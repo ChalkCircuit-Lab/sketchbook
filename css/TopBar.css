@@ -1,0 +1,20 @@
+.TopBar-module--root {
+    display: flex;
+
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: #c9c9c9;
+}
+
+.MenuBar-module--root {
+    display: flex;
+    justify-content: space-between;
+}
+
+.MenuBar-module--Button {
+    cursor: pointer;
+    border: 0px;
+    background-color: rgb(0,0,0,0);
+}
+

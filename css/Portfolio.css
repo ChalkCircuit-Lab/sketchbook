@@ -1,0 +1,69 @@
+.Portfolio-component--Container{
+    display: flex;
+    flex-direction: column;
+
+    height: 500px;
+}
+
+
+.Portfolio-component--TopContainer{
+    display: flex;
+    flex-direction: row;
+
+    height: 15%;
+}
+.Portfolio-component--BottomContainer{
+    display: flex;
+    flex-direction: row;
+
+    height: 85%;
+}
+
+
+
+/* ~/PortfolioContainer/Top Container */
+.Showcase-module--CategorySelector{
+    display: flex;
+    flex-direction: row;
+}
+/* .Showcase-module--ProjectDescription{
+    font-size:
+    
+} */
+.CategorySelector--Button{
+    border: 0;  
+    /* opacity: 50%; */
+}
+.CategorySelector--Button:hover{
+    background-color: #c9c9c9;
+}
+
+
+/* ~/PortfolioContainer/Bottom Container */
+.Showcase-module--VideoPlayer{
+    display: flex;
+    align-items: center;
+    
+    width: 90%;
+
+    /* opacity: 50%; */
+}
+
+.Showcase-module--ProjectSelector{
+    display: flex;
+    flex-direction: column;
+
+    width: 10%;
+}
+
+
+.ProjectSelector--Button{
+    height: 15%;
+
+    border: 0;
+
+    /* opacity: 50%; */
+}
+.ProjectSelector--Button:hover{
+    background-color: #c9c9c9;
+}

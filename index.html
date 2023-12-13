@@ -1,54 +1,184 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<title>Dragos Bobu</title>
-	<meta name="keywords" content="Dragos,Bobu,infoiasi,info uaic">
-	<link href="style.css" rel="stylesheet" type="text/css">
-</head>
-<body>
-	<div id="header">
-		<div id="slogan">
-			<font size="+2">Dragos Bobu, BSc.</font>
-		</div>
-	</div>
-	<div id="nav">
-		<a class="selected" href="index.html">Home</a>
-		<a href="cv.html">CV</a>
-		<a href="research.html">Research</a>
-		<a href="teaching.html">Teaching</a>
-		<a href="work.html">Work</a>
-		<!-- <a href="personal.html">Personal</a> -->
-	</div>
-	<div id="content" class="home">
-		<div id="maincontent">
-			<p><b><font size="+1">Coordinates</font></b></p>
-			<p>
-				<font size="-1">
-					Student at Faculty of Computer Science <br>
-					"Alexandru Ioan Cuza" University of Iasi<br>
-					General Berthelot Str. 16<br>
-					700483 Iasi, Romania<br>
-				</font>
-			</p>
-			<p><font size="-1">e-mail: bobudragos0@gmail.com, tel: +40 75 201 41 32</font></p>
-		</div>
+<!DOCTYPE html>
+<html lang="en">
 
-		<div id="sidecontent">
-			<a href="https://github.com/bobudragos" target="_blank"><img width=150 height=150 src="picture.png"></a>
-		</div>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Portfolio</title>
 
-	</div>
 
-	<div id="footer">
-		<div id="info">
-			<a href="http://www.info.uaic.ro/" target="blank">Faculty of Computer Science</a>
-		</div>
-		<div id="cuza">
-			<a href="http://www.uaic.ro/" target="blank">"Al. I. Cuza" University of Iasi</a>
-		</div>
-	</div>
-	
-</body>
+    
+    <link rel="stylesheet" href="css/Portfolio.css">
+    <script src="js/Portfolio.js"></script>
+
+
+    <link rel="stylesheet" href="css/Research.css">
+    <script src="js/Research.js"></script>
+
+    <link rel="stylesheet" href="css/Contact.css">
+    <script src="js/Contact.js"></script>
+  </head>
+
+  <style>
+    body {
+      width: 60%;
+      margin: auto;
+      background-color: #1D1D1D;
+    }
+  </style>
+
+  <body>
+
+    <nav>
+      <div class="TopBar-module--root">
+
+        <div class="TopBar-module--logo">
+          <a href="">
+            <p>_dragosel505</p>
+          </a>
+        </div>
+
+        <div class="TopBar-module--date">
+          <div class="TopBar-module--longdate" style="font-family: 'GT Maru Mono', monospace;">
+            <p> SUNDAY | DEC 3RD, 2023 </p>
+          </div>
+        </div>
+
+        <div class="MenuBar-module--root">
+          <button class = "MenuBar-module--Button"
+          onClick="document.getElementById('Portfolio-component').scrollIntoView();"> Portfolio </button>
+          <button class = "MenuBar-module--Button"> Research </button>
+          <button class = "MenuBar-module--Button"> Work with me </button>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+    <main>
+
+      <div id="Portfolio-component">
+
+        <header class="Portfolio-component--header">
+          <h1 style="color:white">Projects: </h1>
+        </header>
+
+        <div class="Portfolio-component--Container">
+          <div class="Portfolio-component--TopContainer">
+              <div class="Showcase-module--CategorySelector">
+                <!-- 
+                <button class = "CategorySelector--Button "> Computer Graphics </button>
+                <button class = "CategorySelector--Button"> Game Development </button>
+                <button class = "CategorySelector--Button"> Machine Learning </button>
+                <button class = "CategorySelector--Button"> Software Development </button>
+                <button class = "CategorySelector--Button"> Web Development </button> 
+                -->
+              </div>
+
+              <div class="Showcase-module--ProjectDescription" style="color: white;">
+                <!-- 
+                <p>Tech Used: </p>
+                <p>Description: </p> 
+                -->
+              </div>
+          </div>
+
+          <div class="Portfolio-component--BottomContainer">
+            <div class="Showcase-module--VideoPlayer">
+              <iframe 
+              style="width:95%; height:90%; display: block; margin: 0 auto;"
+              src="" 
+              frameborder="0" 
+              allowfullscreen>
+              </iframe>
+            </div>
+
+            <div class="Showcase-module--ProjectSelector">
+              <!-- 
+              <button class = "ProjectSelector--Button"> Project1 </button>
+              <button class = "ProjectSelector--Button"> Project2 </button>
+              <button class = "ProjectSelector--Button"> Project3 </button> 
+              -->
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- <div id="Research-component">
+        <header class="Research-component--header">
+          <h1 style="color:white">Research: </h1>
+        </header>
+
+        <div class="Research-component--Container">
+          <div class="Research-component--TopContainer">
+            <div id="PaperShowcase-module--CategorySelector">
+              <button>GDD</button>
+              <button>SDD</button>
+              <button>Papers</button>
+            </div>
+            <div id="PaperShowcase-module--PaperDescription">
+
+            </div>
+          </div>
+
+          <div class="Research-component--BottomContainer">
+            <div id="PaperShowcase-module--PaperViewer">
+              <object 
+                style="width:95%; height:90%; display: block; margin: 0 auto;"
+                data="/static/papers/test.pdf" 
+                type="application/pdf" 
+                width="100%" height="100%">
+                <p>Unable to display PDF file. 
+                  <a href="static/papers/test.pdf">Download</a> instead.
+                </p>
+              </object>
+            </div>
+
+            <div id="PaperShowcase-module--PaperSelector">
+
+            </div>
+
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div id="Contact-component">
+        <header class="Contact-component--header">
+          <h1 style="color:white">Let's work together!</h1>
+        </header>
+
+        <div class="Contact-component--Container">
+          <div class="Contact-component--LeftContainer">
+            <div class="Contact-module--ContactInfo">
+              <img style="width: 200px; height:200px">
+
+              <p> <a href="">Email</a> me!</p>
+            </div>
+          </div>
+
+          <div class="Contact-component--RightContainer">
+            <object 
+                style="width:95%; height:90%; display: block; margin: 0 auto;"
+                data="/static/resume/cv.pdf" 
+                type="application/pdf" 
+                width="100%" height="100%">
+                <p>Unable to display PDF file. 
+                  <a href="static/resume/cv.pdf">Download</a> instead.
+                </p>
+              </object>
+          </div>
+        </div>
+      </div> -->
+    </main>
+
+
+
+  </body>
+  <script src="js/TopBar.js"></script>
+  <link rel="stylesheet" href="css/TopBar.css">
+
+
 </html>
-

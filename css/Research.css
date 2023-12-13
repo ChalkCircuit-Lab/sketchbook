@@ -1,0 +1,65 @@
+.Research-component--Container{
+    display: flex;
+    flex-direction: column;
+
+    height: 500px;
+}
+
+
+.Research-component--TopContainer{
+    display: flex;
+    flex-direction: row;
+
+    height: 15%;
+}
+.Research-component--BottomContainer{
+    display: flex;
+    flex-direction: row;
+
+    height: 85%;
+}
+
+
+
+/* ~/ResearchContainer/Top Container */
+#PaperShowcase-module--CategorySelector{
+    display: flex;
+    flex-direction: row;
+}
+.PaperShowcase-module--CategorySelector--Button{
+    border: 0;  
+    /* opacity: 50%; */
+}
+.PaperShowcase-module--CategorySelector--Button:hover{
+    background-color: #c9c9c9;
+}
+
+
+/* ~/ResearchContainer/Bottom Container */
+#PaperShowcase-module--PaperViewer{
+    display: flex;
+    align-items: center;
+    
+    width: 90%;
+
+    /* opacity: 50%; */
+}
+
+#PaperShowcase-module--PaperSelector{
+    display: flex;
+    flex-direction: column;
+
+    width: 10%;
+}
+
+
+.PaperShowcase-module--PaperSelector--Button{
+    height: 15%;
+
+    border: 0;
+
+    /* opacity: 50%; */
+}
+.PaperShowcase-module--PaperSelector--Button:hover{
+    background-color: #c9c9c9;
+}

@@ -1,0 +1,33 @@
+{
+    "Fields":
+    [
+        {
+            "Name": "Game Design Documents",
+            "Projects":
+            [
+                {
+                    "Name": "Project 1",
+                    "PDF": ""
+                },
+                {
+                    "Name": "Project 2",
+                    "PDF": ""
+                }
+            ]
+        },
+        {
+            "Name": "Software Design Documents",
+            "Projects":
+            [
+                {
+                    "Name": "Project 1",
+                    "PDF": ""
+                },
+                {
+                    "Name": "Project 2",
+                    "PDF": ""
+                }
+            ]
+        }
+    ]
+}
