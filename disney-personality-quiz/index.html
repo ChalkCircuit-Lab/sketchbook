@@ -5,8 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Disney Personality Quiz</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 <body>
+    <div class="alert alert-danger" role="alert">
+        This page has been vandalized. For more information, please visit 
+        <a href="https://example.com" class="alert-link">this link</a>.
+    </div>
     <div class="quiz-container">
         <h1>Find Out Which Disney Character You Are!</h1>
         <form id="quiz-form">
@@ -16,6 +21,30 @@
         <div id="result" class="result-container"></div>
     </div>
     <div class="graffiti-overlay">VANDALISED BY HAK5</div>
+
+    <!-- Sneaky HTML elements showcasing what HTML can do -->
+    <div style="display: none;">
+        <h2>Code Example</h2>
+        <pre><code>
+function greet() {
+    console.log("Hello, World!");
+}
+        </code></pre>
+
+        <h2>Random HTML Tags</h2>
+        <blockquote cite="https://www.huxley.net/bnw/four.html">
+            Words can be like X-rays if you use them properly -- they’ll go through anything. You read and you’re pierced.
+        </blockquote>
+        <figure>
+            <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+            <figcaption>Placeholder Image</figcaption>
+        </figure>
+        <details>
+            <summary>More Info</summary>
+            <p>This is a hidden section that can be expanded to show more information.</p>
+        </details>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
