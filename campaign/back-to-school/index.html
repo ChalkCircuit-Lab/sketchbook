@@ -1,67 +1,394 @@
 <!DOCTYPE html>
-<html lang="ro">
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <title>De la haos până la regulă - Lansare revistă</title>
-    <meta name="description" content="Anunț lansare revistă: De la haos până la regulă. Urmărește conținutul pe Discord, Reddit, academons.github.io, Ko-phy, Patreon.">
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Back-to-School — Cambridge-Aligned Modern Sciences Bridge (KS3) · + Revista „De la haos până la regulă”</title>
+  <meta name="description" content="Back-to-School: Cambridge-aligned, CLIL-based STEM programme for KS3 (11–14) + launch of the Romanian magazine „De la haos până la regulă”. Inquiry-driven science, algorithmic thinking, and EAL scaffolding." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/campaign/back-to-school/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Back-to-School — Cambridge-Aligned Modern Sciences Bridge (KS3)" />
+  <meta property="og:description" content="Inquiry-driven science + algorithmic thinking with EAL scaffolding. Built around Cambridge Lower Secondary. Includes the magazine launch „De la haos până la regulă”." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/campaign/back-to-school/" />
+  <meta property="og:image" content="https://dbxdrgsl.github.io/assets/og/back-to-school-campaign.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <meta name="author" content="Dragoș A. Bobu" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+
+  <style>
+    :root{
+      --bg: #0b1020;
+      --bg-soft: #0f162e;
+      --card: rgba(255,255,255,0.05);
+      --text: #e6e9f0;
+      --muted: #a8b2d1;
+      --brand: #8ab4ff;
+      --accent: #a6ffcb;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 18px;
+      --maxw: 1160px;
+    }
+    @media (prefers-color-scheme: light) {
+      :root{ --bg:#f6f8ff; --bg-soft:#ffffff; --card:rgba(0,0,0,0.04); --text:#0b1020; --muted:#41506b; --brand:#1f4bff; --accent:#0bb; }
+      .hero{ background: linear-gradient(135deg,#eaf1ff 0%,#ffffff 60%); }
+    }
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans";
+      color:var(--text); background:linear-gradient(160deg,var(--bg),#090c1a 60%);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{ color:var(--brand); text-decoration:none; }
+    a:hover{ text-decoration:underline; }
+    .container{ width:100%; max-width:var(--maxw); margin-inline:auto; padding: clamp(16px, 2vw, 24px); }
+    .skip-link{ position:absolute; top:-40px; left:0; background:#000; color:#fff; padding:8px 12px; z-index:1000; }
+    .skip-link:focus{ top:0; }
+
+    header{ position:sticky; top:0; z-index:50; backdrop-filter:saturate(110%) blur(12px); background:linear-gradient(180deg, rgba(10,14,28,.75), rgba(10,14,28,.35)); border-bottom:1px solid rgba(255,255,255,.06); }
+    .nav{ display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    .brand{ display:flex; align-items:center; gap:12px; font-weight:700; letter-spacing:.2px; }
+    .badge{ display:inline-block; padding:4px 10px; border:1px solid rgba(255,255,255,.2); border-radius:999px; font-size:12px; color:var(--muted); white-space:nowrap; }
+    .nav a{ color:var(--text); opacity:.9; }
+    .nav .links{ display:flex; gap:18px; align-items:center; flex-wrap:wrap; }
+    .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; padding:12px 16px; border-radius:12px; background:linear-gradient(135deg,var(--brand),#62a2ff); color:#fff; border:none; box-shadow: var(--shadow); font-weight:600; cursor:pointer; }
+    .btn.ghost{ background:transparent; color:var(--brand); border:1px solid rgba(138,180,255,.35); box-shadow:none; }
+
+    .hero{ position:relative; overflow:hidden; }
+    .hero .wrap{ display:grid; grid-template-columns: 1.15fr .85fr; gap: clamp(20px, 4vw, 48px); align-items:center; }
+    @media (max-width: 920px){ .hero .wrap{ grid-template-columns:1fr; } }
+    .poster{ position:relative; aspect-ratio: 16/10; border-radius: var(--radius); background: linear-gradient(135deg,var(--bg-soft),rgba(255,255,255,0.02)); border:1px solid rgba(255,255,255,.08); box-shadow: var(--shadow); overflow:hidden; }
+    .glow{ position:absolute; inset:-40%; background: radial-gradient(circle at 70% 10%, rgba(138,180,255,.25), transparent 35%), radial-gradient(circle at 20% 90%, rgba(166,255,203,.20), transparent 40%); filter: blur(30px); }
+    h1{ font-size: clamp(28px, 5vw, 48px); line-height:1.05; margin:8px 0 12px; }
+    .sub{ font-size: clamp(16px, 2vw, 20px); color:var(--muted); max-width: 70ch; }
+    .cta-row{ display:flex; gap:12px; flex-wrap:wrap; margin-top:22px; }
+    .trust{ display:flex; align-items:center; gap:26px; margin-top:22px; opacity:.85; flex-wrap:wrap; }
+    .trust span{ font-size:12px; color:var(--muted); letter-spacing:.3px; }
+
+    section{ padding: clamp(24px, 5vw, 64px) 0; }
+    h2{ font-size: clamp(22px, 3.5vw, 34px); margin:0 0 14px; }
+    p.lead{ color: var(--muted); max-width: 70ch; }
+
+    .grid{ display:grid; gap:18px; }
+    .grid.cols-3{ grid-template-columns: repeat(3, 1fr); }
+    .grid.cols-2{ grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 920px){ .grid.cols-3, .grid.cols-2{ grid-template-columns: 1fr; } }
+
+    .card{ background: var(--card); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding:18px; box-shadow: var(--shadow); }
+    .card h3{ margin-top:0; font-size: 18px; }
+    .icon{ width:28px; height:28px; display:inline-block; vertical-align:middle; margin-right:8px; }
+
+    .pricing{ display:grid; grid-template-columns: repeat(3, 1fr); gap:18px; }
+    @media (max-width: 920px){ .pricing{ grid-template-columns:1fr; } }
+    .price{ position:relative; padding:22px; border-radius: var(--radius); background: linear-gradient(135deg, rgba(138,180,255,.14), rgba(255,255,255,.04)); border: 1px solid rgba(255,255,255,.12); }
+    .price h3{ margin:0 0 8px; }
+    .price .num{ font-size: 28px; font-weight: 800; }
+    .price small{ color:var(--muted); }
+
+    details{ background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: 12px; padding:12px 14px; }
+    details + details{ margin-top:10px; }
+    summary{ cursor:pointer; font-weight:600; }
+
+    footer{ border-top:1px solid rgba(255,255,255,.08); color:var(--muted); }
+    .foot{ display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+
+    .sticky-cta{ position:fixed; bottom:12px; left:50%; transform: translateX(-50%); width:min(92%, 540px); background: linear-gradient(135deg,var(--brand),#5b9bff); color:#fff; padding:12px 14px; border-radius: 999px; box-shadow: var(--shadow); display:none; align-items:center; justify-content:center; gap:12px; }
+    @media (max-width: 720px){ .sticky-cta{ display:flex; } .sticky-cta .ghost{ display:none; } }
+
+    /* Small bilingual tag for RO sections */
+    .tag-ro{ font-size:12px; padding:2px 8px; border:1px solid rgba(255,255,255,.25); border-radius:999px; color:var(--muted); }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>De la haos până la regulă</h1>
-        <p><em>Revista ce transformă dezordinea în cunoaștere</em></p>
-    </header>
-    <main>
-        <section>
-            <h2>Despre revistă</h2>
-            <p>
-                Lansăm în curând revista <strong>De la haos până la regulă</strong>! O colecție de articole, lecții și reflecții despre organizare, creativitate și învățare, publicată de <strong>Editura Collaborative</strong>.
-            </p>
-        </section>
-        <section>
-            <h2>Cuprins</h2>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header>
+    <div class="container nav" role="navigation" aria-label="Primary">
+      <div class="brand">
+        <span class="badge" aria-label="Alignment">Cambridge-aligned</span>
+        <a href="https://dbxdrgsl.github.io/" aria-label="Home">Dragoș A. Bobu</a>
+      </div>
+      <nav class="links">
+        <a href="#offer">Offer</a>
+        <a href="#alignment">Alignment</a>
+        <a href="#outcomes">Outcomes</a>
+        <a href="#magazine">Revistă</a>
+        <a href="#faq">FAQ</a>
+        <a class="btn ghost" id="btn-book-top" href="#book">Book a 15-min intro</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container wrap">
+        <div>
+          <div class="badge" aria-hidden="true">Back-to-School • KS3 • CLIL STEM</div>
+          <h1>Back-to-School: Modern Sciences Bridge</h1>
+          <p class="sub">Inquiry-driven Science with algorithmic thinking, mapped to <strong>Cambridge Lower Secondary Science</strong> & <strong>Global Perspectives</strong>. EAL-friendly through CLIL routines. Run as a 6–8 week starter strand.</p>
+          <div class="cta-row">
+            <a class="btn" id="btn-download-hero" href="#download">Download pack</a>
+            <a class="btn ghost" id="btn-book-hero" href="#book">Book a 15-min intro</a>
+          </div>
+          <div class="trust" aria-label="Trust cues">
+            <span>Mapped to: Thinking & Working Scientifically • Science in Context</span>
+            <span>Safeguarding-aware • GDPR-compliant</span>
+          </div>
+        </div>
+        <div class="poster" aria-hidden="true">
+          <div class="glow"></div>
+          <!-- Optional: swap for a lightweight poster/looping mp4 -->
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTCOMES -->
+    <section id="outcomes">
+      <div class="container">
+        <h2>Clear outcomes in 6–8 weeks</h2>
+        <p class="lead">We target enquiry skills and language functions. Evidence is collected weekly.</p>
+        <div class="grid cols-3">
+          <div class="card"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Thinking & Working Scientifically</h3><p>Plan, test, measure, explain. From hypotheses to conclusions with uncertainty awareness.</p></div>
+          <div class="card"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20V10M6 20V4M18 20v-7"/></svg>Data & Algorithms</h3><p>Block diagrams, if/else, variables. Simple sensors or virtual labs to gather and reason with data.</p></div>
+          <div class="card"><h3><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>Academic English</h3><p>CLIL scaffolding: describe → explain → compare → conclude. CEFR-aware prompts and sentence frames.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALIGNMENT -->
+    <section id="alignment">
+      <div class="container">
+        <h2>Built around Cambridge Lower Secondary</h2>
+        <p class="lead">We use <strong>Thinking & Working Scientifically</strong> as the backbone, draw contexts from Biology, Chemistry, Physics, and finish with a <strong>Global Perspectives</strong> mini-inquiry.</p>
+        <div class="grid cols-2">
+          <div class="card">
+            <h3>What this means in class</h3>
             <ul>
-                <li>Introducere: De ce haosul precede regula?</li>
-                <li>Lecții din dezordine</li>
-                <li>Structurarea ideilor</li>
-                <li>Instrumente pentru creativitate</li>
-                <li>Studiu de caz: Organizarea cunoașterii</li>
-                <li>Resurse recomandate</li>
+              <li>CLIL staging: input → guided output → free output.</li>
+              <li>Dual targets: science objective + language function.</li>
+              <li>Artefacts: lab notes, diagrams, short videos, viva.</li>
             </ul>
-        </section>
-        <section>
-            <h2>Lecții implicate</h2>
+          </div>
+          <div class="card">
+            <h3>Safeguarding & operations</h3>
+            <ul>
+              <li>KCSIE-aware delivery; GDPR-compliant data flow.</li>
+              <li>Hybrid or on-site. 60–75 min sessions. Groups ≤ 16.</li>
+              <li>Resourcing: micro:bit/virtual labs; printable booklets.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OFFER -->
+    <section id="offer">
+      <div class="container">
+        <h2>Pilot offer (Back-to-School window)</h2>
+        <p class="lead">Start small. Gather evidence. Decide together.</p>
+        <div class="pricing">
+          <div class="price">
+            <h3>6-Week Bridge</h3>
+            <div class="num">£2,100–£3,200</div>
+            <small>1×/week • cohort ≤ 16</small>
+            <ul>
+              <li>Baseline diagnostic & exit task</li>
+              <li>Weekly artefacts + rubric snapshots</li>
+              <li>Parent summary at the end</li>
+            </ul>
+          </div>
+          <div class="price">
+            <h3>8-Week Intensive</h3>
+            <div class="num">£2,800–£4,200</div>
+            <small>1–2×/week • cohort ≤ 16</small>
+            <ul>
+              <li>More practice + mini-inquiry showcase</li>
+              <li>Teacher CPD (2×90 min) included</li>
+              <li>Board-ready summary report</li>
+            </ul>
+          </div>
+          <div class="price">
+            <h3>CPD Add-Ons</h3>
+            <div class="num">from £600</div>
+            <small>for staff or partner schools</small>
+            <ul>
+              <li>CLIL in STEM (hands-on)</li>
+              <li>Assessing enquiry & language</li>
+              <li>Parent engagement evening</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cta-row" style="margin-top:16px">
+          <a class="btn" id="btn-download-offer" href="#download">Download full pack</a>
+          <a class="btn ghost" id="btn-book-offer" href="#book">Book an intro call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODULES -->
+    <section id="modules">
+      <div class="container">
+        <h2>What we teach (example modules)</h2>
+        <div class="grid cols-3">
+          <div class="card"><h3>A • Enquiry × Data</h3><p>Hypothesis → test → communicate. Mini-investigations with simple datasets and visualisations.</p></div>
+          <div class="card"><h3>B • Algorithms × Measurement</h3><p>if/else, variables, loops. Sensor-based or virtual experiments. Error and uncertainty.</p></div>
+          <div class="card"><h3>C • Science in Context</h3><p>Local issue capstone (e.g., air quality). Team poster + 3-min viva following GP routines.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EVIDENCE -->
+    <section id="evidence">
+      <div class="container">
+        <h2>Evidence & reporting</h2>
+        <p class="lead">We share progress artefacts and concise reports. No extra exam burden.</p>
+        <div class="grid cols-2">
+          <div class="card"><h3>Weekly artefacts</h3><p>Photos/scans of lab notes, diagrams, short clips. Rubric snapshots aligned to enquiry & communication.</p></div>
+          <div class="card"><h3>End-of-pilot report</h3><p>Cohort summary, sample work, attendance, recommendations for rollout.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAGAZINE (merged RO content) -->
+    <section id="magazine" aria-labelledby="magazine-title">
+      <div class="container">
+        <div class="badge" aria-hidden="true">Launch</div>
+        <h2 id="magazine-title">Revista: <em>De la haos până la regulă</em> <span class="tag-ro" aria-label="Romanian language">RO</span></h2>
+        <p class="lead">O publicație care transformă dezordinea în cunoaștere. Capitole, lecții și reflecții despre organizare, creativitate și învățare — în sprijinul clasei și al familiei.</p>
+
+        <div class="grid cols-2" style="margin-top:12px">
+          <div class="card">
+            <h3>Despre revistă</h3>
+            <p>
+              Lansăm în curând <strong>De la haos până la regulă</strong>, publicată de <strong>Editura Collaborative</strong>. Conținutul scalează de la „ordine în idei” la aplicare în proiecte școlare.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Publicare & platforme</h3>
+            <p>Fiecare capitol/lecție va fi publicat treptat pe:</p>
+            <ul>
+              <li>Discord</li>
+              <li>Reddit</li>
+              <li><a href="https://academons.github.io/" target="_blank" rel="noopener">academons.github.io</a></li>
+              <li>Ko-phy (Buy Me a Coffee)</li>
+              <li>Patreon</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="grid cols-2" style="margin-top:12px">
+          <div class="card">
+            <h3>Cuprins</h3>
+            <ul>
+              <li>Introducere: De ce haosul precede regula?</li>
+              <li>Lecții din dezordine</li>
+              <li>Structurarea ideilor</li>
+              <li>Instrumente pentru creativitate</li>
+              <li>Studiu de caz: Organizarea cunoașterii</li>
+              <li>Resurse recomandate</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Lecții implicate</h3>
             <ol>
-                <li>Gestionarea haosului personal</li>
-                <li>Tehnici de structurare a informației</li>
-                <li>Colaborare și feedback</li>
-                <li>Publicare și diseminare</li>
+              <li>Gestionarea haosului personal</li>
+              <li>Tehnici de structurare a informației</li>
+              <li>Colaborare și feedback</li>
+              <li>Publicare și diseminare</li>
             </ol>
-        </section>
-        <section>
-            <h2>Publicare și platforme</h2>
-            <p>
-                Fiecare capitol și lecție va fi lansat treptat pe diverse platforme:
-            </p>
-            <ul>
-                <li>Discord</li>
-                <li>Reddit</li>
-                <li><a href="https://academons.github.io/" target="_blank">academons.github.io</a></li>
-                <li>Ko-phy (Buy Me a Coffee)</li>
-                <li>Patreon</li>
-            </ul>
-            <p>Urmărește-ne pentru a nu rata lansările!</p>
-        </section>
-        <section>
-            <h2>Editura Collaborative</h2>
-            <p>
-                Proiectul este realizat în colaborare cu <strong>Editura Collaborative</strong>, dedicată promovării educației deschise și colaborative.
-            </p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2024 De la haos până la regulă. Toate drepturile rezervate.</p>
-    </footer>
+          </div>
+        </div>
+
+        <div class="cta-row" style="margin-top:10px">
+          <!-- Replace with your actual sample issue / landing -->
+          <a class="btn" id="btn-mag-download" href="/assets/magazine/haos-regula/Issue-0-Sample.pdf">Descarcă Issue 0 (PDF)</a>
+          <a class="btn ghost" id="btn-mag-news" href="mailto:dragos.bobu@uaic.ro?subject=Revista%20—%20nout%C4%83%C8%9Bi&body=V%C4%83%20rog%20s%C4%83%20m%C4%83%20abona%C8%9Bi%20la%20nout%C4%83%C8%9Bile%20pentru%20revist%C4%83.">Primește noutăți pe email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download">
+      <div class="container">
+        <h2>Download the pack</h2>
+        <p class="lead">One-pager, sample lesson, rubric, timeline. PDF (≈ 8 pages).</p>
+        <div class="cta-row">
+          <a class="btn" id="btn-pack" href="/assets/campaign/uk-cambridge/UK-Cambridge-Bridge-Pack.pdf">Download PDF</a>
+          <a class="btn ghost" id="btn-email" href="mailto:dragos.bobu@uaic.ro?subject=Back-to-School%20Bridge%20—%20Info%20pack&body=Please%20send%20me%20the%20pack%20and%203%20available%20slots%20for%20a%2015-min%20intro.">Request by email</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- BOOK -->
+    <section id="book">
+      <div class="container">
+        <h2>Book a 15-minute introduction</h2>
+        <p class="lead">Choose a slot that works for SLT or the Science/English leads.</p>
+        <div class="cta-row">
+          <a class="btn" id="btn-cal" href="https://calendly.com/">Open calendar</a>
+          <a class="btn ghost" id="btn-alt" href="mailto:dragos.bobu@uaic.ro?subject=Back-to-School%20Bridge%20—%20Intro%20call&body=We%20would%20like%20to%20book%20a%2015-minute%20introduction.%20Please%20propose%203%20times.">Email instead</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Is this endorsed by Cambridge?</summary>
+          <p>No. It’s independently developed and aligned to public framework statements.</p>
+        </details>
+        <details>
+          <summary>Do we need devices?</summary>
+          <p>Not strictly. We can run with printable booklets and lightweight demos; devices enable richer data tasks.</p>
+        </details>
+        <details>
+          <summary>How is safeguarding handled?</summary>
+          <p>Delivery is KCSIE-aware; artefact handling follows GDPR. Media capture is opt-in and configurable.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <a class="sticky-cta" id="btn-sticky" href="#book" aria-label="Book a 15-minute introduction">Book a 15-min intro</a>
+
+  <footer>
+    <div class="container foot">
+      <div>
+        <strong>Disclaimer</strong>: Cambridge is a registered trademark of Cambridge University Press & Assessment. This programme is independently developed and not endorsed by Cambridge.
+      </div>
+      <div>
+        <a href="https://dbxdrgsl.github.io/">Home</a> · <a href="https://dbxdrgsl.github.io/blog">Blog</a> · <a href="https://dbxdrgsl.github.io/research-paper">Research</a> · <a href="https://dbxdrgsl.github.io/cv">CV</a> · <span id="year"></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Preserve UTM params across CTA links
+    (function(){
+      const qs = window.location.search;
+      if(!qs) return;
+      const ids = [
+        'btn-book-top','btn-book-hero','btn-download-hero','btn-download-offer','btn-book-offer',
+        'btn-pack','btn-email','btn-cal','btn-alt','btn-sticky','btn-mag-download','btn-mag-news'
+      ];
+      ids.forEach(id=>{
+        const a = document.getElementById(id); if(!a) return;
+        try{
+          const url = new URL(a.getAttribute('href'), window.location.origin);
+          if(url.protocol.startsWith('http')){ url.search += (url.search ? '&' : '') + qs.slice(1); }
+          a.setAttribute('href', url.toString());
+        }catch(e){/* ignore */}
+      });
+    })();
+
+    // Footer year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
