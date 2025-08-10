@@ -20,7 +20,9 @@
   <meta name="twitter:description" content="Teacher & Developer. Informatics, Game Dev, Mathematical Visualization." />
   <meta name="twitter:image" content="https://dbxdrgsl.github.io/assets/og/europass-cv.png" />
 
-  <!-- Styles -->
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
   <style>
     :root{
       --ink:#1f2937; --muted:#6b7280; --line:#e5e7eb; --accent:#0f62fe; --paper:#ffffff; --bg:#f3f4f6;
@@ -30,18 +32,15 @@
     body{margin:0;background:var(--bg);color:#111;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
 
     /* A4 sheet container */
-    .sheet{
-      width:210mm; min-height:297mm;
-      margin: 16px auto; background:var(--paper);
-      box-shadow:0 10px 30px rgba(0,0,0,.1);
-      color:var(--ink);
-      display:flex; flex-direction:column;
-    }
+    .sheet{width:210mm; min-height:297mm; margin: 16px auto; background:var(--paper);
+      box-shadow:0 10px 30px rgba(0,0,0,.1); color:var(--ink); display:flex; flex-direction:column;}
     .sheet-inner{padding:16mm 16mm 18mm}
 
-    /* Header with photo/QR block like Europass */
+    /* Header: identity + qr */
     header{
-      display:grid; grid-template-columns: 1fr 38mm 38mm; gap:10mm; align-items:start;
+      display:grid;
+      grid-template-columns: 1fr 48mm;
+      gap:10mm; align-items:start;
       border-bottom:2px solid var(--line); padding-bottom:8mm; margin-bottom:10mm;
     }
     .identity h1{margin:0 0 4mm; font-size:20pt; line-height:1.2}
@@ -49,63 +48,61 @@
     .contact{margin-top:4mm; display:grid; grid-template-columns: 28mm 1fr; column-gap:6mm; row-gap:2mm; font-size:10.5pt}
     .label{color:var(--muted)}
 
-    .photo-slot{
-      width:38mm; height:50mm; border:1px solid var(--line); border-radius:3mm;
-      display:flex; align-items:center; justify-content:center; font-size:9pt; color:var(--muted);
-      background:#fafafa; text-align:center; padding:3mm;
-    }
-    .qr-slot{
-      width:38mm; height:38mm; border:1px dashed var(--line); border-radius:3mm;
-      display:flex; align-items:center; justify-content:center; background:#fff;
-    }
-    .qr-slot canvas, .qr-slot img{width:100%; height:100%;}
+    .qr-wrapper{display:flex; flex-direction:column; align-items:center; gap:4mm}
+    .qr-slot{width:38mm; height:38mm; border:1px dashed var(--line); border-radius:3mm; display:flex; align-items:center; justify-content:center; background:#fff}
+    .qr-slot canvas,.qr-slot img{width:100%;height:100%}
+    .qr-caption{font-size:9pt; color:var(--muted); text-align:center; word-break:break-all}
 
-    /* Two-column Europass-like layout for sections */
+    /* Two-column layout */
     main{display:grid; grid-template-columns: 60mm 1fr; gap:10mm}
     aside{border-right:1px solid var(--line); padding-right:10mm}
     section{margin:0 0 8mm}
-    h2{
-      font-size:11pt; text-transform:uppercase; letter-spacing:.06em; color:#111;
-      border-bottom:1px solid var(--line); padding-bottom:2mm; margin:0 0 4mm;
-    }
+    h2{font-size:11pt; text-transform:uppercase; letter-spacing:.06em; color:#111;
+       border-bottom:1px solid var(--line); padding-bottom:2mm; margin:0 0 4mm;}
     h3{margin:2mm 0 1mm; font-size:11pt}
     .dates{color:var(--muted); font-variant-numeric:tabular-nums; font-size:10pt}
-
     ul{margin:2mm 0 2mm 5mm; padding:0}
     li{margin:1mm 0}
 
     .taglist{display:flex; flex-wrap:wrap; gap:3mm; margin-top:2mm}
     .tag{border:1px solid #e0e7ff; background:#eef2ff; border-radius:999px; padding:.8mm 2.8mm; font-size:9.5pt}
 
-    table{width:100%; border-collapse:collapse; font-size:10pt}
+    /* Table: prevent overlap */
+    table{border-collapse:collapse; font-size:10pt}
     th,td{border:1px solid var(--line); padding:3mm 3.2mm; text-align:left}
     th{background:#f7f7f9}
+    .table-scroll{display:block; overflow-x:auto; max-width:100%}
 
     footer{margin-top:auto; border-top:1px solid var(--line); padding-top:4mm; color:var(--muted); font-size:9.5pt}
 
-    /* Links */
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
 
-    /* Print */
+    /* Popover theme */
+    .eu-popover.popover{border:1px solid #dbeafe; box-shadow:0 10px 30px rgba(15,118,255,.15)}
+    .eu-popover .popover-header{background:#eff6ff; color:#0b3b8c; font-weight:600}
+
+    /* Top hint banner with tiny SVG motion */
+    .hint-banner{position:relative; border:1px solid #dbeafe; background:linear-gradient(180deg,#eff6ff,#fff);}
+    .hint-banner svg{position:absolute; right:8px; top:50%; transform:translateY(-50%);}
+    .dash{stroke-dasharray:6 6; animation:dash 6s linear infinite}
+    @keyframes dash{to{stroke-dashoffset:-48}}
     @page{size:A4; margin:14mm}
     @media print{
       body{background:#fff}
       .sheet{box-shadow:none; margin:0; width:auto; min-height:auto}
+      .hint-banner{display:none}
       a[href^="http"]::after{content:" (" attr(href) ")"; color:var(--muted); font-size:8pt}
-      .qr-note{display:none}
     }
-
-    /* Small screens (readable) */
     @media (max-width:900px){
       .sheet{width:100%; min-height:auto}
-      header{grid-template-columns:1fr 32mm 32mm}
+      header{grid-template-columns:1fr}
       main{grid-template-columns:1fr; gap:6mm}
       aside{border-right:none; padding-right:0}
     }
   </style>
 
-  <!-- Structured data (SEO) -->
+  <!-- Structured data (unchanged) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -120,41 +117,33 @@
       "https://dbxdrgsl.notion.site/Freelancer-Hub-245fb3301e9780d0a826f3ff5adb1b14?pvs=74",
       "https://dbxdrgsl.github.io/"
     ],
-    "alumniOf":[{
-      "@type":"CollegeOrUniversity",
-      "name":"Alexandru Ioan Cuza University of Iași (UAIC)"
-    }],
+    "alumniOf":[{"@type":"CollegeOrUniversity","name":"Alexandru Ioan Cuza University of Iași (UAIC)"}],
     "hasPart":[
-      {
-        "@type":"CreativeWork",
-        "name":"Machine Learning Compatible Computer Graphics",
-        "url":"https://dbxdrgsl.github.io/research-paper/thesis",
-        "datePublished":"2024-06",
-        "inLanguage":"en",
-        "about":["Game Engine","OpenGL","Machine Learning","NPC AI"]
-      },
-      {
-        "@type":"CreativeWork",
-        "name":"Aproximarea numerică a ecuațiilor cu derivate parțiale folosind FreeFem++",
-        "url":"https://dbxdrgsl.github.io/research-paper/dissertation",
-        "dateCreated":"2026",
-        "inLanguage":"ro",
-        "about":["Finite Element Method","PDEs","FreeFem++"]
-      }
+      {"@type":"CreativeWork","name":"Machine Learning Compatible Computer Graphics","url":"https://dbxdrgsl.github.io/research-paper/thesis","datePublished":"2024-06","inLanguage":"en","about":["Game Engine","OpenGL","Machine Learning","NPC AI"]},
+      {"@type":"CreativeWork","name":"Aproximarea numerică a ecuațiilor cu derivate parțiale folosind FreeFem++","url":"https://dbxdrgsl.github.io/research-paper/dissertation","dateCreated":"2026","inLanguage":"ro","about":["Finite Element Method","PDEs","FreeFem++"]}
     ]
   }
   </script>
+  
 </head>
 <body>
   <div class="sheet" role="document">
     <div class="sheet-inner">
 
+      <!-- Soft, positive banner -->
+      <div class="hint-banner alert alert-primary py-2 px-3 mb-3" role="status">
+        <strong>Tip:</strong> hover or focus any link to preview where it goes. Click to open in a new tab.
+        <svg width="120" height="18" viewBox="0 0 120 18" aria-hidden="true">
+          <path class="dash" d="M2 9 Q 22 1, 42 9 T 82 9 T 118 9" fill="none" stroke="#60a5fa" stroke-width="2"/>
+        </svg>
+      </div>
+
       <header role="banner" aria-label="Header">
         <div class="identity">
           <h1 itemprop="name">Dragos A. Bobu</h1>
           <p class="lead" itemprop="description">
-            <strong><a href="https://dbxdrgsl.notion.site/Teacher-home-244fb3301e9780a2bb3cf42576ac5233" target="_blank" rel="noopener">Teacher</a> &amp;
-            <a href="https://dbxdrgsl.notion.site/Freelancer-Hub-245fb3301e9780d0a826f3ff5adb1b14?pvs=74" target="_blank" rel="noopener">Developer</a></strong><br>
+            <strong><a href="./promo/teacher/" target="_blank" rel="noopener">Teacher</a> &amp;
+            <a href="./promo/freelancer/" target="_blank" rel="noopener">Developer</a></strong><br>
             Specializing in Informatics, Game Development, and Mathematical Visualization.
           </p>
 
@@ -171,13 +160,11 @@
           </div>
         </div>
 
-        <!-- Photo placeholder, Europass-like -->
-        <figure class="photo-slot" aria-label="Photo placeholder">
-          35×45 mm<br>photo
-        </figure>
-
-        <!-- Auto QR code (canonical URL by default) -->
-        <figure class="qr-slot" id="qr" aria-label="QR code to this CV"></figure>
+        <!-- QR only (photo removed) -->
+        <div class="qr-wrapper">
+          <figure class="qr-slot" id="qr" aria-label="QR code to this CV"></figure>
+          <div class="qr-caption" id="qr-url">https://dbxdrgsl.github.io/cv/europass</div>
+        </div>
       </header>
 
       <main role="main">
@@ -185,138 +172,81 @@
           <section id="digital-skills">
             <h2>Digital Skills</h2>
             <div class="taglist" aria-label="Digital skills">
-              <span class="tag">Python</span>
-              <span class="tag">C/C++</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">OpenGL</span>
-              <span class="tag">Game Engines</span>
-              <span class="tag">Unity</span>
-              <span class="tag">Blender</span>
-              <span class="tag">p5.js</span>
-              <span class="tag">Arduino</span>
-              <span class="tag">FreeFem++</span>
-              <span class="tag">Curriculum Design</span>
-              <span class="tag">Assessment</span>
+              <span class="tag">Python</span><span class="tag">C/C++</span><span class="tag">JavaScript</span>
+              <span class="tag">OpenGL</span><span class="tag">Game Engines</span><span class="tag">Unity</span>
+              <span class="tag">Blender</span><span class="tag">p5.js</span><span class="tag">Arduino</span>
+              <span class="tag">FreeFem++</span><span class="tag">Curriculum Design</span><span class="tag">Assessment</span>
             </div>
           </section>
 
           <section id="languages">
             <h2>Language Skills (CEFR)</h2>
-            <table aria-describedby="languages">
-              <thead>
-                <tr>
-                  <th>Language</th>
-                  <th>Listening</th>
-                  <th>Reading</th>
-                  <th>Interaction</th>
-                  <th>Production</th>
-                  <th>Writing</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><strong>Romanian</strong> — Mother tongue</td>
-                  <td>C2</td><td>C2</td><td>C2</td><td>C2</td><td>C2</td>
-                </tr>
-                <tr>
-                  <td><strong>English</strong></td>
-                  <td>C2</td><td>C2</td><td>C2</td><td>C2</td><td>C2</td>
-                </tr>
-                <tr>
-                  <td><strong>French</strong></td>
-                  <td>B2</td><td>B2</td><td>B2</td><td>B2</td><td>B2</td>
-                </tr>
-                <tr>
-                  <td><strong>German</strong></td>
-                  <td>A1</td><td>A1</td><td>A1</td><td>A1</td><td>A1</td>
-                </tr>
-              </tbody>
-            </table>
+            <div class="table-scroll">
+              <table aria-describedby="languages">
+                <thead>
+                  <tr><th>Language</th><th>Listening</th><th>Reading</th><th>Interaction</th><th>Production</th><th>Writing</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td><strong>Romanian</strong> — Mother tongue</td><td>C2</td><td>C2</td><td>C2</td><td>C2</td><td>C2</td></tr>
+                  <tr><td><strong>English</strong></td><td>C2</td><td>C2</td><td>C2</td><td>C2</td><td>C2</td></tr>
+                  <tr><td><strong>French</strong></td><td>B2</td><td>B2</td><td>B2</td><td>B2</td><td>B2</td></tr>
+                  <tr><td><strong>German</strong></td><td>A1</td><td>A1</td><td>A1</td><td>A1</td><td>A1</td></tr>
+                </tbody>
+              </table>
+            </div>
           </section>
         </aside>
 
         <div>
-          <!-- EDUCATION AND TRAINING -->
           <section id="education">
             <h2>Education and Training</h2>
-
-            <article class="item" itemscope itemtype="https://schema.org/EducationalOrganization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/edu/msc/miss" target="_blank" rel="noopener" itemprop="url">M.Sc. in Formal Software Engineering</a></h3>
-              <p class="dates"><time datetime="2025-10">2025</time>–<time datetime="2027-07">2027</time> — UAIC Iași</p>
-            </article>
-
-            <article class="item" itemscope itemtype="https://schema.org/EducationalOrganization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/edu/msc/mfic" target="_blank" rel="noopener" itemprop="url">M.Sc. in Foundational Mathematics for Teaching and Research</a></h3>
-              <p class="dates"><time datetime="2024-10">2024</time>–<time datetime="2025-07">2025</time> — UAIC Iași</p>
-            </article>
-
-            <article class="item" itemscope itemtype="https://schema.org/EducationalOrganization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/edu/did/dppd#module-1" target="_blank" rel="noopener" itemprop="url">DPPD — Teacher Training Program (Level I)</a></h3>
-              <p class="dates"><time datetime="2024-10">2024</time>–<time datetime="2025-07">2025</time> — UAIC Iași</p>
-            </article>
-
-            <article class="item" itemscope itemtype="https://schema.org/EducationalOrganization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/edu/bsc/fii" target="_blank" rel="noopener" itemprop="url">B.Sc. in Computer Science</a></h3>
-              <p class="dates"><time datetime="2020-10">2020</time>–<time datetime="2024-07">2024</time> — UAIC Iași</p>
-            </article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/cv/edu/msc/miss" target="_blank" rel="noopener">M.Sc. in Formal Software Engineering</a></h3>
+              <p class="dates"><time datetime="2025-10">2025</time>–<time datetime="2027-07">2027</time> — UAIC Iași</p></article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/cv/edu/msc/mfic" target="_blank" rel="noopener">M.Sc. in Foundational Mathematics for Teaching and Research</a></h3>
+              <p class="dates"><time datetime="2024-10">2024</time>–<time datetime="2025-07">2025</time> — UAIC Iași</p></article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/cv/edu/did/dppd#module-1" target="_blank" rel="noopener">DPPD — Teacher Training Program (Level I)</a></h3>
+              <p class="dates"><time datetime="2024-10">2024</time>–<time datetime="2025-07">2025</time> — UAIC Iași</p></article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/cv/edu/bsc/fii" target="_blank" rel="noopener">B.Sc. in Computer Science</a></h3>
+              <p class="dates"><time datetime="2020-10">2020</time>–<time datetime="2024-07">2024</time> — UAIC Iași</p></article>
           </section>
 
-          <!-- WORK EXPERIENCE -->
           <section id="experience">
             <h2>Work Experience</h2>
-
-            <article class="item" itemscope itemtype="https://schema.org/Organization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/exp/teacher#ion" target="_blank" rel="noopener" itemprop="url">ITC Teacher</a></h3>
+            <article class="item">
+              <h3><a href="https://dbxdrgsl.github.io/cv/exp/teacher#ion" target="_blank" rel="noopener">ITC Teacher</a></h3>
               <p class="dates"><time datetime="2024-09">2024</time>–<time datetime="2025-07">2025</time> — Școala Gimnazială „Ion Ghica” &amp; „Ion Simionescu”</p>
-              <ul>
-                <li>Taught IT to grades 5–8.</li>
-                <li>Designed lessons and assessments aligned with the national curriculum.</li>
-              </ul>
+              <ul><li>Taught IT to grades 5–8.</li><li>Designed lessons and assessments aligned with the national curriculum.</li></ul>
             </article>
 
-            <article class="item" itemscope itemtype="https://schema.org/Organization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/exp/educator#csc" target="_blank" rel="noopener" itemprop="url">Programming &amp; Robotics Trainer</a></h3>
+            <article class="item">
+              <h3><a href="https://dbxdrgsl.github.io/cv/exp/educator#csc" target="_blank" rel="noopener">Programming &amp; Robotics Trainer</a></h3>
               <p class="dates"><time datetime="2019-01">2019</time>–<time datetime="2024-12">2024</time> — Code School Clubs &amp; SKID</p>
-              <ul>
-                <li>Led Scratch, Python, and Arduino workshops.</li>
-                <li>Participated in competitions (FiiCode, Erasmus+).</li>
-              </ul>
+              <ul><li>Led Scratch, Python, and Arduino workshops.</li><li>Participated in competitions (FiiCode, Erasmus+).</li></ul>
             </article>
 
-            <article class="item" itemscope itemtype="https://schema.org/Organization">
-              <h3><a href="https://dbxdrgsl.github.io/cv/exp/freelancer#fiverr" target="_blank" rel="noopener" itemprop="url">Freelance Software Engineer</a></h3>
+            <article class="item">
+              <h3><a href="https://dbxdrgsl.github.io/cv/exp/freelancer#fiverr" target="_blank" rel="noopener">Freelance Software Engineer</a></h3>
               <p class="dates"><time datetime="2020-01">2020</time>–<time datetime="2022-12">2022</time> — Fiverr</p>
-              <ul>
-                <li>Delivered tools and apps in Python, JavaScript, and C++.</li>
-                <li>End-to-end delivery with top-rated feedback.</li>
-              </ul>
+              <ul><li>Delivered tools and apps in Python, JavaScript, and C++.</li><li>End-to-end delivery with top-rated feedback.</li></ul>
             </article>
           </section>
 
-          <!-- PUBLICATIONS -->
           <section id="publications">
             <h2>Publications</h2>
-
-            <article class="item" itemscope itemtype="https://schema.org/CreativeWork">
-              <h3><a href="https://dbxdrgsl.github.io/research-paper/thesis" target="_blank" rel="noopener" itemprop="url">Machine Learning Compatible Computer Graphics (2024)</a></h3>
-              <p>Modular game engine with OpenGL rendering and ML-driven NPCs.</p>
-            </article>
-
-            <article class="item" itemscope itemtype="https://schema.org/CreativeWork">
-              <h3><a href="https://dbxdrgsl.github.io/research-paper/dissertation" target="_blank" rel="noopener" itemprop="url">Aproximarea numerică a ecuațiilor cu derivate parțiale folosind FreeFem (2026–2027)</a></h3>
-              <p>Metoda elementului finit pentru PDE eliptice, parabolice, hiperbolice. Aplicații cu FreeFem++.</p>
-            </article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/research-paper/thesis" target="_blank" rel="noopener">Machine Learning Compatible Computer Graphics (2024)</a></h3>
+              <p>Modular game engine with OpenGL rendering and ML-driven NPCs.</p></article>
+            <article class="item"><h3><a href="https://dbxdrgsl.github.io/research-paper/dissertation" target="_blank" rel="noopener">Aproximarea numerică… folosind FreeFem (2026–2027)</a></h3>
+              <p>Metoda elementului finit pentru PDE. Aplicații cu FreeFem++.</p></article>
           </section>
 
-          <!-- PROJECTS -->
           <section id="projects">
             <h2>Projects</h2>
             <ul>
-              <li class="item"><a href="https://dbxdrgsl.github.io/game-design-document/chess#pipe" target="_blank" rel="noopener">3D Scenography in C/C++ OpenGL (2023)</a></li>
-              <li class="item"><a href="https://dbxdrgsl.github.io/game-design-document/chess#pipe" target="_blank" rel="noopener">Multiplayer Chess in C/C++ (2022)</a></li>
-              <li class="item"><a href="https://dbxdrgsl.github.io/homework/f(x)#trigvis" target="_blank" rel="noopener">TrigVis — Trigonometry Visualizer (2022)</a></li>
-              <li class="item"><a href="https://dbxdrgsl.github.io/homework/circuit#builder" target="_blank" rel="noopener">Circuit Diagram Builder (2022)</a></li>
-              <li class="item"><a href="https://dbxdrgsl.github.io/game-design-document/mmorpg#retro" target="_blank" rel="noopener">It's Retro O'Clock (2018–2020)</a></li>
+              <li><a href="https://dbxdrgsl.github.io/game-design-document/chess#pipe" target="_blank" rel="noopener">3D Scenography in C/C++ OpenGL (2023)</a></li>
+              <li><a href="https://dbxdrgsl.github.io/game-design-document/chess#pipe" target="_blank" rel="noopener">Multiplayer Chess in C/C++ (2022)</a></li>
+              <li><a href="https://dbxdrgsl.github.io/homework/f(x)#trigvis" target="_blank" rel="noopener">TrigVis — Trigonometry Visualizer (2022)</a></li>
+              <li><a href="https://dbxdrgsl.github.io/homework/circuit#builder" target="_blank" rel="noopener">Circuit Diagram Builder (2022)</a></li>
+              <li><a href="https://dbxdrgsl.github.io/game-design-document/mmorpg#retro" target="_blank" rel="noopener">It's Retro O'Clock (2018–2020)</a></li>
             </ul>
           </section>
         </div>
@@ -333,30 +263,60 @@
     </div>
   </div>
 
-  <!-- QR code generator (lightweight CDN). If you prefer offline, replace with an inline QR lib. -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <!-- QR code -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- Bootstrap bundle (Popper included) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
   <script>
     // Year stamp
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Generate QR after library loads
+    // QR
     window.addEventListener('load', function(){
       const canonical = (document.querySelector('link[rel="canonical"]')||{}).href || location.href;
-      const QR_TEXT_SOURCE = canonical; // change to a MECARD/VCARD if desired
-
       const el = document.getElementById('qr');
       if (window.QRCode && el){
-        new QRCode(el, {
-          text: QR_TEXT_SOURCE,
-          width: el.clientWidth || 144,
-          height: el.clientHeight || 144,
-          correctLevel: QRCode.CorrectLevel.M
-        });
-      } else {
-        el.textContent = 'QR';
-        el.title = QR_TEXT_SOURCE;
-      }
+        new QRCode(el, { text: canonical, width: el.clientWidth||144, height: el.clientHeight||144, correctLevel: QRCode.CorrectLevel.M });
+      } else { el.textContent = 'QR'; }
+      const urlEl = document.getElementById('qr-url'); if(urlEl) urlEl.textContent = canonical;
     });
+
+    // Link previews (Bootstrap popovers)
+    const LINK_HINTS = {
+      "https://dbxdrgsl.notion.site/Teacher-home-244fb3301e9780a2bb3cf42576ac5233":
+        {title:"Teacher hub", summary:"Curriculum, lessons, units, standards."},
+      "https://dbxdrgsl.notion.site/Startup-in-a-Box-245fb3301e9780b59f8ceddeed992e5a?pvs=73":
+        {title:"Startup in a Box", summary:"Process, templates, ops, experiments."},
+      "https://dbxdrgsl.notion.site/Freelancer-Hub-245fb3301e9780d0a826f3ff5adb1b14?pvs=74":
+        {title:"Freelancer hub", summary:"Portfolio, client work, processes."},
+      "./promo/teacher/":
+        {title:"Activity (on-going)", summary:"planificari, curriculum, activitati."},
+      "./promo/freelancer/":
+        {title:"Coding projects", summary:"behaviour trees, retro engines, leetcode."}
+    };
+
+    function hintFor(a){
+      const href = a.getAttribute('href');
+      if (LINK_HINTS[href]) return LINK_HINTS[href];
+      const u = (()=>{ try{return new URL(href, location.href);}catch{return null;}})();
+      return {title: a.textContent.trim() || (u?u.hostname:"Link"),
+              summary: u ? `Opens ${u.hostname}.` : "Opens in a new tab."};
+    }
+
+    document.querySelectorAll('a[target="_blank"]').forEach(a=>{
+      const {title, summary} = hintFor(a);
+      const more = a.getAttribute('href');
+      a.setAttribute('data-bs-toggle','popover');
+      a.setAttribute('data-bs-trigger','hover focus');
+      a.setAttribute('data-bs-placement','auto');
+      a.setAttribute('data-bs-custom-class','eu-popover');
+      a.setAttribute('title', title);
+      a.setAttribute('data-bs-html','true');
+      a.setAttribute('data-bs-content', `${summary}<br><small><a href="${more}" target="_blank" rel="noopener">More info →</a></small>`);
+    });
+    [...document.querySelectorAll('[data-bs-toggle="popover"]')]
+      .forEach(el=> new bootstrap.Popover(el));
   </script>
 </body>
 </html>

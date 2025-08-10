@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragoș A. Bobu — Freelancer (Games · AI · Web)</title>
+  <meta name="description" content="Evidence‑first freelancer promo. Games, AI behaviors, graphics prototypes, and compact web builds. Subtle, verifiable, reverse‑chronological." />
+  <meta name="author" content="Dragoș A. Bobu" />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/promo/freelancer" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Freelancer — Evidence‑First" />
+  <meta property="og:description" content="Systems, clarity, delivery. Games · AI · Web." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/promo/freelancer" />
+  <meta property="og:image" content="/assets/og/promo-freelancer.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Bootstrap (preload) -->
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+
+  <style>
+    :root{
+      --glass: rgba(20,24,34,.55);
+      --glass-b: rgba(255,255,255,.08);
+      --ink: #e7eefc;
+      --muted: #aeb6c8;
+      --accent: #79e2ff;
+      --accent-2: #b39bff;
+    }
+    html,body{height:100%}
+    body{ background: radial-gradient(1200px 800px at 85% -10%, rgba(121,226,255,.08), transparent 60%), #0c0f19; color: var(--ink); }
+    .glass{ background: var(--glass); border: 1px solid var(--glass-b); backdrop-filter: blur(8px); }
+    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+    .muted{ color: var(--muted) }
+    .tag{ font-size:.8rem; border:1px solid rgba(255,255,255,.16); padding:.1rem .5rem; border-radius: 999px }
+    .badge-soft{ background: rgba(121,226,255,.12); color: var(--accent); border: 1px solid rgba(121,226,255,.3) }
+    .poster{ position:relative; min-height: 72vh; display:flex; align-items:end; border-bottom: 1px solid var(--glass-b); }
+    .poster::before{ content:""; position:absolute; inset:0; background: center/cover no-repeat var(--poster-url, url('/assets/img/posters/freelancer-poster.jpg')); opacity:.28; filter: saturate(0.95); }
+    .poster::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(5,7,12,.10), rgba(5,7,12,.86) 65%); }
+    .poster-content{ position:relative; z-index:2 }
+    .logo-bw{ filter: grayscale(1) contrast(1.1) brightness(.95); opacity:.85; max-height: 44px }
+    .metric{ font-variant-numeric: tabular-nums; font-weight: 700; font-size: clamp(1.6rem, 1.1rem + 1.8vw, 2.4rem) }
+    .grid-3{ display:grid; grid-template-columns: 1fr; gap:1rem }
+    @media (min-width: 768px){ .grid-3{ grid-template-columns: repeat(3,1fr) } }
+    .grid-2{ display:grid; grid-template-columns: 1fr; gap:1rem }
+    @media (min-width: 992px){ .grid-2{ grid-template-columns: repeat(2,1fr) } }
+    .link-muted{ color:#aeb6c8; text-decoration:none }
+    .link-muted:hover{ color:white; text-decoration:underline }
+    .step{ counter-increment: step; }
+    .step::before{ content: counter(step, decimal-leading-zero); font-weight:700; margin-right:.6rem; color: var(--accent-2) }
+    .ok{ display:inline-flex; align-items:center; gap:.5rem }
+    .ok::before{ content:""; width:.9rem; height:.9rem; border-radius:999px; background: radial-gradient(circle at 30% 30%, #b6ffbf, #59d681 60%); box-shadow: 0 0 0 .12rem rgba(89,214,129,.2) }
+    .card-min{ background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08) }
+    .icon{ width: 28px; height: 28px; opacity:.9 }
+    .sr-only{ position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0 }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="poster">
+    <div class="container poster-content pb-5">
+      <div class="row g-3 align-items-end">
+        <div class="col-lg-8">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft">
+            <div class="d-flex flex-wrap gap-2">
+              <span class="tag">Games</span>
+              <span class="tag">AI Systems</span>
+              <span class="tag">Web</span>
+            </div>
+            <h1 class="display-5 fw-bold mt-3">Systems. Clarity. Delivery.</h1>
+            <p class="lead mb-2">Freelance builds with verifiable outcomes.</p>
+            <p class="mb-0 muted">Unity · OpenGL · JS · Python. NDA‑ready. Clean handovers.</p>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a class="btn btn-info" href="#proof">See proof</a>
+              <a class="btn btn-outline-light" href="#offerings">Offerings</a>
+              <a class="btn btn-outline-secondary" href="#contact">Start a conversation</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="glass rounded-4 p-3 p-md-4 shadow-soft">
+            <div class="d-flex justify-content-between align-items-center">
+              <strong class="text-info">Signals</strong>
+              <span class="badge badge-soft rounded-pill">Evidence‑first</span>
+            </div>
+            <ul class="mt-2 mb-0 list-unstyled vstack gap-2">
+              <li class="ok">NDA experience (UK board‑game app)</li>
+              <li class="ok">AI behaviors: FSM / BT / NavMesh</li>
+              <li class="ok">Docs + versioned repos + demos</li>
+              <li class="ok">Minimalist web: ship → measure</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROOF / SOCIAL TRUST -->
+  <section id="proof" class="py-5">
+    <div class="container">
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-4">
+            <h2 class="h4 mb-2">Trusted contexts</h2>
+            <p class="muted mb-0">Platforms, contests, collaborations.</p>
+          </div>
+          <div class="col-md-8">
+            <div class="d-grid d-md-flex gap-3 align-items-center justify-content-md-between">
+              <img class="logo-bw" src="/assets/logos/fiverr.svg" alt="Fiverr" loading="lazy">
+              <img class="logo-bw" src="/assets/logos/unity.svg" alt="Unity" loading="lazy">
+              <img class="logo-bw" src="/assets/logos/fiicode.svg" alt="FiiCODE" loading="lazy">
+              <img class="logo-bw" src="/assets/logos/erasmus.svg" alt="Erasmus" loading="lazy">
+              <img class="logo-bw" src="/assets/logos/gj.svg" alt="Global Game Jam" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-lg-7">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h3 class="h4">Selected outcomes</h3>
+            <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="20">0</div><div class="muted small">Client projects</div></div></div>
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="6">0</div><div class="muted small">Shipped games/tools</div></div></div>
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="2">0</div><div class="muted small">NDAs signed</div></div></div>
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="4">0</div><div class="muted small">AI behavior systems</div></div></div>
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="1">0</div><div class="muted small">Mobile app (board‑game)</div></div></div>
+              <div class="col"><div class="card card-min p-3 h-100"><div class="metric" data-target="8">0</div><div class="muted small">Years active</div></div></div>
+            </div>
+            <p class="small muted mt-3">Counts are conservative. Replace with audited values.</p>
+          </div>
+        </div>
+        <div class="col-lg-5">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h3 class="h4">Reviews</h3>
+            <figure class="mb-3">
+              <blockquote class="blockquote mb-1">“Signed NDA, delivered iterations fast, responsive to change.”</blockquote>
+              <figcaption class="blockquote-footer">Board‑game publisher, UK (via Fiverr)</figcaption>
+            </figure>
+            <figure class="mb-0">
+              <blockquote class="blockquote mb-1">“Enemy behavior felt alive. Clear state machines. Clean handover.”</blockquote>
+              <figcaption class="blockquote-footer">Indie studio (AI behaviors)</figcaption>
+            </figure>
+            <a class="btn btn-outline-info btn-sm mt-3" href="#evidence">Open evidence pack</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OFFERINGS -->
+  <section id="offerings" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Offerings</h2>
+      <div class="grid-3">
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img class="icon" src="/assets/icons/ai.svg" alt="AI" loading="lazy" />
+            <h3 class="h5 mb-0">Game AI behaviors</h3>
+          </div>
+          <ul class="mt-2 mb-0 small vstack gap-1">
+            <li>FSM / BT patterns. NavMesh / pathing.</li>
+            <li>Animator trees. Timers. Signals.</li>
+            <li>Design docs and tuning sheets.</li>
+            <li>Playable demos. Clean handover.</li>
+          </ul>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img class="icon" src="/assets/icons/gfx.svg" alt="Graphics" loading="lazy" />
+            <h3 class="h5 mb-0">Graphics & engine prototypes</h3>
+          </div>
+          <ul class="mt-2 mb-0 small vstack gap-1">
+            <li>OpenGL pipelines. Tools & debug UI.</li>
+            <li>n‑D polytope visualizers (research‑adjacent).</li>
+            <li>Perf‑minded architecture.</li>
+            <li>Docs + sample scenes.</li>
+          </ul>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <div class="d-flex align-items-center gap-2 mb-2">
+            <img class="icon" src="/assets/icons/web.svg" alt="Web" loading="lazy" />
+            <h3 class="h5 mb-0">Compact web builds</h3>
+          </div>
+          <ul class="mt-2 mb-0 small vstack gap-1">
+            <li>Brand pages. Menu + story + contact.</li>
+            <li>Accessibility and licensing basics.</li>
+            <li>Static hosting. Simple analytics.</li>
+            <li>Lightweight assets. Fast load.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mt-4">
+        <h3 class="h5">How I work</h3>
+        <ol class="mt-2 mb-0 small vstack gap-1">
+          <li class="step">Diagnose. Clarify constraints. Define MVP.</li>
+          <li class="step">Spec. Interfaces, states, risks.</li>
+          <li class="step">Iterate. Short cycles. Visible deltas.</li>
+          <li class="step">Deliver. Repo, assets, docs, builds.</li>
+          <li class="step">Support. Hand‑off or retainers.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTED WORK -->
+  <section id="work" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Selected work</h2>
+      <div class="grid-2">
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">Mobile app — board game companion <span class="badge badge-soft ms-1">NDA</span></h3>
+          <p class="small muted mb-1">Rules engine, scoring, UX. Success → recommendations.</p>
+          <div class="small">Stack: Unity · C# · CI builds</div>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">AI behaviors — open environment</h3>
+          <p class="small muted mb-1">Traversal, vaulting, chase. Tuning sheets and demos.</p>
+          <div class="small">Stack: Unity · NavMesh · FSM/BT</div>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">“It’s Retro O’Clock” — RPG prototype</h3>
+          <p class="small muted mb-1">FiiCODE winner. Multi‑game structure. Blend trees.</p>
+          <div class="small">Stack: Unity · Animator · Networking</div>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">TrigVis — trigonometry visualizer</h3>
+          <p class="small muted mb-1">Interactive graphs for teaching periodicity.</p>
+          <div class="small">Stack: p5.js · Web</div>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">Circuit Diagram Builder</h3>
+          <p class="small muted mb-1">Interactive logic gates with save/load.</p>
+          <div class="small">Stack: C++ · WinBGIm</div>
+        </article>
+        <article class="glass rounded-4 p-4 shadow-soft">
+          <h3 class="h5 mb-1">Multiplayer Chess (terminal)</h3>
+          <p class="small muted mb-1">LAN lobby. Threads and sockets. Fair play.</p>
+          <div class="small">Stack: C/C++ · Sockets</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS + TIMELINE (from EVENTS) -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="h4 mb-3">Highlights</h2>
+      <div id="highlights" class="row g-3"></div>
+    </div>
+  </section>
+
+  <section id="timeline" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Activity log (newest → oldest)</h2>
+      <div id="events-list" class="vstack gap-3"></div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE PACK -->
+  <section id="evidence" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Evidence pack</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Artifacts</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">FiiCODE 1st place — certificate (PDF)</a></li>
+              <li><a class="link-muted" href="#" target="_blank">FiiCODE 2nd place — certificate (PDF)</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Game jam finals — photo / link</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Project proof</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">Mobile app (NDA) — redacted screens</a></li>
+              <li><a class="link-muted" href="#" target="_blank">AI behavior demo — video</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Coffee shop website — live / archive</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Third‑party links</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">Fiverr profile / reviews</a></li>
+              <li><a class="link-muted" href="#" target="_blank">GitHub / code excerpts</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Press / mentions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="small muted mt-3">Replace placeholders with live URLs. Keep originals immutable for verification.</p>
+    </div>
+  </section>
+
+  <!-- FAQ / COMPACT -->
+  <section id="faq" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Questions</h2>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="glass rounded-4 p-4 h-100">
+            <h3 class="h6 text-info">Ownership?</h3>
+            <p class="small mb-0">You own shipped code and assets after settlement, unless a license is preferable. Reuse is negotiated.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass rounded-4 p-4 h-100">
+            <h3 class="h6 text-info">NDA & credit?</h3>
+            <p class="small mb-0">NDA welcome. Credit line only with permission. Private evidence pack on request.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass rounded-4 p-4 h-100">
+            <h3 class="h6 text-info">Rates?</h3>
+            <p class="small mb-0">Scoped per project. Transparent milestones. Invoices in RO / EU formats.</p>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="glass rounded-4 p-4 h-100">
+            <h3 class="h6 text-info">Stack?</h3>
+            <p class="small mb-0">Unity, C#, OpenGL/C++, Python, JS. Git, CI. Perf and clarity first.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT (soft CTA) -->
+  <section id="contact" class="py-5">
+    <div class="container">
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft">
+        <div class="row g-3 align-items-center">
+          <div class="col-lg-8">
+            <h2 class="h4 mb-2">Start a conversation</h2>
+            <p class="muted mb-2">Send context, constraints, and a rough goal. I will reply with a small plan.</p>
+            <ul class="small mb-0 vstack gap-1">
+              <li>Iași · Romanian / English.</li>
+              <li>Timezones: EU friendly.</li>
+              <li>Evidence and references on request.</li>
+            </ul>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <a class="btn btn-info" href="mailto:dragos@example.com?subject=Freelance%20Build%20—%20Intro" rel="noopener">Email</a>
+            <a class="btn btn-outline-light ms-2" href="/cv/europass" target="_blank" rel="noopener">CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top border-secondary-subtle">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small muted">© <span id="year"></span> Dragoș A. Bobu</div>
+      <nav class="d-flex gap-3 small" aria-label="Footer">
+        <a class="link-muted" href="#offerings">Offerings</a>
+        <a class="link-muted" href="#evidence">Evidence</a>
+        <a class="link-muted" href="#faq">FAQ</a>
+        <a class="link-muted" href="#top">Top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Events (seeded from your history) ---------------------------------
+    const EVENTS = [
+      { sort: 2025_06_30, when: "2025 — recent", title: "Coffee shop website", org: "Bulgarian owner based in NL", location: "Netherlands (remote)", tags: ["Web","Design","Deploy"], link: "#", desc: "Compact brand site. Menu, story, contact." },
+      { sort: 2024_11_20, when: "2024", title: "AI behaviors — free‑running in open environment", org: "Indie client", location: "Remote", tags: ["Unity","AI","NavMesh","Design Doc"], link: "#", desc: "Traversal, vaulting, chase logic. Tuning sheets." },
+      { sort: 2024_04_12, when: "2024", title: "Enemy behavior — time‑of‑day logic", org: "Indie studio", location: "Remote", tags: ["State Machine","Scripting","AI"], link: "#", desc: "BT + timers. Ambient ↔ hostile cycles." },
+      { sort: 2023_09_18, when: "2023", title: "Enemy behavior — animator tree", org: "Indie studio", location: "Remote", tags: ["Animator","Blend Trees","AI"], link: "#", desc: "Combat loops + movement. Clear transitions." },
+      { sort: 2023_06_01, when: "2023", title: "Stochastic Market Analysis", org: "Personal R&D", location: "Iași", tags: ["Data","ML","Stats"], link: "#", desc: "Clustering and decision rules over public data." },
+      { sort: 2022_06_10, when: "2022", title: "Mobile app for a board game (NDA)", org: "UK company", location: "Remote", tags: ["Mobile","Unity","NDA"], link: "#", desc: "Rules engine, scoring, UX polish." },
+      { sort: 2022_05_15, when: "2022", title: "TrigVis — Trigonometry Visualizer", org: "Teaching tool", location: "Web", tags: ["p5.js","Web"], link: "#", desc: "Interactive graphs for periodicity." },
+      { sort: 2022_03_04, when: "2022", title: "Circuit Diagram Builder", org: "Personal", location: "C++", tags: ["WinBGIm","Logic"], link: "#", desc: "Interactive gates, save/load." },
+      { sort: 2022_02_12, when: "2022", title: "Multiplayer Chess (terminal)", org: "Personal", location: "LAN", tags: ["Sockets","C/C++"], link: "#", desc: "Lobby, threads, fair play." },
+      { sort: 2020_04_25, when: "≈11th grade", title: "FiiCODE — 1st place", org: "Contest finals", location: "Iași", tags: ["Design","Dev","Game"], link: "#", desc: "Design assured from start. Judges praised multi‑game idea." },
+      { sort: 2019_04_25, when: "≈10th grade", title: "FiiCODE — 2nd place (live coding finals)", org: "Contest finals", location: "Iași", tags: ["Game Jam","Live Coding"], link: "#", desc: "With Maria Entuc. Visual upgrade under pressure." },
+      { sort: 2018_02_10, when: "≈10th grade", title: "Discovered game jams", org: "Various jams", location: "Iași / Remote", tags: ["Prototype","Teamwork"], link: "#", desc: "Fast loops. Scope control." },
+      { sort: 2017_06_01, when: "Early", title: "Virtual reconstruction — Vaslui Hospital (self‑proposed)", org: "Personal initiative", location: "Vaslui", tags: ["3D","Archviz","WIP"], link: "#", desc: "Offered a 3D reconstruction. Not finished → scope lessons." }
+    ];
+
+    // ---- Counters (reduced‑motion aware) -----------------------------------
+    const animate = () => {
+      document.querySelectorAll('.metric').forEach(el => {
+        const target = +el.dataset.target; let cur = 0;
+        const step = Math.max(1, Math.floor(target/60));
+        const tick = () => { cur += step; el.textContent = (cur >= target ? target : cur).toLocaleString(); if(cur < target) requestAnimationFrame(tick); };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    // ---- Events render (newest -> oldest) ----------------------------------
+    function renderEvents(){
+      const sorted = [...EVENTS].sort((a,b)=> (b.sort||0) - (a.sort||0));
+
+      // Highlights (top 3)
+      const hi = document.getElementById('highlights');
+      hi.innerHTML = '';
+      sorted.slice(0,3).forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        hi.insertAdjacentHTML('beforeend', `
+          <div class="col-md-4">
+            <div class="glass rounded-4 p-3 h-100 shadow-soft">
+              <div class="small muted">${ev.when} • ${ev.org}</div>
+              <h3 class="h6 mt-1">${ev.title}</h3>
+              <p class="small mb-2">${ev.desc}</p>
+              <div class="mb-2">${tags}</div>
+              <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Details</a>
+            </div>
+          </div>
+        `);
+      });
+
+      // Full list
+      const list = document.getElementById('events-list');
+      list.innerHTML = '';
+      sorted.forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        list.insertAdjacentHTML('beforeend', `
+          <article class="glass rounded-4 p-3 p-md-4 shadow-soft">
+            <div class="d-flex justify-content-between flex-wrap gap-2">
+              <div>
+                <div class="small muted">${ev.when} • ${ev.org} — ${ev.location}</div>
+                <h3 class="h5 mb-1">${ev.title}</h3>
+              </div>
+              <div class="text-end">${tags}</div>
+            </div>
+            <p class="mb-2">${ev.desc}</p>
+            <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Verify / see more</a>
+          </article>
+        `);
+      });
+    }
+
+    // ---- Init ---------------------------------------------------------------
+    const m = window.matchMedia('(prefers-reduced-motion: reduce)');
+    window.addEventListener('DOMContentLoaded', ()=>{
+      if(!m.matches) animate();
+      renderEvents();
+      document.getElementById('year').textContent = new Date().getFullYear();
+    });
+  </script>
+
+  <!-- Schema.org Person (skills oriented) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dragoș A. Bobu",
+    "jobTitle": "Freelance Developer (Games · AI · Web)",
+    "knowsAbout": [
+      "Unity AI (FSM/BT/NavMesh)",
+      "Animator trees and state machines",
+      "OpenGL graphics and tools",
+      "n-dimensional polytope visualization",
+      "Minimalist brand websites",
+      "Python/JS for data and prototyping"
+    ],
+    "url": "https://dbxdrgsl.github.io/promo/freelancer"
+  }
+  </script>
+</body>
+</html>

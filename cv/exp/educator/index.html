@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragoș A. Bobu — Educator & Robotics Trainer</title>
+  <meta name="description" content="Evidence-first portfolio blog: awards, reviews, and a reverse-chronological log of events. Robotics, coding clubs, 3D printing workshops." />
+  <meta name="author" content="Dragoș A. Bobu" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+  <style>
+    :root{
+      --poster-h: min(72vh, 760px);
+      --glass: rgba(20,24,34,.55);
+      --glass-b: rgba(255,255,255,.08);
+      --accent: #79e2ff;
+    }
+    body{ background: radial-gradient(1200px 800px at 85% -10%, rgba(121,226,255,.08), transparent 60%), #0c0f19; }
+    .poster{
+      position: relative; height: var(--poster-h);
+      background: center/cover no-repeat var(--poster-url, url('/assets/img/posters/educator-poster.jpg'));
+      border-bottom: 1px solid var(--glass-b);
+    }
+    .poster::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(5,7,12,.35), rgba(5,7,12,.82) 70%);
+    }
+    .poster-content{
+      position: relative; z-index: 2;
+    }
+    .glass{
+      background: var(--glass);
+      border: 1px solid var(--glass-b);
+      backdrop-filter: blur(6px);
+    }
+    .counter{ font-variant-numeric: tabular-nums; }
+    .badge-soft{background: rgba(121,226,255,.12); color: var(--accent); border: 1px solid rgba(121,226,255,.3)}
+    .event-pin{ border-left: 4px solid var(--accent); }
+    .logo-bw{ filter: grayscale(1) contrast(1.1) brightness(.95); opacity:.85; max-height: 44px }
+    .muted{ color: #aeb6c8 }
+    .tag{ font-size:.8rem; border:1px solid rgba(255,255,255,.16); padding:.1rem .5rem; border-radius: 999px }
+    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+    .link-muted{ color:#aeb6c8; text-decoration:none }
+    .link-muted:hover{ color:white; text-decoration:underline }
+    .grid-cols-5{ display:grid; grid-template-columns: repeat(2,1fr); gap:1rem }
+    @media (min-width: 768px){ .grid-cols-5{ grid-template-columns: repeat(5,1fr) } }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / POSTER -->
+  <header class="poster d-flex align-items-end">
+    <div class="container poster-content pb-4">
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft">
+            <span class="tag me-2">Robotics</span>
+            <span class="tag me-2">Programming</span>
+            <span class="tag">3D Printing</span>
+            <h1 class="display-5 fw-bold mt-3">Dragoș A. Bobu</h1>
+            <p class="lead mb-3">Educator. Robotics trainer. Workshop builder.</p>
+            <div class="d-flex flex-wrap gap-2">
+              <a href="#evidence" class="btn btn-info">Read</a>
+              <a href="#recent" class="btn btn-outline-light">Latest activity</a>
+              <a href="#timeline" class="btn btn-outline-secondary">Full log</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-end">
+          <div id="recent" class="glass rounded-4 p-3 p-md-4 shadow-soft event-pin">
+            <div class="d-flex justify-content-between align-items-center">
+              <strong class="text-info">Most recent event</strong>
+              <span class="badge badge-soft rounded-pill">Pinned</span>
+            </div>
+            <h3 id="recent-title" class="h5 mt-2 mb-1">Loading…</h3>
+            <div class="small muted" id="recent-meta"></div>
+            <p class="mb-2 small" id="recent-desc"></p>
+            <a id="recent-link" class="link-muted small" href="#" target="_blank" rel="noopener">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- EVIDENCE FIRST: METRICS / AWARDS / REVIEWS -->
+  <section id="evidence" class="py-5">
+    <div class="container">
+      <!-- Logos / social proof -->
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-4">
+            <h2 class="h4 mb-2">Trusted by learners and schools</h2>
+            <p class="muted mb-0">Sampling of organizations and initiatives I worked with.</p>
+          </div>
+          <div class="col-md-8">
+            <div class="grid-cols-5">
+              <img class="logo-bw" src="/assets/logos/codeschoolclubs.svg" alt="Code School Clubs Iași logo placeholder">
+              <img class="logo-bw" src="/assets/logos/skid.svg" alt="SKID club logo placeholder">
+              <img class="logo-bw" src="/assets/logos/valea-lupului.svg" alt="Școala Valea Lupului logo placeholder">
+              <img class="logo-bw" src="/assets/logos/iulius.svg" alt="Iulius Iași logo placeholder">
+              <img class="logo-bw" src="/assets/logos/partners-generic.svg" alt="Partner schools">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By the numbers -->
+      <div class="row g-4">
+        <div class="col-md-7">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h2 class="h4">By the numbers</h2>
+            <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="1000">0</div>
+                  <div class="muted small">Sessions delivered</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="500">0</div>
+                  <div class="muted small">Students reached</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="9">0</div>
+                  <div class="muted small">Years active</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="60">0</div>
+                  <div class="muted small">Workshops hosted</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="25">0</div>
+                  <div class="muted small">Partner schools</div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="p-3 rounded-3 bg-dark border border-secondary-subtle">
+                  <div class="fs-3 fw-bold counter" data-target="3">0</div>
+                  <div class="muted small">Domains: Robotics • Coding • 3D</div>
+                </div>
+              </div>
+            </div>
+            <p class="small muted mt-3">Note: replace with audited counts if needed. Values here are conservative placeholders.</p>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h2 class="h4">Recognition</h2>
+            <ul class="list-unstyled mb-3">
+              <li class="mb-2"><span class="badge badge-soft me-2">Award</span> <strong>[Replace]</strong> — “Trainer of the Year” (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Certificate</span> LEGO® Mindstorms EV3 Mentor — <em>Code School Clubs Iași</em> (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Certificate</span> 3D Printing Workshop Lead — <em>SKID</em> (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Press</span> Mention in local media — STEM after-school programs (link)</li>
+            </ul>
+            <a class="btn btn-outline-info btn-sm" href="#evidence-pack">Open evidence pack</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews / Recensions -->
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mt-4">
+        <h2 class="h4">Reviews</h2>
+        <div id="reviews" class="row g-3 mt-1">
+          <div class="col-md-6">
+            <blockquote class="blockquote mb-0">
+              <p>“Clear steps. Friendly pace. Kids left proud of their robots.”</p>
+              <footer class="blockquote-footer">Parent, Iași (2024)</footer>
+            </blockquote>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="blockquote mb-0">
+              <p>“He adapts fast when the room energy shifts. Results follow.”</p>
+              <footer class="blockquote-footer">School coordinator, Valea Lupului (2023)</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT HIGHLIGHTS (explicit list, newest first) -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="h4 mb-3">Highlights</h2>
+      <div id="highlights" class="row g-3">
+        <!-- Injected by JS from the same events array (top 3) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL TIMELINE (reverse-chronological) -->
+  <section id="timeline" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Activity log (newest → oldest)</h2>
+      <div id="events-list" class="vstack gap-3">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE PACK -->
+  <section id="evidence-pack" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Evidence pack</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Certificates</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">EV3 mentor certificate (PDF)</a></li>
+              <li><a class="link-muted" href="#" target="_blank">3D printing workshop lead (PDF)</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Safeguarding & lab safety (PDF)</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Photo proof</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">Class setup — CSC Iași</a></li>
+              <li><a class="link-muted" href="#" target="_blank">SKID 3D printing atelier</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Valea Lupului showcase</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Third-party links</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">School page / announcement</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Press mention</a></li>
+              <li><a class="link-muted" href="#" target="_blank">GitHub / project repo</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="small muted mt-3">Replace placeholders with your live URLs. Keep originals immutable for verification.</p>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top border-secondary-subtle">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small muted">© <span id="year"></span> Dragoș A. Bobu</div>
+      <div class="d-flex gap-3 small">
+        <a class="link-muted" href="mailto:dragos@example.com">Email</a>
+        <a class="link-muted" href="/cv/europass">CV</a>
+        <a class="link-muted" href="#timeline">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Data (edit here) ----------------------------------------------------
+    const EVENTS = [
+      {
+        title: "Guest workshop: Sensors → Smiles (EV3, 2h)",
+        date: "2025-06-12",
+        org: "Iulius • weekend club",
+        location: "Iași",
+        tags: ["Robotics","EV3","Workshop"],
+        link: "#",
+        desc: "Hands-on missions. Ultrasonic + color sensors. Iterative testing."
+      },
+      {
+        title: "End-of-year coding showcase",
+        date: "2024-12-18",
+        org: "Școala Valea Lupului",
+        location: "Iași",
+        tags: ["Python","Scratch","Showcase"],
+        link: "#",
+        desc: "Multi-group demos. Debugging as team sport."
+      },
+      {
+        title: "3D Printing Marathon (design → print → refine)",
+        date: "2023-05-27",
+        org: "SKID",
+        location: "Iași",
+        tags: ["3D Printing","CAD"],
+        link: "#",
+        desc: "Guest specialist invited. From STL to finished part."
+      },
+      {
+        title: "Remote robotics block (COVID adaptation)",
+        date: "2020-05-10",
+        org: "Code School Clubs Iași",
+        location: "Online",
+        tags: ["Remote","Robotics"],
+        link: "#",
+        desc: "Camera rigs, virtual simulators, home kits."
+      },
+      {
+        title: "First class delivered",
+        date: "2016-10-05",
+        org: "Code School Clubs Iași",
+        location: "Iași",
+        tags: ["Start"],
+        link: "#",
+        desc: "Nervous, honest, effective. Learners led the way."
+      }
+    ];
+
+    const METRICS = [
+      ["Sessions delivered", 1000],
+      ["Students reached", 500],
+      ["Years active", 9],
+      ["Workshops hosted", 60],
+      ["Partner schools", 25],
+      ["Domains", 3]
+    ];
+
+    // ---- Counters ------------------------------------------------------------
+    const animateCounters = () => {
+      document.querySelectorAll(".counter").forEach(el=>{
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = Math.max(1, Math.floor(target/60));
+        const tick = () => {
+          cur += step;
+          if(cur >= target){ el.textContent = target.toLocaleString(); }
+          else{ el.textContent = cur.toLocaleString(); requestAnimationFrame(tick); }
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    // ---- Events render (newest -> oldest) ------------------------------------
+    function renderEvents(){
+      const sorted = [...EVENTS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+      // Recent pin
+      const r = sorted[0];
+      document.getElementById("recent-title").textContent = r.title;
+      document.getElementById("recent-meta").textContent = `${new Date(r.date).toLocaleDateString()} • ${r.org} — ${r.location}`;
+      document.getElementById("recent-desc").textContent = r.desc;
+      document.getElementById("recent-link").href = r.link || "#";
+
+      // Highlights (top 3)
+      const hi = document.getElementById("highlights");
+      hi.innerHTML = "";
+      sorted.slice(0,3).forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        hi.insertAdjacentHTML("beforeend", `
+          <div class="col-md-4">
+            <div class="glass rounded-4 p-3 h-100 shadow-soft">
+              <div class="small muted">${new Date(ev.date).toLocaleDateString()} • ${ev.org}</div>
+              <h3 class="h6 mt-1">${ev.title}</h3>
+              <p class="small mb-2">${ev.desc}</p>
+              <div class="mb-2">${tags}</div>
+              <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Details</a>
+            </div>
+          </div>
+        `);
+      });
+
+      // Full list
+      const list = document.getElementById("events-list");
+      list.innerHTML = "";
+      sorted.forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        list.insertAdjacentHTML("beforeend", `
+          <article class="glass rounded-4 p-3 p-md-4 shadow-soft">
+            <div class="d-flex justify-content-between flex-wrap gap-2">
+              <div>
+                <div class="small muted">${new Date(ev.date).toLocaleDateString()} • ${ev.org} — ${ev.location}</div>
+                <h3 class="h5 mb-1">${ev.title}</h3>
+              </div>
+              <div class="text-end">${tags}</div>
+            </div>
+            <p class="mb-2">${ev.desc}</p>
+            <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Verify / see more</a>
+          </article>
+        `);
+      });
+    }
+
+    // ---- Init ----------------------------------------------------------------
+    window.addEventListener("DOMContentLoaded", ()=>{
+      animateCounters();
+      renderEvents();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>
