@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DID — Teacher Formation (DPPD)</title>
+  <meta name="description" content="Courses, practice, and certification for teacher training (DPPD)." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/cv/edu/did/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DID — Teacher Formation (DPPD)" />
+  <meta property="og:description" content="Courses, practice, and certification for teacher training (DPPD)." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/cv/edu/did/" />
+  <meta property="og:image" content="/assets/og/edu-did.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --fg: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #60a5fa;
+      --card: #111318;
+      --ring: rgba(96,165,250,.35);
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--fg); background: radial-gradient(1200px 800px at 20% -10%, #122033 0, #0b0c10 40%), var(--bg);
+    }
+    .wrap { max-width: 960px; margin: 0 auto; padding: 24px; }
+    header { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--fg); }
+    .brand .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 6px var(--ring); }
+    nav ul { list-style: none; display: flex; gap: 14px; padding: 0; margin: 0; }
+    nav a { color: var(--muted); text-decoration: none; padding: 6px 10px; border-radius: 10px; }
+    nav a[aria-current="page"], nav a:hover { color: var(--fg); background: var(--card); outline: 1px solid #1f2937; }
+    .crumbs { margin: 12px 0 0; font-size: 0.9rem; color: var(--muted); }
+    .crumbs a { color: var(--muted); text-decoration: none; }
+
+    main { margin-top: 28px; }
+    h1 { font-size: 1.9rem; margin: 0 0 8px; letter-spacing: .2px; }
+    .sub { color: var(--muted); margin: 0 0 24px; }
+
+    .grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 16px; }
+    .card { grid-column: span 12; background: var(--card); border: 1px solid #1f2937; border-radius: 16px; padding: 16px; }
+    .card h2 { margin: 0 0 6px; font-size: 1.2rem; }
+    .todo { color: var(--muted); font-style: italic; }
+
+    @media (min-width: 800px) {
+      .card.col-6 { grid-column: span 6; }
+      .card.col-4 { grid-column: span 4; }
+    }
+
+    footer { margin: 36px 0 16px; color: var(--muted); font-size: .9rem; }
+    .small { font-size: .85rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <a class="brand" href="/">
+        <span class="dot" aria-hidden="true"></span>
+        <strong>dbxdrgsl</strong>
+      </a>
+      <nav aria-label="Section">
+        <ul>
+          <li><a href="/cv/edu/bsc/">BSc</a></li>
+          <li><a href="/cv/edu/did/" aria-current="page">DID</a></li>
+          <li><a href="/cv/edu/msc/">MSc</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <p class="crumbs" aria-label="Breadcrumbs"><a href="/cv/">cv</a> / <a href="/cv/edu/">edu</a> / <strong>did</strong></p>
+
+    <main>
+      <h1>Teacher Formation / Pedagogie</h1>
+      <p class="sub">DPPD · initial teacher education · practicum · certification</p>
+
+      <section class="grid" aria-label="Overview">
+        <article class="card col-6">
+          <h2>Overview</h2>
+          <p class="small">Scope, structure, and outcomes.</p>
+          <p class="todo">TODO: One paragraph overview. Link to framework PDF.</p>
+        </article>
+        <article class="card col-6">
+          <h2>Quick Links</h2>
+          <ul class="small">
+            <li><a href="/cv/edu/did/courses/">Courses</a> · plan & syllabus</li>
+            <li><a href="/cv/edu/did/practicum/">Practicum</a> · mentor & hours</li>
+            <li><a href="/cv/edu/did/certification/">Certification</a> · steps & docs</li>
+            <li><a href="/cv/edu/did/downloads/">Downloads</a> · templates</li>
+          </ul>
+        </article>
+
+        <article class="card col-4">
+          <h2>Courses</h2>
+          <p class="todo">TODO: List units (pedagogy, psychology, didactics).</p>
+        </article>
+        <article class="card col-4">
+          <h2>Practicum</h2>
+          <p class="todo">TODO: Hours, mentor, evaluation grid.</p>
+        </article>
+        <article class="card col-4">
+          <h2>Certification</h2>
+          <p class="todo">TODO: Requirements, deadlines, contact.</p>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p>© <span id="y"></span> dragoș — <a href="/cv/edu/dppd/" class="small">/dppd → /did</a> redirect planned.</p>
+    </footer>
+  </div>
+
+  <script>
+    // year
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
