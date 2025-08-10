@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSc — Faculty of Physics (UAIC)</title>
+  <meta name="description" content="Bachelor of Science portfolio page — Faculty of Physics, Alexandru Ioan Cuza University of Iași." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/cv/edu/bsc/phy.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BSc — Faculty of Physics (UAIC)" />
+  <meta property="og:description" content="Coursework, projects, thesis, skills, and achievements." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/cv/edu/bsc/phy.html" />
+  <meta property="og:image" content="/assets/og/edu-bsc-phy.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg:#0b0d10; --panel:#11151a; --muted:#8aa0b4; --text:#e6edf3;
+      --brand:#5bd6a0; --brand-2:#7aa2ff; --warn:#ffcc66; --danger:#ff6b6b; --ok:#5bd66e;
+      --border:#1e2630; --code:#0f141a; --shadow:0 8px 24px rgba(0,0,0,.24);
+    }
+    @media (prefers-color-scheme: light){
+      :root { --bg:#f7f9fc; --panel:#fff; --muted:#4a5568; --text:#1a202c; --border:#e6eef6; --code:#f2f5f9; }
+      body.light { --bg:#f7f9fc; --panel:#fff; --muted:#4a5568; --text:#1a202c; --border:#e6eef6; --code:#f2f5f9; }
+    }
+    body.dark { --bg:#0b0d10; --panel:#11151a; --muted:#8aa0b4; --text:#e6edf3; --border:#1e2630; --code:#0f141a; }
+
+    *{box-sizing:border-box} html,body{height:100%}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    a{color:var(--brand-2);text-decoration:none} a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:0 auto;padding:1rem}
+    .breadcrumbs{font-size:.9rem;color:var(--muted);display:flex;gap:.5rem;align-items:center;flex-wrap:wrap}
+    .breadcrumbs a{color:var(--muted)}
+
+    header.hero{position:sticky;top:0;z-index:5;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0)),var(--bg);backdrop-filter:blur(6px);border-bottom:1px solid var(--border)}
+    .hero-inner{display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;padding:.75rem 1rem}
+    .title{display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap}
+    .title h1{margin:0;font-size:clamp(1.25rem,1.2rem + 1vw,2rem);letter-spacing:.2px}
+    .meta{font-size:.95rem;color:var(--muted)}
+    .actions{display:flex;gap:.5rem;flex-wrap:wrap}
+    .btn{border:1px solid var(--border);background:var(--panel);color:var(--text);padding:.5rem .8rem;border-radius:.6rem;display:inline-flex;align-items:center;gap:.45rem;box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05);text-decoration:none}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand-2));border-color:transparent;color:#081018;font-weight:600}
+
+    main{display:grid;grid-template-columns:280px 1fr;gap:1.25rem;margin-top:1rem}
+    nav#toc{position:sticky;top:72px;align-self:start;background:var(--panel);border:1px solid var(--border);border-radius:.9rem;padding:.75rem}
+    nav#toc h3{margin:.25rem .5rem .5rem;font-size:.95rem;color:var(--muted)}
+    nav#toc a{display:block;padding:.35rem .5rem;border-radius:.5rem;color:var(--muted)}
+    nav#toc a:hover{background:rgba(122,162,255,.08);color:var(--text);text-decoration:none}
+
+    section.card{background:var(--panel);border:1px solid var(--border);border-radius:1rem;padding:1rem;box-shadow:var(--shadow)}
+    section.card h2{margin-top:.25rem;font-size:1.3rem}
+    .grid{display:grid;gap:1rem}
+    .grid.cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .grid.cols-3{grid-template-columns:repeat(3,minmax(0,1fr))}
+    @media (max-width:980px){main{grid-template-columns:1fr} nav#toc{position:static} .grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+
+    .badge{display:inline-flex;align-items:center;gap:.35rem;padding:.2rem .5rem;border-radius:999px;border:1px solid var(--border);background:rgba(91,214,160,.1);color:#c8ffe8;font-size:.8rem}
+    .badge.blue{background:rgba(122,162,255,.1);color:#dbe6ff}
+    .badge.muted{background:transparent;color:var(--muted)}
+
+    table{width:100%;border-collapse:collapse;font-size:.95rem}
+    th,td{border-bottom:1px solid var(--border);padding:.5rem .4rem;vertical-align:top}
+    thead th{text-align:left;color:var(--muted);font-weight:600;position:sticky;top:0;background:var(--panel)}
+    tbody tr:hover{background:rgba(122,162,255,.06)}
+    tfoot td{font-weight:600}
+    .right{text-align:right}
+
+    details.accordion{border:1px solid var(--border);background:var(--panel);border-radius:.8rem;padding:.75rem}
+    details.accordion + details.accordion{margin-top:.75rem}
+    details.accordion summary{cursor:pointer;list-style:none;position:relative;font-weight:600;color:var(--text)}
+    details.accordion summary::-webkit-details-marker{display:none}
+    details.accordion[open]{outline:1px dashed rgba(122,162,255,.3)}
+    .summary-sub{font-size:.9rem;color:var(--muted);font-weight:400}
+
+    .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem}
+    .card-item{border:1px solid var(--border);border-radius:.9rem;padding:.9rem;background:var(--panel);box-shadow:var(--shadow)}
+    .card-item h3{margin:.2rem 0 .4rem;font-size:1.05rem}
+    .meta-row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center}
+    .tags{display:flex;gap:.4rem;flex-wrap:wrap}
+
+    .skill{margin:.45rem 0}
+    .skill label{display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)}
+    .bar{height:8px;background:#0e1318;border:1px solid var(--border);border-radius:999px;overflow:hidden}
+    .bar>i{display:block;height:100%;width:0%;background:linear-gradient(90deg,var(--brand),var(--brand-2))}
+
+    .timeline{position:relative;margin-left:.25rem}
+    .tl-item{position:relative;padding-left:1.5rem;margin:.75rem 0}
+    .tl-item::before{content:"";position:absolute;left:.55rem;top:0;bottom:0;width:2px;background:var(--border)}
+    .dot{position:absolute;left:.25rem;top:.25rem;width:.6rem;height:.6rem;border-radius:50%;background:var(--brand-2);box-shadow:0 0 0 3px rgba(122,162,255,.15)}
+
+    footer{margin:2rem 0;color:var(--muted);text-align:center}
+
+    @media print{
+      header.hero,nav#toc .actions,.actions,.print-hide{display:none!important}
+      main{display:block} section.card{break-inside:avoid;box-shadow:none}
+      body{background:white;color:black}
+    }
+  </style>
+</head>
+<body class="dark">
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="title">
+        <div>
+          <div class="breadcrumbs">
+            <a href="/cv/">CV</a> › <a href="/cv/edu/">Education</a> › <a href="/cv/edu/bsc/">BSc</a> › <span>Physics</span>
+          </div>
+          <h1>BSc — Faculty of Physics (UAIC)</h1>
+          <div class="meta">Alexandru Ioan Cuza University of Iași · <span id="years">20XX–20XX</span> · Iași, Romania</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="themeToggle" aria-label="Toggle theme">🌓 Theme</button>
+        <a class="btn" href="#" onclick="window.print();return false;" title="Print this page">🖨️ Print</a>
+        <a class="btn btn-primary" href="/cv/cv.pdf" title="Download CV PDF">⬇️ Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <nav id="toc" aria-label="Table of contents">
+        <h3>Contents</h3>
+        <a href="#overview">Overview</a>
+        <a href="#structure">Program structure</a>
+        <a href="#courses">Courses & ECTS</a>
+        <a href="#projects">Highlighted projects</a>
+        <a href="#thesis">Bachelor thesis</a>
+        <a href="#skills">Skills</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#awards">Awards</a>
+        <a href="#materials">Notes & materials</a>
+        <a href="#links">Links</a>
+        <div class="actions" style="margin-top:.75rem">
+          <a class="btn" href="/cv/edu/">← Back</a>
+        </div>
+      </nav>
+
+      <div class="grid">
+        <section id="overview" class="card">
+          <h2>Overview</h2>
+          <p>Degree: <strong>B.Sc. in Physics</strong> — Faculty of Physics, Alexandru Ioan Cuza University of Iași.</p>
+          <p>Focus: <span class="badge">Theory</span> <span class="badge blue">Computation</span> <span class="badge">Experiment</span> <span class="badge blue">Data</span></p>
+          <p>Interests: mathematical physics, computational modeling, precision experiments, and scientific visualization.</p>
+        </section>
+
+        <section id="structure" class="card">
+          <h2>Program structure</h2>
+          <div class="grid cols-3">
+            <div>
+              <h3>Year 1</h3>
+              <ul>
+                <li>Calculus, Linear Algebra</li>
+                <li>Classical Mechanics</li>
+                <li>General Physics Labs</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Year 2</h3>
+              <ul>
+                <li>Electromagnetism, Optics</li>
+                <li>Thermodynamics & Statistical Physics</li>
+                <li>Electronics & Data Analysis</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Year 3</h3>
+              <ul>
+                <li>Quantum Mechanics I–II</li>
+                <li>Solid State / Nuclear & Particle</li>
+                <li>Advanced Lab & Thesis</li>
+              </ul>
+            </div>
+          </div>
+          <p class="meta">Replace items with exact curricula. GPA is computed as a weighted average by ECTS.</p>
+          <pre style="background:var(--code);padding:.75rem;border-radius:.6rem;overflow:auto"><code>GPA = \frac{\sum_i \mathrm{ECTS}_i \cdot \mathrm{grade}_i}{\sum_i \mathrm{ECTS}_i}</code></pre>
+        </section>
+
+        <section id="courses" class="card">
+          <h2>Courses & ECTS</h2>
+
+          <details class="accordion" open>
+            <summary>Year 1 <span class="summary-sub">— Foundations</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 1</summary>
+                <div>
+                  <table data-semester="y1s1">
+                    <thead>
+                      <tr>
+                        <th style="width:8ch">Code</th>
+                        <th>Course</th>
+                        <th style="width:7ch">Type</th>
+                        <th class="right" style="width:8ch">ECTS</th>
+                        <th class="right" style="width:8ch">Grade</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>MA101</td><td>Calculus I</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Limits, derivatives, integrals.</td></tr>
+                      <tr><td>AL101</td><td>Linear Algebra I</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Vector spaces, matrices.</td></tr>
+                      <tr><td>PH101</td><td>Classical Mechanics</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Newton–Lagrange.</td></tr>
+                      <tr><td>PH102</td><td>General Physics Lab I</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Measurement & error.</td></tr>
+                      <tr><td>HU101</td><td>Academic Writing</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>Reports, citations.</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 2</summary>
+                <div>
+                  <table data-semester="y1s2">
+                    <thead>
+                      <tr>
+                        <th style="width:8ch">Code</th>
+                        <th>Course</th>
+                        <th style="width:7ch">Type</th>
+                        <th class="right" style="width:8ch">ECTS</th>
+                        <th class="right" style="width:8ch">Grade</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>MA102</td><td>Calculus II</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Series, multivariable.</td></tr>
+                      <tr><td>DE101</td><td>Differential Equations</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>ODE/PDE basics.</td></tr>
+                      <tr><td>PH103</td><td>Electromagnetism I</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Maxwell (statics).</td></tr>
+                      <tr><td>PH104</td><td>General Physics Lab II</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Oscillations & waves.</td></tr>
+                      <tr><td>EL101</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>Year 2 <span class="summary-sub">— Core Physics</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 3</summary>
+                <div>
+                  <table data-semester="y2s1">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>PH201</td><td>Thermodynamics & Statistical Physics</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>State functions, ensembles.</td></tr>
+                      <tr><td>PH202</td><td>Electromagnetism II</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Waves, radiation.</td></tr>
+                      <tr><td>PH203</td><td>Optics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Geometric & physical.</td></tr>
+                      <tr><td>PH204</td><td>Electronics for Physicists</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Analog/digital, DAQ.</td></tr>
+                      <tr><td>EL201</td><td>Elective</td><td>Opt</td><td class="right ects">3</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 4</summary>
+                <div>
+                  <table data-semester="y2s2">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>PH205</td><td>Quantum Mechanics I</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Postulates, 1D systems.</td></tr>
+                      <tr><td>PH206</td><td>Solid State Physics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Crystals, bands.</td></tr>
+                      <tr><td>PH207</td><td>Mathematical Methods</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Fourier, Green, tensors.</td></tr>
+                      <tr><td>PH208</td><td>Experimental Techniques & Data</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Uncertainty, fitting.</td></tr>
+                      <tr><td>EL202</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>Year 3 <span class="summary-sub">— Advanced & Thesis</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 5</summary>
+                <div>
+                  <table data-semester="y3s1">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>PH301</td><td>Quantum Mechanics II</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Spin, perturbation.</td></tr>
+                      <tr><td>PH302</td><td>Nuclear & Particle Physics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Interactions, detectors.</td></tr>
+                      <tr><td>PH303</td><td>Computational Physics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>FDM/FEM, Monte Carlo.</td></tr>
+                      <tr><td>PH304</td><td>Condensed Matter Topics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Transport, phase transitions.</td></tr>
+                      <tr><td>EL301</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 6</summary>
+                <div>
+                  <table data-semester="y3s2">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>PH305</td><td>Advanced Laboratory</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Instrumentation.</td></tr>
+                      <tr><td>PH306</td><td>Research Seminar</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Reading & talks.</td></tr>
+                      <tr><td>PH307</td><td>Advanced Elective</td><td>Opt</td><td class="right ects">4</td><td class="right grade">10</td><td>—</td></tr>
+                      <tr><td>TH301</td><td>Thesis</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Research & defense.</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <div class="actions" style="margin-top:.75rem">
+            <button class="btn" id="recalc">↻ Recompute totals</button>
+            <span class="badge muted">Romanian scale 1–10</span>
+          </div>
+        </section>
+
+        <section id="projects" class="card">
+          <h2>Highlighted projects</h2>
+          <div class="meta">Filter by tag:</div>
+          <div class="actions print-hide" style="margin:.5rem 0">
+            <button class="btn" data-filter="all">All</button>
+            <button class="btn" data-filter="theory">Theory</button>
+            <button class="btn" data-filter="comp">Computation</button>
+            <button class="btn" data-filter="exp">Experiment</button>
+            <button class="btn" data-filter="data">Data</button>
+          </div>
+          <div class="cards" id="projectCards">
+            <article class="card-item" data-tags="comp theory">
+              <h3>Ising Model (Monte Carlo)</h3>
+              <div class="meta-row">
+                <span class="badge blue">Computation</span>
+                <span class="badge">Theory</span>
+                <span class="meta">Python · NumPy</span>
+              </div>
+              <p>Metropolis sampling of 2D Ising; critical behavior estimation.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">Notebook</a>
+                <span class="meta">Year 2</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="comp theory data">
+              <h3>2D Wave Propagation (FDTD)</h3>
+              <div class="meta-row">
+                <span class="badge blue">Computation</span>
+                <span class="badge">Theory</span>
+                <span class="badge blue">Data</span>
+                <span class="meta">C++ · Visualization</span>
+              </div>
+              <p>Finite-difference time-domain solver; validation against analytic modes.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">GitHub (to be added)</a>
+                <span class="meta">Year 3</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="exp comp data">
+              <h3>Optics Bench Automation</h3>
+              <div class="meta-row">
+                <span class="badge">Experiment</span>
+                <span class="badge blue">Computation</span>
+                <span class="badge blue">Data</span>
+                <span class="meta">Python · DAQ</span>
+              </div>
+              <p>Motorized alignment and acquisition for interference/fringe analysis.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">Repo (private)</a>
+                <span class="meta">Year 2</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="exp data">
+              <h3>Muon Lifetime Measurement</h3>
+              <div class="meta-row">
+                <span class="badge">Experiment</span>
+                <span class="badge blue">Data</span>
+                <span class="meta">Lab · Statistics</span>
+              </div>
+              <p>Scintillator setup; exponential fit with background correction.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">Lab report</a>
+                <span class="meta">Year 3</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="thesis" class="card">
+          <h2>Bachelor thesis</h2>
+          <p><strong>Title:</strong> Numerical Study of Wave Propagation in Anisotropic Media</p>
+          <p><strong>Advisor:</strong> — <span class="meta">(add name)</span></p>
+          <p><strong>Abstract (short):</strong> We implement stable finite-difference schemes for hyperbolic PDEs on structured grids. Boundary conditions and source terms are calibrated against closed-form solutions. Parameter sweeps map dispersion and damping regimes relevant to laboratory acoustics and optics.</p>
+          <div class="grid cols-2">
+            <div>
+              <h3>Contributions</h3>
+              <ul>
+                <li>2D FDTD solver with CFL-controlled time stepping.</li>
+                <li>Absorbing boundaries (PML) and point/line sources.</li>
+                <li>Validation suite and reproducible benchmarks.</li>
+                <li>Interactive visualizer for mode structure.</li>
+              </ul>
+              <div class="meta-row">
+                <a href="/assets/thesis/bsc-physics.pdf">PDF</a>
+                <span>·</span>
+                <a href="#" aria-disabled="true">Slides</a>
+                <span>·</span>
+                <a href="#" aria-disabled="true">Repo</a>
+              </div>
+            </div>
+            <div>
+              <h3>Key methods</h3>
+              <ul>
+                <li>Discrete operators: ∇·, ∇×, and Laplacians on grids.</li>
+                <li>Stability: CFL condition; dispersion analysis.</li>
+                <li>Statistical error estimation and uncertainty budgets.</li>
+                <li>Performance profiling and I/O pipelines.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="card">
+          <h2>Skills</h2>
+          <div class="grid cols-2">
+            <div>
+              <h3>Computation</h3>
+              <div class="skill"><label><span>Python (NumPy/SciPy)</span><span>advanced</span></label><div class="bar"><i style="width:85%"></i></div></div>
+              <div class="skill"><label><span>C/C++</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+              <div class="skill"><label><span>MATLAB/Octave</span><span>intermediate</span></label><div class="bar"><i style="width:70%"></i></div></div>
+              <div class="skill"><label><span>Data Analysis</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+            </div>
+            <div>
+              <h3>Physics</h3>
+              <div class="skill"><label><span>Classical Mechanics</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+              <div class="skill"><label><span>Electromagnetism</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+              <div class="skill"><label><span>Quantum Mechanics</span><span>intermediate</span></label><div class="bar"><i style="width:70%"></i></div></div>
+              <div class="skill"><label><span>Statistics & Uncertainty</span><span>intermediate</span></label><div class="bar"><i style="width:65%"></i></div></div>
+            </div>
+          </div>
+          <p class="meta">Bars are indicative; adjust values as preferred.</p>
+        </section>
+
+        <section id="timeline" class="card">
+          <h2>Timeline</h2>
+          <div class="timeline">
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 1</strong> — Calculus, mechanics, and core labs.
+            </div>
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 2</strong> — E&M, thermodynamics, optics; electronics.
+            </div>
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 3</strong> — Quantum, advanced lab, thesis defense.
+            </div>
+          </div>
+        </section>
+
+        <section id="awards" class="card">
+          <h2>Awards & certifications</h2>
+          <ul>
+            <li>— Add scholarships, olympiads, summer schools.</li>
+            <li>— Add relevant lab/safety certifications.</li>
+          </ul>
+        </section>
+
+        <section id="materials" class="card">
+          <h2>Notes & materials</h2>
+          <ul>
+            <li><a href="/assets/notes/mechanics.pdf">Classical Mechanics — Notes (PDF)</a></li>
+            <li><a href="/assets/notes/electromagnetism.pdf">Electromagnetism — Problem sets (PDF)</a></li>
+            <li><a href="/assets/notes/quantum.pdf">Quantum Mechanics — Cheatsheet (PDF)</a></li>
+          </ul>
+        </section>
+
+        <section id="links" class="card">
+          <h2>Links</h2>
+          <ul>
+            <li>Faculty: <a href="https://www.uaic.ro/">UAIC — Faculty of Physics</a></li>
+            <li>Main site: <a href="https://dbxdrgsl.github.io/">dbxdrgsl.github.io</a></li>
+            <li>Back to education index: <a href="/cv/edu/">/cv/edu/</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Dragoș — Portfolio. Built for printing and web.
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dragoș",
+    "url": "https://dbxdrgsl.github.io/",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Alexandru Ioan Cuza University of Iași",
+      "department": {
+        "@type": "CollegeOrUniversity",
+        "name": "Faculty of Physics"
+      }
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor of Science",
+      "name": "B.Sc. in Physics",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Alexandru Ioan Cuza University of Iași"
+      }
+    }
+  }
+  </script>
+
+  <script>
+    // Theme toggle with localStorage
+    (function(){
+      const key='theme';
+      const body=document.body;
+      const saved=localStorage.getItem(key);
+      if(saved) body.className=saved; else body.classList.add('dark');
+      document.getElementById('themeToggle').addEventListener('click',()=>{
+        const next=body.classList.contains('dark')?'light':'dark';
+        body.classList.remove('dark','light'); body.classList.add(next);
+        localStorage.setItem(key,next);
+      });
+    })();
+
+    // GPA & ECTS recompute
+    function recompute(){
+      const tables=document.querySelectorAll('table[data-semester]');
+      tables.forEach(t=>{
+        let ectsSum=0, wg=0;
+        t.querySelectorAll('tbody tr').forEach(tr=>{
+          const ects=parseFloat((tr.querySelector('.ects')?.textContent||'0').replace(',', '.'))||0;
+          const grade=parseFloat((tr.querySelector('.grade')?.textContent||'0').replace(',', '.'))||0;
+          ectsSum+=ects; wg+=ects*grade;
+        });
+        const totalCell=t.querySelector('[data-total-ects]');
+        const gpaCell=t.querySelector('[data-gpa]');
+        if(totalCell) totalCell.textContent=ectsSum.toFixed(0);
+        if(gpaCell) gpaCell.textContent=ectsSum>0?(wg/ectsSum).toFixed(2):'—';
+      });
+    }
+    document.getElementById('recalc').addEventListener('click',recompute);
+    window.addEventListener('DOMContentLoaded',()=>{ 
+      document.getElementById('year').textContent=new Date().getFullYear();
+      recompute();
+    });
+
+    // Project filtering
+    (function(){
+      const buttons=document.querySelectorAll('#projects [data-filter]');
+      const cards=document.querySelectorAll('#projectCards .card-item');
+      buttons.forEach(btn=>btn.addEventListener('click',()=>{
+        const tag=btn.getAttribute('data-filter');
+        cards.forEach(c=>{
+          const tags=(c.getAttribute('data-tags')||'').split(/\s+/);
+          const show=tag==='all'||tags.includes(tag);
+          c.style.display=show?'':'none';
+        });
+      }));
+    })();
+  </script>
+</body>
+</html>
