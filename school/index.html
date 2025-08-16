@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Schools Index — dbxdrgsl</title>
+  <meta name="description" content="Clear index of schools and partners: Ghica, Simionescu, CodeSchool, SKID, Academons." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/school/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Schools Index — dbxdrgsl" />
+  <meta property="og:description" content="Browse all schools and partners. Links to lessons and documents." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/school/" />
+
+  <!-- Bootstrap (defer render-blocking) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+
+  <style>
+    :root{
+      --fg:#e6eef7; --muted:#9aa6b2; --bg:#0d1117; --card:rgba(255,255,255,.035);
+      --border:rgba(255,255,255,.08); --glass:rgba(255,255,255,.05);
+    }
+    html,body{background:var(--bg); color:var(--fg)}
+    header{backdrop-filter:saturate(140%) blur(6px); background:var(--glass)}
+    .hero{padding:4rem 0 2rem}
+    .grid{display:grid; gap:1rem}
+    @media(min-width: 992px){ .grid-3{grid-template-columns:1fr 1fr 1fr} }
+    .card{background:var(--card); border:1px solid var(--border)}
+    .badge{letter-spacing:.2px}
+    .muted{color:var(--muted)}
+    a.card-link{ text-decoration:none; color:inherit}
+    .tag{border:1px solid var(--border); border-radius:999px; padding:.2rem .6rem; font-size:.8rem}
+    .search{position:sticky; top:.75rem; z-index:5}
+    footer{color:var(--muted)}
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Schools and Partners",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Școala Gimnazială „Ion Ghica”", "url": "/lesson/ghica.html" },
+      { "@type": "ListItem", "position": 2, "name": "Școala „Ion Simionescu”", "url": "/lesson/simionescu.html" },
+      { "@type": "ListItem", "position": 3, "name": "CodeSchool", "url": "/lesson/codeschool.html" },
+      { "@type": "ListItem", "position": 4, "name": "SKID", "url": "/lesson/skid.html" },
+      { "@type": "ListItem", "position": 5, "name": "Academons", "url": "/lesson/academons.html" }
+    ]
+  }
+  </script>
+</head>
+<body>
+<header class="border-bottom sticky-top">
+  <nav class="container-xxl navbar navbar-expand py-2">
+    <a class="navbar-brand fw-semibold" href="/">dbxdrgsl.github.io</a>
+    <div class="ms-auto small text-secondary">/school</div>
+  </nav>
+</header>
+
+<main class="container-xxl">
+  <section class="hero">
+    <h1 class="display-6 fw-bold">Schools & Partners</h1>
+    <p class="lead">Clear index. Short notes. Direct links.</p>
+  </section>
+
+  <!-- Controls -->
+  <section class="mb-4 search">
+    <div class="card p-3">
+      <div class="row g-2 align-items-center">
+        <div class="col-md-6">
+          <label for="q" class="form-label mb-1">Search</label>
+          <input id="q" class="form-control" placeholder="name, area, tags…" aria-label="Search schools" />
+        </div>
+        <div class="col-md-6">
+          <div class="d-flex flex-wrap gap-2 pt-3 pt-md-0" role="group" aria-label="Filter by type">
+            <button class="btn btn-sm btn-outline-light" data-filter="all">All</button>
+            <button class="btn btn-sm btn-outline-light" data-filter="public">Public</button>
+            <button class="btn btn-sm btn-outline-light" data-filter="private">Private</button>
+            <button class="btn btn-sm btn-outline-light" data-filter="online">Online</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- List -->
+  <section class="grid grid-3" id="list" aria-live="polite">
+    <!-- Ghica -->
+    <a class="card card-link p-4" href="/lesson/ghica.html"
+       data-name="ghica ion ghica iași public grades 5-8"
+       data-type="public" data-area="iași">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h2 class="h5 mb-0">Școala Gimnazială „Ion Ghica”</h2>
+        <span class="badge text-bg-primary">Public</span>
+      </div>
+      <p class="mb-2">My first public-school post. Year 2024–2025. I learned a lot.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <span class="tag">Iași</span>
+        <span class="tag">Grades 5–8</span>
+        <span class="tag">Curriculum</span>
+      </div>
+    </a>
+
+    <!-- Simionescu -->
+    <a class="card card-link p-4" href="/lesson/simionescu.html"
+       data-name="simionescu galata iași public prestigious"
+       data-type="public" data-area="galata">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h2 class="h5 mb-0">Școala „Ion Simionescu”</h2>
+        <span class="badge text-bg-primary">Public</span>
+      </div>
+      <p class="mb-2">A timely offer. Prestigious. In the heart of Galata.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <span class="tag">Galata</span>
+        <span class="tag">Grades 5–8</span>
+        <span class="tag">Projects</span>
+      </div>
+    </a>
+
+    <!-- CodeSchool -->
+    <a class="card card-link p-4" href="/lesson/codeschool.html"
+       data-name="codeschool private partner evenings weekend labs"
+       data-type="private" data-area="iași">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h2 class="h5 mb-0">CodeSchool</h2>
+        <span class="badge text-bg-success">Private</span>
+      </div>
+      <p class="mb-2">First private partner. Space to teach. Good cohorts.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <span class="tag">Evenings</span>
+        <span class="tag">Weekend labs</span>
+        <span class="tag">Small groups</span>
+      </div>
+    </a>
+
+    <!-- SKID -->
+    <a class="card card-link p-4" href="/lesson/skid.html"
+       data-name="skid private pop-up targeted skills flexible"
+       data-type="private" data-area="iași">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h2 class="h5 mb-0">SKID</h2>
+        <span class="badge text-bg-success">Private</span>
+      </div>
+      <p class="mb-2">On-demand teaching. Lean ops. Clear outcomes.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <span class="tag">Pop-up</span>
+        <span class="tag">Targeted</span>
+        <span class="tag">Checklists</span>
+      </div>
+    </a>
+
+    <!-- Academons -->
+    <a class="card card-link p-4" href="/lesson/academons.html"
+       data-name="academons online platform wip github io"
+       data-type="online" data-area="remote">
+      <div class="d-flex justify-content-between align-items-start mb-2">
+        <h2 class="h5 mb-0">Academons</h2>
+        <span class="badge text-bg-info">Online</span>
+      </div>
+      <p class="mb-2">Platform in progress. Clean design. Fair privacy.</p>
+      <div class="d-flex gap-2 flex-wrap">
+        <span class="tag">Alpha</span>
+        <span class="tag">KS2–KS4</span>
+        <span class="tag">Roadmap</span>
+      </div>
+    </a>
+  </section>
+
+  <!-- Notes -->
+  <section class="my-4">
+    <p class="muted small mb-0">
+      Tip. Use the search box or the filters. Results update instantly.
+    </p>
+  </section>
+</main>
+
+<footer class="container-xxl py-4 small">
+  <div class="d-flex justify-content-between">
+    <span>Last updated: 2025-08-16</span>
+    <span>CC BY-SA</span>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    const q = document.getElementById('q');
+    const list = document.getElementById('list');
+    const cards = Array.from(list.querySelectorAll('.card-link'));
+    const filterButtons = document.querySelectorAll('[data-filter]');
+    let activeType = 'all';
+
+    function apply(){
+      const term = (q.value || '').toLowerCase().trim();
+      cards.forEach(c=>{
+        const name = (c.dataset.name||'') + ' ' + (c.dataset.area||'');
+        const type = c.dataset.type || 'other';
+        const matchText = !term || name.includes(term);
+        const matchType = (activeType==='all') || (type===activeType);
+        c.style.display = (matchText && matchType) ? '' : 'none';
+      });
+    }
+    q.addEventListener('input', apply);
+    filterButtons.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        activeType = btn.dataset.filter;
+        filterButtons.forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        apply();
+      });
+    });
+  })();
+</script>
+</body>
+</html>
