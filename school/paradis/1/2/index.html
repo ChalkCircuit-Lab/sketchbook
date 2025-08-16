@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paradis Cambridge — Peripheral Devices Lesson</title>
+  <!--
+    This single‑file lesson page is designed for the Paradis Cambridge School.
+    It introduces the concept of peripheral devices, summarises the lesson plan
+    from the "Dispozitive periferice" proiect didactic, embeds a key diagram
+    illustrating the flow of information through a computer and offers an
+    evaluation sheet and further reading resources. All styling is contained
+    within this document to ease deployment. The PDFs and DOCX files referenced
+    in the Resources section should be placed alongside this HTML file or
+    served from a relative `/pdf/` directory on your site.
+  -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d47a1;
+      --secondary: #f5f5f5;
+      --accent: #ffb300;
+      --text-dark: #212121;
+      --text-light: #f5f5f5;
+      --max-width: 960px;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: var(--text-dark);
+      background: #fafafa;
+    }
+    header {
+      background: var(--primary);
+      color: var(--text-light);
+      padding: 4rem 1rem 3rem;
+      text-align: center;
+    }
+    header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    header p {
+      font-size: 1.1rem;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    main {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    section p {
+      margin-bottom: 0.8rem;
+    }
+    .objective-list li,
+    .eval-list li {
+      margin-left: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .diagram {
+      text-align: center;
+    }
+    .diagram img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .resources ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .resources li {
+      margin-bottom: 0.8rem;
+    }
+    .resources a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .resources a:hover {
+      text-decoration: underline;
+    }
+    .pdf-container {
+      margin-top: 1rem;
+      border: 1px solid #ccc;
+      height: 500px;
+    }
+    .pdf-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    footer {
+      background: var(--secondary);
+      color: var(--primary);
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Peripheral Devices</h1>
+    <p>An introductory resource on input, output and storage peripherals, based on the Paradis Cambridge School curriculum.</p>
+  </header>
+  <main>
+    <section id="introduction">
+      <h2>Introduction</h2>
+      <p>Peripheral devices are external or semi‑external components that connect to a computer’s central unit. They allow users to <strong>input</strong> data (e.g.&nbsp;keyboards, mice), <strong>output</strong> results (e.g.&nbsp;monitors, printers), <strong>store</strong> information (e.g.&nbsp;USB drives) or even perform both input and output simultaneously (e.g.&nbsp;touchscreens).</p>
+      <p>Understanding how these devices communicate with the processor and memory lays the foundation for effectively using and troubleshooting computer systems.</p>
+    </section>
+    <section id="lesson-plan">
+      <h2>Lesson Outline</h2>
+      <p>The following summary is adapted from the <em>Proiect didactic &ndash; Dispozitive periferice</em> document prepared for class IX at Paradis Cambridge School. It identifies the main learning objectives, teaching methods and content to be covered.</p>
+      <h3>Objectives</h3>
+      <ul class="objective-list">
+        <li>Define the concept of a peripheral device.</li>
+        <li>Classify peripherals by function: input, output, storage and input‑output.</li>
+        <li>Provide concrete examples for each category and describe their roles.</li>
+        <li>Explain how peripherals interact with the central processing unit (CPU) and memory.</li>
+      </ul>
+      <h3>Key Content</h3>
+      <p>Peripherals can be grouped into four broad categories:</p>
+      <ul class="objective-list">
+        <li><strong>Input devices:</strong> keyboard, mouse, scanner, microphone, joystick.</li>
+        <li><strong>Output devices:</strong> monitor, printer, speakers, video projector.</li>
+        <li><strong>Storage devices:</strong> USB sticks, external hard drives, optical media (CD/DVD), memory cards.</li>
+        <li><strong>Input‑output devices:</strong> touchscreen displays, multifunction printers, modems.</li>
+      </ul>
+      <p>When you press a key on the keyboard, an electrical signal representing the character’s code is sent to the CPU via the input subsystem. The processor interprets this code, stores it temporarily in RAM and instructs an output device (usually the monitor) to display the corresponding symbol. Similar exchanges occur between all peripherals and the CPU, coordinated by device drivers and communication protocols such as USB and Bluetooth.</p>
+    </section>
+    <section id="diagram">
+      <h2>Information Flow Diagram</h2>
+      <p>The diagram below illustrates the physical structure and functioning of a computer. Data flows from input peripherals through conversion devices to the processor, memory and permanent storage. Output peripherals receive processed data in the opposite direction.</p>
+      <div class="diagram">
+        <img src="recap_dispozitive_periferice.png" alt="Physical structure and functioning of a computer">
+      </div>
+    </section>
+    <section id="evaluation">
+      <h2>Evaluation Sheet (Sample)</h2>
+      <p>The following questions are adapted from the evaluation sheet associated with this lesson. They are intended for individual assessment and can be answered in class or as homework.</p>
+      <ol class="eval-list">
+        <li>Choose the correct option: input peripherals are used for …<br>
+          a) displaying results; b) introducing data into the computer; c) storing data; d) printing documents.
+        </li>
+        <li>Match each device with its category (input / output / storage):
+          <br>a) printer – <em>_____</em><br>b) mouse – <em>_____</em><br>c) USB stick – <em>_____</em><br>d) monitor – <em>_____</em>
+        </li>
+        <li>Fill in the blanks: a scanner is an <em>________</em> device, whereas a video projector is an <em>________</em> device.</li>
+        <li>Select the correct answer: which of the following is an input‑output device? (a) Keyboard; (b) Touchscreen; (c) Simple printer; (d) Speakers.</li>
+        <li>A student claims that “all peripheral devices are necessarily external”. Argue whether the statement is correct or incorrect and give an example.</li>
+        <li>Explain how a peripheral can belong to two categories at the same time and provide a concrete example.</li>
+      </ol>
+    </section>
+
+    <!--
+      The following section proposes a time‑bound schedule for the lesson.
+      With a class of roughly twenty pupils, the activities are paced to
+      fit within a fifty minute lesson. Adjustments can be made depending
+      on class dynamics, but the total duration should not be exceeded.
+    -->
+    <section id="timing">
+      <h2>Proposed Timing (50&nbsp;minutes)</h2>
+      <p>To keep the lesson within a 50&nbsp;minute window for a class of approximately 20 pupils, the activities may be allocated as follows:</p>
+      <table style="width:100%; border-collapse:collapse; margin-top:1rem;">
+        <thead>
+          <tr style="background:#e3f2fd; color:#0d47a1;">
+            <th style="text-align:left; padding:0.5rem;">Activity</th>
+            <th style="text-align:right; padding:0.5rem;">Duration</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:0.5rem;">Organisational moment &amp; recap of previous concepts</td>
+            <td style="padding:0.5rem; text-align:right;">5&nbsp;min</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:0.5rem;">Brainstorming: personal peripheral devices and usage</td>
+            <td style="padding:0.5rem; text-align:right;">5&nbsp;min</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:0.5rem;">Presentation of definitions and classification of peripherals</td>
+            <td style="padding:0.5rem; text-align:right;">15&nbsp;min</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:0.5rem;">Discussion of information flow &amp; diagram analysis</td>
+            <td style="padding:0.5rem; text-align:right;">10&nbsp;min</td>
+          </tr>
+          <tr style="border-bottom:1px solid #eee;">
+            <td style="padding:0.5rem;">Individual or pair work on evaluation sheet</td>
+            <td style="padding:0.5rem; text-align:right;">10&nbsp;min</td>
+          </tr>
+          <tr>
+            <td style="padding:0.5rem;">Conclusion, feedback &amp; homework instructions</td>
+            <td style="padding:0.5rem; text-align:right;">5&nbsp;min</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section id="resources" class="resources">
+      <h2>Further Reading &amp; Resources</h2>
+      <p>To deepen your understanding of peripheral devices, consult the following materials. These documents are hosted locally; ensure they are placed in the appropriate folders on your site when publishing.</p>
+      <ul>
+        <li><strong>Lesson Plan:</strong> <a href="Dispozitive periferice.docx" download>Download the detailed proiect didactic (DOCX)</a></li>
+        <li><strong>Evaluation Sheet:</strong> <a href="Fisa_evaluare_dispozitive_periferice.docx" download>Download the complete evaluation sheet (DOCX)</a></li>
+        <li><strong>Course Chapters:</strong> <a href="TIC_IX_C2_C3.pdf" download>Download chapters 2–3 from the TIC manual (PDF)</a></li>
+      </ul>
+      <p>You can also view the manual chapters directly in your browser:</p>
+      <div class="pdf-container">
+        <iframe src="TIC_IX_C2_C3.pdf" title="TIC Manual Chapters 2-3"></iframe>
+      </div>
+    </section>
+  </main>
+  <footer>
+    &copy; 2025 Paradis Cambridge School. Lesson materials prepared by Prof. Bobu Dragoș Andrei. All rights reserved.
+  </footer>
+</body>
+</html>
