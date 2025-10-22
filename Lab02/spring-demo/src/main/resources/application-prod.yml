@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: demo
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:${database.connection.host}}:${DB_PORT:${database.connection.port}}/${DB_NAME:${database.connection.name}}
+    driver-class-name: org.postgresql.Driver
+    username: ${DB_USER:${database.connection.user}}
+    password: ${DB_PASSWORD:${database.connection.password}}
+    hikari:
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
+      maximum-pool-size: 20
+      minimum-idle: 10
+      pool-name: ProdHikariPool
+      leak-detection-threshold: 60000
+
+  sql:
+    init:
+      mode: never  # Don't run SQL scripts in production
+
+database:
+  environment: production
+  connection:
+    host: ${DB_HOST:localhost}
+    port: ${DB_PORT:5432}
+    name: ${DB_NAME:proddb}
+    user: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:password}
+
+logging:
+  level:
+    org.springframework.jdbc: INFO
+    org.springframework.boot.autoconfigure: INFO
+    org.postgresql: WARN
+    
+server:
+  port: ${SERVER_PORT:8080}
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized

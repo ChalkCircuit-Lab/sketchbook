@@ -21,15 +21,7 @@
     </authorization-service>
   </security-configurations>
   <managed-job-config/>
-  <system-applications>
-    <application context-root="" object-type="system-admin" name="__admingui" directory-deployed="true" location="${com.sun.aas.installRootURI}/lib/install/applications/__admingui">
-      <module name="__admingui">
-        <engine sniffer="web"/>
-        <engine sniffer="weld"/>
-        <engine sniffer="security"/>
-      </module>
-    </application>
-  </system-applications>
+  <system-applications/>
   <resources>
     <jdbc-resource pool-name="__TimerPool" object-type="system-all" jndi-name="jdbc/__TimerPool"/>
     <jdbc-resource pool-name="DerbyPool" object-type="system-all-req" jndi-name="jdbc/__default"/>
@@ -45,24 +37,11 @@
       <property name="DatabaseName" value="sun-appserv-samples"/>
       <property name="connectionAttributes" value=";create=true"/>
     </jdbc-connection-pool>
-    <connector-connection-pool resource-adapter-name="jmsra" max-pool-size="250" steady-pool-size="1" name="jms/__defaultConnectionFactory-Connection-Pool" connection-definition-name="jakarta.jms.ConnectionFactory"/>
-    <connector-resource pool-name="jms/__defaultConnectionFactory-Connection-Pool" object-type="system-all-req" jndi-name="jms/__defaultConnectionFactory"/>
-    <context-service object-type="system-all" jndi-name="concurrent/__defaultContextService"/>
-    <managed-executor-service object-type="system-all" jndi-name="concurrent/__defaultManagedExecutorService"/>
-    <managed-scheduled-executor-service object-type="system-all" jndi-name="concurrent/__defaultManagedScheduledExecutorService"/>
-    <managed-thread-factory object-type="system-all" jndi-name="concurrent/__defaultManagedThreadFactory"/>
   </resources>
   <servers>
     <server config-ref="server-config" name="server">
-      <application-ref ref="__admingui" virtual-servers="__asadmin"/>
-      <application-ref ref="servlet-demo" virtual-servers="server"/>
       <resource-ref ref="jdbc/__TimerPool"/>
       <resource-ref ref="jdbc/__default"/>
-      <resource-ref ref="jms/__defaultConnectionFactory"/>
-      <resource-ref ref="concurrent/__defaultContextService"/>
-      <resource-ref ref="concurrent/__defaultManagedExecutorService"/>
-      <resource-ref ref="concurrent/__defaultManagedScheduledExecutorService"/>
-      <resource-ref ref="concurrent/__defaultManagedThreadFactory"/>
     </server>
   </servers>
   <nodes>
@@ -97,23 +76,6 @@
       <connector-service/>
       <transaction-service tx-log-dir="${com.sun.aas.instanceRoot}/logs"/>
       <batch-runtime-configuration/>
-      <jms-service default-jms-host="default_JMS_host" type="EMBEDDED">
-        <jms-host port="${JMS_PROVIDER_PORT}" name="default_JMS_host" host="localhost"/>
-      </jms-service>
-      <ejb-container>
-        <ejb-timer-service/>
-      </ejb-container>
-      <web-container>
-        <session-config>
-          <session-manager>
-            <store-properties/>
-            <manager-properties/>
-          </session-manager>
-          <session-properties/>
-        </session-config>
-      </web-container>
-      <rest-config/>
-      <cdi-service/>
       <diagnostic-service/>
       <security-service>
         <auth-realm classname="com.sun.enterprise.security.auth.realm.file.FileRealm" name="admin-realm">
@@ -451,7 +413,6 @@
       <thread-pools>
         <thread-pool name="http-thread-pool"/>
         <thread-pool name="thread-pool-1" max-thread-pool-size="200"/>
-        <thread-pool name="admin-thread-pool" max-thread-pool-size="50" max-queue-size="256"/>
       </thread-pools>
       <group-management-service>
         <failure-detection/>
@@ -477,15 +438,5 @@
     <secure-admin-principal dn="CN=localhost-instance,OU=GlassFish,O=Eclipse.org Foundation Inc,L=Ottawa,ST=Ontario,C=CA"/>
   </secure-admin>
   <clusters/>
-  <applications>
-    <application context-root="/servlet-demo" object-type="user" name="servlet-demo" location="${com.sun.aas.instanceRootURI}/applications/servlet-demo/">
-      <property name="archiveType" value="war"/>
-      <property name="defaultAppName" value="servlet-demo"/>
-      <property name="appLocation" value="${com.sun.aas.instanceRootURI}/applications/__internal/servlet-demo/servlet-demo.war"/>
-      <module name="servlet-demo">
-        <engine sniffer="security"/>
-        <engine sniffer="web"/>
-      </module>
-    </application>
-  </applications>
+  <applications/>
 </domain>
