@@ -1,0 +1,14 @@
+server:
+  port: 8081        # compulsory requirement
+spring:
+  application:
+    name: springboot-demo
+  profiles:
+    active: dev     # default
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"  # so you can hit actuator endpoints
+greeting:
+  message: "Hello from Spring Boot on 8081 (default dev)!"

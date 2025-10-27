@@ -1,0 +1,18 @@
+app:
+  db:
+    vendor: h2
+    host: localhost
+    port: 0
+    name: devdb
+    user: sa
+    password: ""
+spring:
+  datasource:        # you still get auto-config for H2 console if needed
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+#spring:
+  sql:
+    init:
+      mode: always   # run schema/data on dev
