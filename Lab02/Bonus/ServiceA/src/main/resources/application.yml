@@ -1,0 +1,16 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: serviceA
+  profiles:
+    active: dev
+  config:
+    import: "optional:configserver:http://localhost:8888"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
