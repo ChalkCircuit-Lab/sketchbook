@@ -6,7 +6,7 @@ import ro.uaic.dbxdrgsl.OrderManagementSystem.model.Customer;
 import ro.uaic.dbxdrgsl.OrderManagementSystem.model.Order;
 
 @Service
-@Profile("default")
+@Profile("!loyalty & !largeorder")
 public class NoDiscountService implements DiscountService {
     @Override
     public double applyDiscount(Customer customer, Order order) {

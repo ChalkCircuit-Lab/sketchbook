@@ -16,7 +16,7 @@ public class OrderController {
 
     @GetMapping("/{id}")
     public String testOrder(@PathVariable Long id) {
-        Order order = new Order(id, id, 600); // just for demo
+        Order order = new Order(id, id, 600);
         double discount = orderService.processOrder(order);
         return "Discount applied: " + discount;
     }

@@ -1,32 +1,29 @@
 package rules
+dialect "java"
 
-import ro.uaic.dbxdrgsl.DroolsDiscounts.model.Customer;
 import ro.uaic.dbxdrgsl.DroolsDiscounts.model.Order;
 
 rule "Loyal customer discount"
-    when
-        $c : Customer( loyal == true )
-        $o : Order()
-    then
-        double d = $o.getTotal() * 0.10;
-        $o.setDiscount(d);
-        System.out.println("[DROOLS] Loyalty discount = " + d);
+salience 20
+when
+  $o : Order( customer != null, customer.loyal == true, $amt : amount )
+then
+  double d = $amt * 0.10;
+  $o.setDiscount(d);
 end
 
 rule "Large order discount"
-    when
-        $c : Customer( loyal == false )
-        $o : Order( total > 500 )
-    then
-        $o.setDiscount(50);
-        System.out.println("[DROOLS] Large order discount = 50");
+salience 10
+when
+  $o : Order( amount > 1000 )
+then
+  $o.setDiscount(100.0);
 end
 
 rule "No discount"
-    when
-        $c : Customer( loyal == false )
-        $o : Order( total <= 500 )
-    then
-        $o.setDiscount(0);
-        System.out.println("[DROOLS] No discount applied");
+salience 0
+when
+  $o : Order()
+then
+  if ($o.getDiscount() == 0.0) { $o.setDiscount(0.0); }
 end

@@ -3,6 +3,7 @@ package ro.uaic.dbxdrgsl.OrderManagementSystem.service;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import ro.uaic.dbxdrgsl.OrderManagementSystem.event.BigDiscountEvent;
+import ro.uaic.dbxdrgsl.OrderManagementSystem.exception.CustomerNotFoundException;
 import ro.uaic.dbxdrgsl.OrderManagementSystem.model.Customer;
 import ro.uaic.dbxdrgsl.OrderManagementSystem.model.Order;
 import ro.uaic.dbxdrgsl.OrderManagementSystem.repository.CustomerRepository;
@@ -21,8 +22,8 @@ public class OrderService {
     }
 
     public double processOrder(Order order) {
-        Customer customer = repository.findById(order.getCustomerId())
-                .orElseThrow(() -> new RuntimeException("Customer not found"));
+    Customer customer = repository.findById(order.getCustomerId())
+        .orElseThrow(() -> new CustomerNotFoundException("Customer with id " + order.getCustomerId() + " not found"));
 
         double discount = discountService.applyDiscount(customer, order);
 

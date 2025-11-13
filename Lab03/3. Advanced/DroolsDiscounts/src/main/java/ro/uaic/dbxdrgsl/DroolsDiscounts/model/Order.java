@@ -1,14 +1,14 @@
 package ro.uaic.dbxdrgsl.DroolsDiscounts.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Order {
-    private double total;
+    private double amount;
     private double discount;
-
-    public Order(double total) {
-        this.total = total;
-    }
-
-    public double getTotal() { return total; }
-    public double getDiscount() { return discount; }
-    public void setDiscount(double discount) { this.discount = discount; }
+    private Customer customer;
 }

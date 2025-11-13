@@ -1,3 +1,5 @@
 spring:
   profiles:
     active: loyalty  # or largeorder or default
+server:
+  port: 8070        # compulsory requirement
