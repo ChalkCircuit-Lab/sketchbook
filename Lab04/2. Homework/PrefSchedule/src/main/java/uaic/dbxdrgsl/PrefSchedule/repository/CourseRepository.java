@@ -14,8 +14,8 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
     // derived query
     List<Course> findByTitleContainingIgnoreCase(String fragment);
 
-    // JPQL query - find courses by instructor last name
-    @Query("SELECT c FROM Course c WHERE c.instructor.lastName = :lastName")
+    // JPQL query - find courses by instructor last name (accessing through user relationship)
+    @Query("SELECT c FROM Course c WHERE c.instructor.user.lastName = :lastName")
     List<Course> findByInstructorLastName(@Param("lastName") String lastName);
 
     // modifying, transactional query to update credits

@@ -1,12 +1,18 @@
 package uaic.dbxdrgsl.PrefSchedule.init;
 
 import net.datafaker.Faker;
-import org.springframework.boot.CommandLineRunner;
+import jakarta.persistence.EntityManager;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
+import org.springframework.context.annotation.DependsOn;
+import org.springframework.context.event.EventListener;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
-import uaic.dbxdrgsl.PrefSchedule.model.Course;
-import uaic.dbxdrgsl.PrefSchedule.model.Enrollment;
-import uaic.dbxdrgsl.PrefSchedule.model.Instructor;
-import uaic.dbxdrgsl.PrefSchedule.model.Student;
+import org.springframework.transaction.annotation.Transactional;
+import uaic.dbxdrgsl.PrefSchedule.model.*;
+import uaic.dbxdrgsl.PrefSchedule.repository.InstructorRepository;
+import uaic.dbxdrgsl.PrefSchedule.repository.StudentRepository;
+import uaic.dbxdrgsl.PrefSchedule.repository.UserRepository;
 import uaic.dbxdrgsl.PrefSchedule.service.CourseService;
 import uaic.dbxdrgsl.PrefSchedule.service.EnrollmentService;
 import uaic.dbxdrgsl.PrefSchedule.service.InstructorService;
@@ -17,43 +23,115 @@ import java.util.List;
 import java.util.Random;
 
 @Component
-public class DataLoader implements CommandLineRunner {
+@ConditionalOnProperty(name = "app.data-loader.enabled", havingValue = "true", matchIfMissing = true)
+@DependsOn("entityManagerFactory")
+public class DataLoader {
 
     private final StudentService studentService;
     private final InstructorService instructorService;
     private final CourseService courseService;
     private final EnrollmentService enrollmentService;
+    private final UserRepository userRepository;
+    private final StudentRepository studentRepository;
+    private final InstructorRepository instructorRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final EntityManager entityManager;
 
-    public DataLoader(StudentService studentService, InstructorService instructorService, CourseService courseService, EnrollmentService enrollmentService) {
+    public DataLoader(StudentService studentService, InstructorService instructorService, CourseService courseService,
+                     EnrollmentService enrollmentService, UserRepository userRepository, StudentRepository studentRepository,
+                     InstructorRepository instructorRepository, PasswordEncoder passwordEncoder, EntityManager entityManager) {
         this.studentService = studentService;
         this.instructorService = instructorService;
         this.courseService = courseService;
         this.enrollmentService = enrollmentService;
+        this.userRepository = userRepository;
+        this.studentRepository = studentRepository;
+        this.instructorRepository = instructorRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.entityManager = entityManager;
     }
 
-    @Override
-    public void run(String... args) throws Exception {
+    @EventListener(ApplicationReadyEvent.class)
+    @Transactional
+    public void loadData() {
         Faker faker = new Faker();
         Random rnd = new Random();
 
-        // create instructors
-        List<Instructor> instructors = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            Instructor inst = new Instructor();
-            inst.setFirstName(faker.name().firstName());
-            inst.setLastName(faker.name().lastName());
-            inst.setEmail(inst.getFirstName().toLowerCase() + "." + inst.getLastName().toLowerCase() + "@uni.edu");
-            instructors.add(instructorService.save(inst));
+        // Create default users if they don't exist
+        if (!userRepository.existsByUsername("admin")) {
+            User adminUser = User.builder()
+                .username("admin")
+                .password(passwordEncoder.encode("admin123"))
+                .email("admin@uni.edu")
+                .firstName("Admin")
+                .lastName("User")
+                .role(UserRole.ADMIN)
+                .enabled(true)
+                .build();
+            userRepository.save(adminUser);
+            System.out.println("Created ADMIN user: admin");
         }
 
-        // create students
+        // Create instructors with users
+        List<Instructor> instructors = new ArrayList<>();
+        for (int i = 0; i < 5; i++) {
+            String firstName = faker.name().firstName();
+            String lastName = faker.name().lastName();
+            String username = firstName.toLowerCase() + "_inst" + i;
+
+            if (!userRepository.existsByUsername(username)) {
+                User instructorUser = User.builder()
+                    .username(username)
+                    .password(passwordEncoder.encode("password123"))
+                    .email(username + "@uni.edu")
+                    .firstName(firstName)
+                    .lastName(lastName)
+                    .role(UserRole.INSTRUCTOR)
+                    .enabled(true)
+                    .build();
+                instructorUser = userRepository.save(instructorUser);
+
+                Instructor inst = Instructor.builder()
+                    .user(instructorUser)
+                    .department("Computer Science")
+                    .specialization("Software Engineering")
+                    .build();
+                instructors.add(instructorRepository.save(inst));
+                System.out.println("Created INSTRUCTOR user: " + username);
+            } else {
+                instructors.add(instructorRepository.findAll().get(i % instructorRepository.findAll().size()));
+            }
+        }
+
+        // Create students with users
         List<Student> students = new ArrayList<>();
         for (int i = 0; i < 20; i++) {
-            Student s = new Student();
-            s.setFirstName(faker.name().firstName());
-            s.setLastName(faker.name().lastName());
-            s.setEmail(s.getFirstName().toLowerCase() + "." + s.getLastName().toLowerCase() + "@student.uni.edu");
-            students.add(studentService.save(s));
+            String firstName = faker.name().firstName();
+            String lastName = faker.name().lastName();
+            String username = firstName.toLowerCase() + "_std" + i;
+
+            if (!userRepository.existsByUsername(username)) {
+                User studentUser = User.builder()
+                    .username(username)
+                    .password(passwordEncoder.encode("password123"))
+                    .email(username + "@student.uni.edu")
+                    .firstName(firstName)
+                    .lastName(lastName)
+                    .role(UserRole.STUDENT)
+                    .enabled(true)
+                    .build();
+                studentUser = userRepository.save(studentUser);
+
+                Student s = Student.builder()
+                    .user(studentUser)
+                    .studentNumber("STU" + String.format("%05d", 10000 + i))
+                    .group("Group" + (i % 4 + 1))
+                    .build();
+                students.add(studentRepository.save(s));
+                System.out.println("Created STUDENT user: " + username);
+            } else {
+                students.add(studentRepository.findAll().get(i % studentRepository.findAll().size()));
+            }
         }
 
         // create courses

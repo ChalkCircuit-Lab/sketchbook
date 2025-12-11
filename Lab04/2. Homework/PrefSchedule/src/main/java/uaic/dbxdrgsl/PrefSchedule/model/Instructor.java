@@ -1,14 +1,7 @@
 package uaic.dbxdrgsl.PrefSchedule.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
-import lombok.Getter;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.util.ArrayList;
@@ -17,11 +10,25 @@ import java.util.List;
 @Entity
 @Table(name = "instructors")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class Instructor extends Person {
+@Builder
+@EqualsAndHashCode(exclude = {"user", "courses"})
+@ToString(exclude = {"user", "courses"})
+public class Instructor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @OneToOne
+    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    private User user;
+
+    @Column(nullable = false)
+    private String department;
+
+    private String specialization;
 
     @OneToMany(mappedBy = "instructor", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference("instr-courses")

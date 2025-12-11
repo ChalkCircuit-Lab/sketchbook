@@ -26,6 +26,6 @@ public class StudentService {
 
     public void deleteById(Long id) { repo.deleteById(id); }
 
-    public List<Student> findByLastName(String lastName) { return repo.findByLastName(lastName); }
+    public List<Student> findByLastName(String lastName) { return repo.findByUserLastName(lastName); }
 
 }

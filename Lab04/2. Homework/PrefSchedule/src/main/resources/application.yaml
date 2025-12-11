@@ -6,17 +6,36 @@ spring:
     driver-class-name: org.h2.Driver
     username: sa
     password:
+  sql:
+    init:
+      mode: never
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+    defer-datasource-initialization: false
+    generate-ddl: true
+
+app:
+  data-loader:
+    enabled: true
+
+jwt:
+  secret: mySecretKeyForJWTTokenGenerationAndValidationPurposePrefSchedule12345
+  expiration: 86400000
 
 # enable h2 console
 management:
   endpoints:
     web:
       exposure:
-        include: health,info
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
 
 spring.h2.console.enabled: true
 spring.h2.console.path: /h2-console
