@@ -37,6 +37,9 @@ public class Course {
 
     private int credits;
 
+    @Column
+    private boolean compulsory = true;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @com.fasterxml.jackson.annotation.JsonBackReference("instr-courses")
     private Instructor instructor;

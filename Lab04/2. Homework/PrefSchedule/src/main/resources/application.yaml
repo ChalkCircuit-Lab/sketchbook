@@ -1,6 +1,22 @@
 spring:
   application:
     name: PrefSchedule
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      group-id: prefschedule-grades
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      properties:
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+        spring.json.value.default.type: uaic.dbxdrgsl.PrefSchedule.messaging.GradeEvent
+        spring.json.trusted.packages: uaic.dbxdrgsl.PrefSchedule.*
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+      properties:
+        spring.json.add.type.headers: false
   datasource:
     url: jdbc:h2:mem:prefdb;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
     driver-class-name: org.h2.Driver
@@ -39,3 +55,29 @@ management:
 
 spring.h2.console.enabled: true
 spring.h2.console.path: /h2-console
+# StableMatch service configuration
+stable-match:
+  url: http://localhost:8080/api
+  timeout: 5000
+  retry:
+    max-attempts: 3
+    delay: 500
+
+# Resilience4j configuration
+resilience4j:
+  retry:
+    instances:
+      stableMatchRetry:
+        max-attempts: 3
+        wait-duration: 500
+        retry-exceptions:
+          - java.net.SocketTimeoutException
+          - java.io.IOException
+          - org.springframework.web.client.ResourceAccessException
+        ignore-exceptions:
+          - java.lang.IllegalArgumentException
+  timelimiter:
+    instances:
+      stableMatchTimeout:
+        timeout-duration: 5s
+        cancel-running-future: true

@@ -134,18 +134,45 @@ public class DataLoader {
             }
         }
 
-        // create courses
+        // create courses (mark some as compulsory) + a few known codes for testing
         List<Course> courses = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
             Course c = new Course();
             c.setCode("C" + (100 + i));
             c.setTitle(faker.educator().course());
             c.setCredits(3 + rnd.nextInt(3));
+            // mark half as compulsory
+            c.setCompulsory(i % 2 == 0);
             // assign random instructor
             Instructor inst = instructors.get(rnd.nextInt(instructors.size()));
             c.setInstructor(inst);
             courses.add(courseService.save(c));
         }
+
+        // Add specific demo courses
+        Course cs101 = new Course();
+        cs101.setCode("CS101");
+        cs101.setTitle("Intro to Computer Science");
+        cs101.setCredits(5);
+        cs101.setCompulsory(true);
+        cs101.setInstructor(instructors.get(0));
+        courses.add(courseService.save(cs101));
+
+        Course cs102 = new Course();
+        cs102.setCode("CS102");
+        cs102.setTitle("Data Structures");
+        cs102.setCredits(5);
+        cs102.setCompulsory(true);
+        cs102.setInstructor(instructors.get(1 % instructors.size()));
+        courses.add(courseService.save(cs102));
+
+        Course el201 = new Course();
+        el201.setCode("EL201");
+        el201.setTitle("Elective: Creative Coding");
+        el201.setCredits(4);
+        el201.setCompulsory(false);
+        el201.setInstructor(instructors.get(2 % instructors.size()));
+        courses.add(courseService.save(el201));
 
         // enroll some students randomly
         for (Student s : students) {
@@ -169,6 +196,7 @@ public class DataLoader {
         newCourse.setCode("C999");
         newCourse.setTitle("Intro to Preferences");
         newCourse.setCredits(5);
+        newCourse.setCompulsory(true);
         newCourse.setInstructor(instructors.get(0));
         newCourse = courseService.save(newCourse);
         System.out.println("Created course: " + newCourse.getId());
