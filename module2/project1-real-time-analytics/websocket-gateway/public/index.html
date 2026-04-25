@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Movie Analytics Dashboard</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header>
+        <div>
+          <p class="eyebrow">Fast Lazy Bee</p>
+          <h1>Real-time movie analytics</h1>
+        </div>
+        <div class="status">
+          <span id="status-dot" class="dot offline"></span>
+          <span id="connection-state">Disconnected</span>
+        </div>
+      </header>
+
+      <section class="metrics">
+        <div>
+          <span class="label">Connected clients</span>
+          <strong id="clients">0</strong>
+        </div>
+        <div>
+          <span class="label">Last update</span>
+          <strong id="last-update">-</strong>
+        </div>
+      </section>
+
+      <section class="grid">
+        <article>
+          <h2>Top viewed movies</h2>
+          <ol id="top-movies" class="list"></ol>
+        </article>
+        <article>
+          <h2>Recent activity</h2>
+          <ul id="recent-activity" class="list"></ul>
+        </article>
+      </section>
+    </main>
+    <script src="/app.js"></script>
+  </body>
+</html>
