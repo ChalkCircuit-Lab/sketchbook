@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dragoș A. Bobu — Teaching Portfolio (Evidence-First)</title>
+  <meta name="description" content="Flashy hero. Proof up-front. Reviews, awards, and data. Reverse-chronological highlights of teaching grades 5–8 at Școala Gimnazială „Ion Ghica” and „Ion Simionescu”." />
+  <meta name="author" content="Dragoș A. Bobu" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+  <style>
+    :root{
+      --poster-h: min(72vh, 760px);
+      --glass: rgba(20,24,34,.55);
+      --glass-b: rgba(255,255,255,.08);
+      --accent: #79e2ff;
+    }
+    body{ background: radial-gradient(1200px 800px at 85% -10%, rgba(121,226,255,.08), transparent 60%), #0c0f19; }
+    .poster{
+      position: relative; height: var(--poster-h);
+      background: center/cover no-repeat var(--poster-url, url('/assets/img/posters/teach-poster.jpg'));
+      border-bottom: 1px solid var(--glass-b);
+    }
+    .poster::after{ content:""; position:absolute; inset:0; background: linear-gradient(180deg, rgba(5,7,12,.35), rgba(5,7,12,.82) 70%); }
+    .poster-content{ position: relative; z-index: 2; }
+    .glass{ background: var(--glass); border: 1px solid var(--glass-b); backdrop-filter: blur(6px); }
+    .counter{ font-variant-numeric: tabular-nums; }
+    .badge-soft{ background: rgba(121,226,255,.12); color: var(--accent); border: 1px solid rgba(121,226,255,.3) }
+    .event-pin{ border-left: 4px solid var(--accent); }
+    .logo-bw{ filter: grayscale(1) contrast(1.1) brightness(.95); opacity:.85; max-height: 44px }
+    .muted{ color: #aeb6c8 }
+    .tag{ font-size:.8rem; border:1px solid rgba(255,255,255,.16); padding:.1rem .5rem; border-radius: 999px }
+    .shadow-soft{ box-shadow: 0 10px 30px rgba(0,0,0,.45); }
+    .link-muted{ color:#aeb6c8; text-decoration:none }
+    .link-muted:hover{ color:white; text-decoration:underline }
+    .grid-cols-5{ display:grid; grid-template-columns: repeat(2,1fr); gap:1rem }
+    @media (min-width: 768px){ .grid-cols-5{ grid-template-columns: repeat(5,1fr) } }
+  </style>
+</head>
+<body>
+
+  <!-- HERO / POSTER -->
+  <header class="poster d-flex align-items-end">
+    <div class="container poster-content pb-4">
+      <div class="row g-3">
+        <div class="col-lg-8">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft">
+            <span class="tag me-2">Informatics</span>
+            <span class="tag me-2">Grades 5–8</span>
+            <span class="tag">Digital Literacy</span>
+            <h1 class="display-5 fw-bold mt-3">Teaching — Evidence First</h1>
+            <p class="lead mb-2">Școala Gimnazială „Ion Ghica” · „Ion Simionescu”.</p>
+            <p class="mb-3">I design curriculum-aligned lessons. I assess fairly. I grow problem-solving and algorithmic thinking. I teach responsible technology use.</p>
+            <div class="text-info fst-italic small">“I love this work more than anything I have ever loved.”</div>
+            <div class="d-flex flex-wrap gap-2 mt-3">
+              <a href="#evidence" class="btn btn-info">See proof</a>
+              <a href="#recent" class="btn btn-outline-light">Latest activity</a>
+              <a href="#timeline" class="btn btn-outline-secondary">Full log</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex flex-column justify-content-end">
+          <div id="recent" class="glass rounded-4 p-3 p-md-4 shadow-soft event-pin">
+            <div class="d-flex justify-content-between align-items-center">
+              <strong class="text-info">Most recent event</strong>
+              <span class="badge badge-soft rounded-pill">Pinned</span>
+            </div>
+            <h3 id="recent-title" class="h5 mt-2 mb-1">Loading…</h3>
+            <div class="small muted" id="recent-meta"></div>
+            <p class="mb-2 small" id="recent-desc"></p>
+            <a id="recent-link" class="link-muted small" href="#" target="_blank" rel="noopener">Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- EVIDENCE FIRST: METRICS / AWARDS / REVIEWS -->
+  <section id="evidence" class="py-5">
+    <div class="container">
+      <!-- Logos / social proof -->
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mb-4">
+        <div class="row g-3 align-items-center">
+          <div class="col-md-4">
+            <h2 class="h4 mb-2">Trusted by schools and families</h2>
+            <p class="muted mb-0">Sampling of institutions and frameworks.</p>
+          </div>
+          <div class="col-md-8">
+            <div class="grid-cols-5">
+              <img class="logo-bw" src="/assets/logos/ion-ghica.svg" alt="Școala Gimnazială „Ion Ghica”">
+              <img class="logo-bw" src="/assets/logos/ion-simionescu.svg" alt="Școala Gimnazială „Ion Simionescu”">
+              <img class="logo-bw" src="/assets/logos/omec.svg" alt="Ministerul Educației (curriculum național)">
+              <img class="logo-bw" src="/assets/logos/intuitext.svg" alt="Manuale aprobate OMEC / Intuitext">
+              <img class="logo-bw" src="/assets/logos/partners-generic.svg" alt="Partner schools">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- By the numbers -->
+      <div class="row g-4">
+        <div class="col-md-7">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h2 class="h4">By the numbers</h2>
+            <div class="row row-cols-2 row-cols-md-3 g-3 mt-1">
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="240">0</div><div class="muted small">Lessons delivered</div></div></div>
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="180">0</div><div class="muted small">Students taught</div></div></div>
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="24">0</div><div class="muted small">Units designed</div></div></div>
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="800">0</div><div class="muted small">Assessments graded</div></div></div>
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="2">0</div><div class="muted small">Schools</div></div></div>
+              <div class="col"><div class="p-3 rounded-3 bg-dark border border-secondary-subtle"><div class="fs-3 fw-bold counter" data-target="3">0</div><div class="muted small">Years active</div></div></div>
+            </div>
+            <p class="small muted mt-3">Replace with audited counts. Values are conservative placeholders.</p>
+          </div>
+        </div>
+        <div class="col-md-5">
+          <div class="glass rounded-4 p-4 p-md-5 shadow-soft h-100">
+            <h2 class="h4">Recognition</h2>
+            <ul class="list-unstyled mb-3">
+              <li class="mb-2"><span class="badge badge-soft me-2">Certificate</span> Curriculum-aligned planning (ICT, grades 5–8) — <em>Iași</em> (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Training</span> Digital safety & safeguarding — (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Workshop</span> Algorithmic thinking across subjects — (YYYY)</li>
+              <li class="mb-2"><span class="badge badge-soft me-2">Press</span> Mention in school newsletter — showcase day (link)</li>
+            </ul>
+            <a class="btn btn-outline-info btn-sm" href="#evidence-pack">Open evidence pack</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reviews / Recensions -->
+      <div class="glass rounded-4 p-4 p-md-5 shadow-soft mt-4">
+        <h2 class="h4">Reviews</h2>
+        <div id="reviews" class="row g-3 mt-1">
+          <div class="col-md-6">
+            <blockquote class="blockquote mb-0">
+              <p>“Clear, structured, and kind. Our child now explains algorithms at dinner.”</p>
+              <footer class="blockquote-footer">Parent, Iași (2024)</footer>
+            </blockquote>
+          </div>
+          <div class="col-md-6">
+            <blockquote class="blockquote mb-0">
+              <p>“Lessons match the curriculum and keep curiosity high. Reliable evaluation.”</p>
+              <footer class="blockquote-footer">School coordinator (2023)</footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RECENT HIGHLIGHTS (explicit list, newest first) -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="h4 mb-3">Highlights</h2>
+      <div id="highlights" class="row g-3"></div>
+    </div>
+  </section>
+
+  <!-- FULL TIMELINE (reverse-chronological) -->
+  <section id="timeline" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Activity log (newest → oldest)</h2>
+      <div id="events-list" class="vstack gap-3"></div>
+    </div>
+  </section>
+
+  <!-- EVIDENCE PACK -->
+  <section id="evidence-pack" class="py-5">
+    <div class="container">
+      <h2 class="h4 mb-3">Evidence pack</h2>
+      <div class="row g-3">
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Curriculum & planning</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">Year plans (grades 5–8) — PDF</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Sample lesson plan — DOCX/PDF</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Curriculum mapping → competencies</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Assessment & outcomes</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">Formative rubrics — PDF</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Summative samples — anonymized</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Student projects — gallery</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="glass rounded-4 p-3 h-100">
+            <h3 class="h6">Third-party links</h3>
+            <ul class="small mb-0">
+              <li><a class="link-muted" href="#" target="_blank">School pages / announcements</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Parent feedback — screenshots</a></li>
+              <li><a class="link-muted" href="#" target="_blank">Press / mentions</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="small muted mt-3">Replace placeholders with live URLs. Keep originals immutable for verification.</p>
+    </div>
+  </section>
+
+  <footer class="py-4 border-top border-secondary-subtle">
+    <div class="container d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="small muted">© <span id="year"></span> Dragoș A. Bobu</div>
+      <div class="d-flex gap-3 small">
+        <a class="link-muted" href="mailto:dragos@example.com">Email</a>
+        <a class="link-muted" href="/cv/europass">CV</a>
+        <a class="link-muted" href="#timeline">Top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // ---- Events (edit here) --------------------------------------------------
+    const EVENTS = [
+      {
+        date: "2025-06-15",
+        title: "End-of-year showcase — student projects",
+        org: "Școala Gimnazială „Ion Ghica”",
+        location: "Iași",
+        tags: ["Showcase","Summative"],
+        link: "#",
+        desc: "Scratch animations, Python mini-games, and HTML pages. Peer feedback + rubrics."
+      },
+      {
+        date: "2025-05-20",
+        title: "HTML & CSS week — publish your first page",
+        org: "Școala Gimnazială „Ion Simionescu”",
+        location: "Iași",
+        tags: ["Web","Digital Literacy"],
+        link: "#",
+        desc: "Accessibility basics. Semantic tags. Safe image sourcing. "
+      },
+      {
+        date: "2025-03-12",
+        title: "Intro to algorithms — flowcharts → code",
+        org: "„Ion Ghica” (Grade 6)",
+        location: "Iași",
+        tags: ["Algorithms","Problem-solving"],
+        link: "#",
+        desc: "From I/O blocks to loops. Formative checks and exit tickets."
+      },
+      {
+        date: "2024-12-08",
+        title: "Digital safety month — responsible use",
+        org: "„Ion Simionescu”",
+        location: "Iași",
+        tags: ["eSafety","Digital Citizenship"],
+        link: "#",
+        desc: "Privacy, passwords, phishing patterns. Parent guide handout."
+      },
+      {
+        date: "2024-10-02",
+        title: "Start of year — diagnostics & grouping",
+        org: "„Ion Ghica” & „Ion Simionescu”",
+        location: "Iași",
+        tags: ["Assessment","Planning"],
+        link: "#",
+        desc: "Entry tasks, baselines, and unit mapping to the national curriculum."
+      }
+    ];
+
+    // ---- Counters ------------------------------------------------------------
+    const animateCounters = () => {
+      document.querySelectorAll(".counter").forEach(el=>{
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = Math.max(1, Math.floor(target/60));
+        const tick = () => {
+          cur += step;
+          if(cur >= target){ el.textContent = target.toLocaleString(); }
+          else{ el.textContent = cur.toLocaleString(); requestAnimationFrame(tick); }
+        };
+        requestAnimationFrame(tick);
+      });
+    };
+
+    // ---- Events render (newest -> oldest) ------------------------------------
+    function renderEvents(){
+      const sorted = [...EVENTS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+
+      // Recent pin
+      const r = sorted[0];
+      document.getElementById("recent-title").textContent = r.title;
+      document.getElementById("recent-meta").textContent = `${new Date(r.date).toLocaleDateString()} • ${r.org} — ${r.location}`;
+      document.getElementById("recent-desc").textContent = r.desc;
+      document.getElementById("recent-link").href = r.link || "#";
+
+      // Highlights (top 3)
+      const hi = document.getElementById("highlights");
+      hi.innerHTML = "";
+      sorted.slice(0,3).forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        hi.insertAdjacentHTML("beforeend", `
+          <div class="col-md-4">
+            <div class="glass rounded-4 p-3 h-100 shadow-soft">
+              <div class="small muted">${new Date(ev.date).toLocaleDateString()} • ${ev.org}</div>
+              <h3 class="h6 mt-1">${ev.title}</h3>
+              <p class="small mb-2">${ev.desc}</p>
+              <div class="mb-2">${tags}</div>
+              <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Details</a>
+            </div>
+          </div>
+        `);
+      });
+
+      // Full list
+      const list = document.getElementById("events-list");
+      list.innerHTML = "";
+      sorted.forEach(ev=>{
+        const tags = (ev.tags||[]).map(t=>`<span class="tag me-1">${t}</span>`).join("");
+        list.insertAdjacentHTML("beforeend", `
+          <article class="glass rounded-4 p-3 p-md-4 shadow-soft">
+            <div class="d-flex justify-content-between flex-wrap gap-2">
+              <div>
+                <div class="small muted">${new Date(ev.date).toLocaleDateString()} • ${ev.org} — ${ev.location}</div>
+                <h3 class="h5 mb-1">${ev.title}</h3>
+              </div>
+              <div class="text-end">${tags}</div>
+            </div>
+            <p class="mb-2">${ev.desc}</p>
+            <a class="link-muted small" href="${ev.link||'#'}" target="_blank" rel="noopener">Verify / see more</a>
+          </article>
+        `);
+      });
+    }
+
+    // ---- Init ----------------------------------------------------------------
+    window.addEventListener("DOMContentLoaded", ()=>{
+      animateCounters();
+      renderEvents();
+      document.getElementById("year").textContent = new Date().getFullYear();
+    });
+  </script>
+</body>
+</html>

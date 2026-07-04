@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MSc — MISS | Dragoș</title>
+  <meta name="description" content="MSc — MISS: coursework, research, thesis, and projects." />
+  <meta name="color-scheme" content="light dark">
+  <meta property="og:title" content="MSc — MISS | Dragoș">
+  <meta property="og:description" content="Coursework, research, thesis, projects, and materials.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dbxdrgsl.github.io/cv/edu/msc/miss/">
+  <meta property="og:image" content="https://dbxdrgsl.github.io/assets/og/msc-miss.png">
+  <meta name="theme-color" content="#0a3a5a">
+  <style>
+    :root{
+      --bg: #0b0f14; --bg2:#111720; --fg:#e7edf4; --muted:#9db1c2;
+      --acc:#3fb4ff; --acc2:#8dd3ff; --card:#0f1622; --chip:#122131; --ok:#2ecc71;
+      --warn:#f39c12; --bad:#e74c3c; --br:16px; --shadow:0 12px 32px rgba(0,0,0,.35);
+      --border:1px solid rgba(255,255,255,.08);
+    }
+    @media (prefers-color-scheme: light){
+      :root{ --bg:#f7fafc; --bg2:#ffffff; --fg:#121417; --muted:#5a6a75;
+             --acc:#0a63c9; --acc2:#7fb3ff; --card:#ffffff; --chip:#eef5ff;
+             --border:1px solid rgba(0,0,0,.08); --shadow:0 10px 28px rgba(0,0,0,.08);}
+    }
+    [data-theme="light"] :root {}
+    [data-theme="dark"] :root {}
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji";
+      color:var(--fg); background:linear-gradient(180deg,var(--bg),var(--bg2) 60%);
+    }
+    a{color:var(--acc); text-decoration:none}
+    a:hover{text-decoration:underline}
+    header{
+      position:sticky; top:0; z-index:20;
+      backdrop-filter:saturate(140%) blur(8px);
+      background:color-mix(in oklab, var(--bg) 85%, transparent);
+      border-bottom:var(--border);
+    }
+    .wrap{max-width:1080px; margin:auto; padding:16px 20px}
+    .topbar{display:flex; gap:16px; align-items:center; justify-content:space-between}
+    .brand{display:flex; gap:12px; align-items:center}
+    .logo{
+      width:40px; height:40px; border-radius:50%; background:radial-gradient(60% 60% at 35% 35%, var(--acc2), var(--acc) 60%, transparent 61%), linear-gradient(135deg, transparent 55%, var(--acc) 56%);
+      box-shadow:inset 0 0 0 2px rgba(255,255,255,.08), 0 6px 18px rgba(0,0,0,.25);
+    }
+    .brand h1{font-size:18px; margin:0}
+    .subtitle{font-size:13px; color:var(--muted)}
+    .actions{display:flex; gap:8px; align-items:center}
+    button{
+      appearance:none; border:var(--border); background:var(--chip); color:var(--fg);
+      padding:8px 12px; border-radius:10px; cursor:pointer;
+    }
+    button:hover{filter:brightness(1.05)}
+    main{display:grid; grid-template-columns: 260px 1fr; gap:20px; max-width:1080px; margin:24px auto; padding:0 20px}
+    nav.toc{
+      position:sticky; top:76px; align-self:start; border:var(--border); border-radius:var(--br);
+      background:var(--card); padding:16px; box-shadow:var(--shadow)
+    }
+    nav.toc h3{margin:0 0 10px 0; font-size:14px; letter-spacing:.02em; text-transform:uppercase; color:var(--muted)}
+    nav.toc a{display:block; padding:6px 8px; border-radius:8px}
+    nav.toc a:hover{background:var(--chip)}
+    section{
+      background:var(--card); border:var(--border); border-radius:var(--br); box-shadow:var(--shadow);
+      padding:18px 20px; margin-bottom:18px;
+    }
+    section h2{margin:0 0 8px 0}
+    .meta{color:var(--muted); font-size:.95rem}
+    .grid-2{display:grid; grid-template-columns:1fr 1fr; gap:16px}
+    .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .chips{display:flex; flex-wrap:wrap; gap:8px}
+    .chip{padding:6px 10px; background:var(--chip); border:var(--border); border-radius:999px; font-size:.9rem; cursor:default}
+    .note{font-size:.95rem; color:var(--muted)}
+    table{width:100%; border-collapse:separate; border-spacing:0 8px}
+    th,td{padding:10px 12px; text-align:left}
+    thead th{font-size:.9rem; color:var(--muted); text-transform:uppercase; letter-spacing:.04em}
+    tbody tr{background:color-mix(in oklab, var(--chip) 30%, transparent); border-radius:12px}
+    tbody tr td:first-child{border-top-left-radius:12px; border-bottom-left-radius:12px}
+    tbody tr td:last-child{border-top-right-radius:12px; border-bottom-right-radius:12px}
+    .kpi{display:flex; gap:12px; align-items:baseline; flex-wrap:wrap}
+    .kpi .big{font-size:28px; font-weight:700}
+    .muted{color:var(--muted)}
+    .badge{display:inline-block; padding:2px 8px; border-radius:999px; font-size:.8rem; border:var(--border); background:var(--chip)}
+    .cards{display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px}
+    .card{border:var(--border); background:var(--card); border-radius:14px; padding:14px}
+    .card h3{margin:0 0 6px 0; font-size:1.05rem}
+    .card .tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:8px}
+    .card .tags .badge{background:var(--chip)}
+    .filters{display:flex; gap:8px; flex-wrap:wrap; margin-bottom:10px}
+    .filters button[aria-pressed="true"]{outline:2px solid var(--acc)}
+    .progress{height:8px; width:100%; background:color-mix(in oklab, var(--chip) 35%, transparent); border-radius:999px; overflow:hidden}
+    .progress > i{display:block; height:100%; width:0%}
+    .ok > i{background:var(--ok)} .warn>i{background:var(--warn)} .bad>i{background:var(--bad)}
+    .row{display:flex; gap:10px; align-items:center; flex-wrap:wrap}
+    footer{max-width:1080px; margin:40px auto 60px; padding:0 20px; color:var(--muted); display:flex; justify-content:space-between}
+    .print-only{display:none}
+    @media (max-width: 880px){ main{grid-template-columns:1fr} nav.toc{position:relative; top:auto} .grid-2,.grid-3{grid-template-columns:1fr}}
+    @media print{
+      header, nav.toc, .actions, .filters{display:none !important}
+      body{background:white !important; color:#000}
+      section, footer{box-shadow:none; border:1px solid #00000020}
+      .print-only{display:block}
+      a{color:#000}
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#overview" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">Skip to content</a>
+  <header>
+    <div class="wrap topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <h1>MSc — MISS</h1>
+          <div class="subtitle">Graduate portfolio · Coursework · Research · Thesis</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button id="themeBtn" title="Toggle theme" aria-pressed="false">☾/☀</button>
+        <a href="../../index.html"><button title="Back to Education Index">← Back</button></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sticky ToC -->
+    <nav class="toc" aria-label="On this page">
+      <h3>Contents</h3>
+      <a href="#overview">Overview</a>
+      <a href="#coursework">Coursework & ECTS</a>
+      <a href="#research">Research Focus</a>
+      <a href="#projects">Selected Projects</a>
+      <a href="#thesis">Thesis</a>
+      <a href="#teaching">Teaching & Service</a>
+      <a href="#materials">Materials</a>
+      <a href="#timeline">Timeline</a>
+    </nav>
+
+    <div>
+      <!-- Overview -->
+      <section id="overview" aria-labelledby="h-overview">
+        <h2 id="h-overview">Overview</h2>
+        <p class="meta">Program: <span class="badge">MISS</span> · Mode: full-time · Years: <span id="years-span">2024–2026</span></p>
+        <div class="grid-3" style="margin-top:10px">
+          <div class="card">
+            <div class="kpi"><span class="big" id="gpa-overall">—</span><span class="muted">ECTS-weighted GPA</span></div>
+            <div class="note">Computed from tables below: \(\text{avg}=\frac{\sum \text{ECTS}\cdot \text{grade}}{\sum \text{ECTS}}\).</div>
+          </div>
+          <div class="card">
+            <div class="kpi"><span class="big" id="ects-total">—</span><span class="muted">ECTS earned</span></div>
+            <div class="note">Target: 120 ECTS.</div>
+          </div>
+          <div class="card">
+            <div class="kpi"><span class="big" id="pub-count">—</span><span class="muted">outputs</span></div>
+            <div class="note">Publications, talks, preprints.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Coursework -->
+      <section id="coursework" aria-labelledby="h-coursework">
+        <h2 id="h-coursework">Coursework & ECTS</h2>
+        <p class="note">Fill grades (1–10). Leave blank to exclude. Script recomputes GPA.</p>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Year 1 · Semester 1</h3>
+            <table data-term="Y1S1">
+              <thead><tr><th>Course</th><th>Type</th><th>ECTS</th><th>Grade</th></tr></thead>
+              <tbody>
+                <tr><td>Functional Analysis for CS</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Optimization & Variational Methods</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Probability & Stochastic Processes</td><td>core</td><td class="ects">5</td><td class="grade">—</td></tr>
+                <tr><td>Numerical Linear Algebra</td><td>core</td><td class="ects">5</td><td class="grade">—</td></tr>
+                <tr><td>Elective A</td><td>elective</td><td class="ects">3</td><td class="grade">—</td></tr>
+                <tr><td>Research Seminar I</td><td>seminar</td><td class="ects">5</td><td class="grade">—</td></tr>
+              </tbody>
+            </table>
+            <div class="row"><span class="badge">Term GPA: <b id="gpa-Y1S1">—</b></span><span class="badge">ECTS: <b id="ects-Y1S1">—</b></span></div>
+          </div>
+          <div class="card">
+            <h3>Year 1 · Semester 2</h3>
+            <table data-term="Y1S2">
+              <thead><tr><th>Course</th><th>Type</th><th>ECTS</th><th>Grade</th></tr></thead>
+              <tbody>
+                <tr><td>Measure Theory & Integration</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Convex Optimization</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Differential Geometry for Vision</td><td>elective</td><td class="ects">5</td><td class="grade">—</td></tr>
+                <tr><td>Computational Topology</td><td>elective</td><td class="ects">5</td><td class="grade">—</td></tr>
+                <tr><td>Research Seminar II</td><td>seminar</td><td class="ects">4</td><td class="grade">—</td></tr>
+              </tbody>
+            </table>
+            <div class="row"><span class="badge">Term GPA: <b id="gpa-Y1S2">—</b></span><span class="badge">ECTS: <b id="ects-Y1S2">—</b></span></div>
+          </div>
+          <div class="card">
+            <h3>Year 2 · Semester 3</h3>
+            <table data-term="Y2S1">
+              <thead><tr><th>Course</th><th>Type</th><th>ECTS</th><th>Grade</th></tr></thead>
+              <tbody>
+                <tr><td>Topics in Functional Analysis</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>High-Dimensional Geometry</td><td>core</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Machine Learning Theory</td><td>elective</td><td class="ects">5</td><td class="grade">—</td></tr>
+                <tr><td>Research Methods</td><td>seminar</td><td class="ects">4</td><td class="grade">—</td></tr>
+                <tr><td>Thesis Research I</td><td>research</td><td class="ects">5</td><td class="grade">—</td></tr>
+              </tbody>
+            </table>
+            <div class="row"><span class="badge">Term GPA: <b id="gpa-Y2S1">—</b></span><span class="badge">ECTS: <b id="ects-Y2S1">—</b></span></div>
+          </div>
+          <div class="card">
+            <h3>Year 2 · Semester 4</h3>
+            <table data-term="Y2S2">
+              <thead><tr><th>Course</th><th>Type</th><th>ECTS</th><th>Grade</th></tr></thead>
+              <tbody>
+                <tr><td>Advanced Topics / Reading Course</td><td>elective</td><td class="ects">6</td><td class="grade">—</td></tr>
+                <tr><td>Research Ethics & Writing</td><td>seminar</td><td class="ects">3</td><td class="grade">—</td></tr>
+                <tr><td>Thesis Research II</td><td>research</td><td class="ects">21</td><td class="grade">—</td></tr>
+              </tbody>
+            </table>
+            <div class="row"><span class="badge">Term GPA: <b id="gpa-Y2S2">—</b></span><span class="badge">ECTS: <b id="ects-Y2S2">—</b></span></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section id="research" aria-labelledby="h-research">
+        <h2 id="h-research">Research Focus</h2>
+        <p class="note">Interests: \(\mathbb{R}^n\) geometry, visualization, optimization, spectral methods, and game-engine tooling for scientific computing.</p>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Core questions</h3>
+            <ul>
+              <li>How to visualize \(d\)-polytopes with stable interactions?</li>
+              <li>How to map \((d \to 3)\) slices without losing invariants?</li>
+              <li>What optimization drives readable projections?</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Methods</h3>
+            <div class="chips">
+              <span class="chip">PCA / SVD</span>
+              <span class="chip">Spectral embedding</span>
+              <span class="chip">MDS</span>
+              <span class="chip">Quaternion/dual-quat</span>
+              <span class="chip">GPU pipelines</span>
+              <span class="chip">WebGL/OpenGL</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Artifacts</h3>
+            <ul>
+              <li>Reference implementations (C++/GL, Python).</li>
+              <li>Interactive demos (WebGL).</li>
+              <li>Datasets & benchmarks.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects with filters -->
+      <section id="projects" aria-labelledby="h-projects">
+        <h2 id="h-projects">Selected Projects</h2>
+        <div class="filters" role="toolbar" aria-label="Project filters">
+          <button class="filter" data-tag="all" aria-pressed="true">All</button>
+          <button class="filter" data-tag="geometry">Geometry</button>
+          <button class="filter" data-tag="optimization">Optimization</button>
+          <button class="filter" data-tag="ml">ML</button>
+          <button class="filter" data-tag="graphics">Graphics</button>
+          <button class="filter" data-tag="security">Security</button>
+        </div>
+        <div class="cards" id="project-cards">
+          <article class="card" data-tags="geometry graphics">
+            <h3>Tesseract Traverse</h3>
+            <p>Interactive 4D puzzle exploring hypercube slices and rotations.</p>
+            <div class="progress ok" aria-label="status"><i style="width:70%"></i></div>
+            <div class="tags"><span class="badge">geometry</span><span class="badge">graphics</span></div>
+          </article>
+          <article class="card" data-tags="optimization graphics">
+            <h3>Projection Optimizer</h3>
+            <p>Energy-based layout of \(d\)-polytopes with continuity constraints.</p>
+            <div class="progress warn"><i style="width:40%"></i></div>
+            <div class="tags"><span class="badge">optimization</span><span class="badge">graphics</span></div>
+          </article>
+          <article class="card" data-tags="ml geometry">
+            <h3>Learned Slicing</h3>
+            <p>Policy to select informative \(3\)D slices via RL signal.</p>
+            <div class="progress bad"><i style="width:15%"></i></div>
+            <div class="tags"><span class="badge">ml</span><span class="badge">geometry</span></div>
+          </article>
+          <article class="card" data-tags="security">
+            <h3>Secure Visualization Pipeline</h3>
+            <p>Threat model and mitigations for in-engine data ingestion.</p>
+            <div class="progress ok"><i style="width:55%"></i></div>
+            <div class="tags"><span class="badge">security</span></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Thesis -->
+      <section id="thesis" aria-labelledby="h-thesis">
+        <h2 id="h-thesis">Thesis</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Title</h3>
+            <p><strong>Visualizing Any-Dimensional Polytopes in a Game-Engine Environment</strong></p>
+            <p class="note">Keywords: \(d\)-polytopes, projections, embeddings, interaction, GPU.</p>
+            <div class="row">
+              <span class="badge">status: in progress</span>
+              <span class="badge">advisor: —</span>
+              <span class="badge">defense: —</span>
+            </div>
+          </div>
+          <div class="card">
+            <h3>Outputs</h3>
+            <ul id="pub-list">
+              <li class="muted">Preprint — <em>to be added</em>.</li>
+              <li class="muted">Talk — <em>to be added</em>.</li>
+              <li class="muted">Code — <em>to be added</em>.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Teaching & Service -->
+      <section id="teaching" aria-labelledby="h-teaching">
+        <h2 id="h-teaching">Teaching & Service</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>TA / Workshops</h3>
+            <ul>
+              <li>Lab sessions: algorithms, OpenGL pipelines, Python tools.</li>
+              <li>Workshops: Git, reproducible research, notebook hygiene.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Review / Community</h3>
+            <ul>
+              <li>Student mentoring for visualization mini-projects.</li>
+              <li>Open-source contributions (utilities and docs).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Materials -->
+      <section id="materials" aria-labelledby="h-materials">
+        <h2 id="h-materials">Materials</h2>
+        <div class="grid-3">
+          <div class="card">
+            <h3>Notes & Slides</h3>
+            <ul>
+              <li><a href="#" download>Functional Analysis notes (PDF)</a></li>
+              <li><a href="#" download>Optimization slides (PDF)</a></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Code</h3>
+            <ul>
+              <li><a href="#">miss-polytope-viz (Git)</a></li>
+              <li><a href="#">projection-optimizer (Git)</a></li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Reading</h3>
+            <ul>
+              <li>Concentration in high-dim spaces.</li>
+              <li>Spectral graph theory.</li>
+              <li>Differential forms & wedge \(\wedge\).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timeline -->
+      <section id="timeline" aria-labelledby="h-timeline">
+        <h2 id="h-timeline">Timeline</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Milestones</h3>
+            <ul>
+              <li>Y1S1: topic survey & prototype renderer.</li>
+              <li>Y1S2: projection methods bench.</li>
+              <li>Y2S1: evaluation metrics & user study plan.</li>
+              <li>Y2S2: write-up, defense.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h3>Admin</h3>
+            <ul>
+              <li>Ethics & data handling: <span class="badge">ok</span></li>
+              <li>Backups & reproducibility: <span class="badge">ok</span></li>
+              <li>IRB / approvals: <span class="badge">—</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="note">Last updated: <span id="last-updated">—</span></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div>© <span id="year">2025</span> Dragoș</div>
+    <div><a href="https://dbxdrgsl.github.io">dbxdrgsl.github.io</a></div>
+  </footer>
+
+  <!-- Optional: MathJax for inline math you may add -->
+  <script>
+    // Theme toggle with persistence
+    (function(){
+      const btn = document.getElementById('themeBtn');
+      const key = 'theme';
+      const init = localStorage.getItem(key);
+      if(init){ document.documentElement.setAttribute('data-theme', init); }
+      const isDark = () => (document.documentElement.getAttribute('data-theme')||'').toLowerCase()==='dark'
+                       || (!init && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+      document.documentElement.setAttribute('data-theme', isDark() ? 'dark' : 'light');
+      btn.setAttribute('aria-pressed', isDark() ? 'true' : 'false');
+      btn.addEventListener('click', () => {
+        const next = isDark() ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem(key,next);
+        btn.setAttribute('aria-pressed', next==='dark' ? 'true' : 'false');
+      });
+    })();
+
+    // GPA calculator (Romanian scale 1–10). Ignore blank grades.
+    function parseNum(x){
+      if(!x) return NaN;
+      const s = x.textContent.trim().replace(',', '.');
+      const n = parseFloat(s);
+      return Number.isFinite(n) ? n : NaN;
+    }
+    function computeTerm(table){
+      const ectsCells=[...table.querySelectorAll('td.ects')];
+      const gradeCells=[...table.querySelectorAll('td.grade')];
+      let num=0, den=0, ectsSum=0;
+      for(let i=0;i<ectsCells.length;i++){
+        const e=parseNum(ectsCells[i]); const g=parseNum(gradeCells[i]);
+        if(Number.isFinite(e)){ ectsSum+=e; if(Number.isFinite(g)){ num+=e*g; den+=e; } }
+      }
+      return {ects: ectsSum, gpa: den>0 ? (num/den) : NaN};
+    }
+    function renderGPA(){
+      const terms=[...document.querySelectorAll('table[data-term]')];
+      let totalECTS=0, num=0, den=0;
+      terms.forEach(t=>{
+        const id=''+t.dataset.term;
+        const r=computeTerm(t);
+        totalECTS += r.ects||0;
+        if(!Number.isNaN(r.gpa)){
+          // recompute weighted by same ECTS included in GPA denominator
+          // re-iterate to sum used credits
+          let d=0, n=0;
+          const ectsCells=[...t.querySelectorAll('td.ects')];
+          const gradeCells=[...t.querySelectorAll('td.grade')];
+          for(let i=0;i<ectsCells.length;i++){
+            const e=parseNum(ectsCells[i]); const g=parseNum(gradeCells[i]);
+            if(Number.isFinite(e) && Number.isFinite(g)){ d+=e; n+=e*g; }
+          }
+          den+=d; num+=n;
+        }
+        const gEl=document.getElementById('gpa-'+id);
+        const eEl=document.getElementById('ects-'+id);
+        if(gEl) gEl.textContent = Number.isNaN(r.gpa) ? '—' : r.gpa.toFixed(2);
+        if(eEl) eEl.textContent = r.ects || '—';
+      });
+      const overall = den>0 ? (num/den) : NaN;
+      document.getElementById('gpa-overall').textContent = Number.isNaN(overall) ? '—' : overall.toFixed(2);
+      document.getElementById('ects-total').textContent = totalECTS || '—';
+    }
+    renderGPA();
+
+    // Project filters
+    (function(){
+      const buttons=[...document.querySelectorAll('.filter')];
+      const cards=[...document.querySelectorAll('#project-cards .card')];
+      function setActive(btn){
+        buttons.forEach(b=>b.setAttribute('aria-pressed','false'));
+        btn.setAttribute('aria-pressed','true');
+      }
+      function apply(tag){
+        cards.forEach(c=>{
+          const set = (c.dataset.tags||'').split(/\s+/);
+          c.style.display = (tag==='all' || set.includes(tag)) ? '' : 'none';
+        });
+      }
+      buttons.forEach(b=>{
+        b.addEventListener('click', ()=>{
+          setActive(b); apply(b.dataset.tag);
+        });
+      });
+    })();
+
+    // Publications counter (simple count of non-muted items)
+    (function(){
+      const items=[...document.querySelectorAll('#pub-list li')];
+      const n = items.filter(li => !li.classList.contains('muted')).length;
+      document.getElementById('pub-count').textContent = n || 0;
+    })();
+
+    // Last updated + year
+    (function(){
+      const d = new Date(document.lastModified);
+      const fmt = (n)=>String(n).padStart(2,'0');
+      document.getElementById('last-updated').textContent = Number.isFinite(d.getTime())
+        ? `${d.getFullYear()}-${fmt(d.getMonth()+1)}-${fmt(d.getDate())}`
+        : '—';
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+
+  <!-- (Optional) MathJax; uncomment if you want LaTeX rendering
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"EducationalOccupationalProgram",
+    "name":"MSc — MISS",
+    "educationalProgramMode":"Full-time",
+    "provider":{"@type":"CollegeOrUniversity","name":"—"},
+    "programPrerequisites":"BSc in Computer Science / Mathematics",
+    "timeToComplete":"P2Y",
+    "hasCourse":[
+      {"@type":"Course","name":"Functional Analysis for CS"},
+      {"@type":"Course","name":"Optimization & Variational Methods"},
+      {"@type":"Course","name":"Measure Theory & Integration"},
+      {"@type":"Course","name":"Convex Optimization"},
+      {"@type":"Course","name":"Computational Topology"},
+      {"@type":"Course","name":"High-Dimensional Geometry"}
+    ]
+  }
+  </script>
+</body>
+</html>

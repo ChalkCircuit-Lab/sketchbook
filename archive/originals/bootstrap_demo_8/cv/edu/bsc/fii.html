@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BSc — Faculty of Computer Science (FII, UAIC)</title>
+  <meta name="description" content="Bachelor of Science portfolio page — Faculty of Computer Science (FII), Alexandru Ioan Cuza University of Iași." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/cv/edu/bsc/fii.html" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="BSc — Faculty of Computer Science (FII, UAIC)" />
+  <meta property="og:description" content="Coursework, projects, thesis, skills, and achievements." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/cv/edu/bsc/fii.html" />
+  <meta property="og:image" content="/assets/og/edu-bsc-fii.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #11151a;
+      --muted: #8aa0b4;
+      --text: #e6edf3;
+      --brand: #5bd6a0; /* teal */
+      --brand-2: #7aa2ff; /* blue */
+      --warn: #ffcc66;
+      --danger: #ff6b6b;
+      --ok: #5bd66e;
+      --border: #1e2630;
+      --code: #0f141a;
+      --shadow: 0 8px 24px rgba(0,0,0,.24);
+    }
+    @media (prefers-color-scheme: light) {
+      :root { --bg: #f7f9fc; --panel:#ffffff; --muted:#4a5568; --text:#1a202c; --border:#e6eef6; --code:#f2f5f9; }
+      body.light { --bg: #f7f9fc; --panel:#ffffff; --muted:#4a5568; --text:#1a202c; --border:#e6eef6; --code:#f2f5f9; }
+    }
+    body.dark { --bg:#0b0d10; --panel:#11151a; --muted:#8aa0b4; --text:#e6edf3; --border:#1e2630; --code:#0f141a; }
+
+    /* Base */
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 1rem; }
+    .breadcrumbs { font-size: .9rem; color: var(--muted); display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+    .breadcrumbs a { color: var(--muted); }
+
+    header.hero { position: sticky; top: 0; z-index: 5; background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,0)) , var(--bg); backdrop-filter: blur(6px); border-bottom: 1px solid var(--border); }
+    .hero-inner { display:grid; grid-template-columns: 1fr auto; gap:1rem; align-items:center; padding: .75rem 1rem; }
+    .title {
+      display:flex; align-items:flex-start; gap:1rem; flex-wrap:wrap;
+    }
+    .title h1 { margin:0; font-size: clamp(1.25rem, 1.2rem + 1vw, 2rem); letter-spacing:.2px; }
+    .meta { font-size:.95rem; color: var(--muted); }
+    .actions { display:flex; gap:.5rem; flex-wrap:wrap; }
+    .btn { border:1px solid var(--border); background: var(--panel); color:var(--text); padding:.5rem .8rem; border-radius:.6rem; display:inline-flex; align-items:center; gap:.45rem; box-shadow: var(--shadow); }
+    .btn:hover { filter: brightness(1.05); text-decoration:none; }
+    .btn-primary { background: linear-gradient(135deg, var(--brand), var(--brand-2)); border-color: transparent; color:#081018; font-weight:600; }
+
+    /* Layout */
+    main { display:grid; grid-template-columns: 280px 1fr; gap: 1.25rem; margin-top: 1rem; }
+    nav#toc { position: sticky; top: 72px; align-self: start; background: var(--panel); border:1px solid var(--border); border-radius: .9rem; padding: .75rem; }
+    nav#toc h3 { margin:.25rem .5rem .5rem; font-size: .95rem; color: var(--muted); }
+    nav#toc a { display:block; padding:.35rem .5rem; border-radius:.5rem; color: var(--muted); }
+    nav#toc a:hover { background: rgba(122,162,255,.08); color: var(--text); text-decoration:none; }
+
+    section.card { background: var(--panel); border:1px solid var(--border); border-radius: 1rem; padding: 1rem; box-shadow: var(--shadow); }
+    section.card h2 { margin-top: .25rem; font-size: 1.3rem; }
+    .grid { display:grid; gap: 1rem; }
+    .grid.cols-2 { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .grid.cols-3 { grid-template-columns: repeat(3, minmax(0,1fr)); }
+    @media (max-width: 980px) { main { grid-template-columns: 1fr; } nav#toc { position: static; } .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; } }
+
+    /* Badges & tags */
+    .badge { display:inline-flex; align-items:center; gap:.35rem; padding:.2rem .5rem; border-radius: 999px; border:1px solid var(--border); background: rgba(91,214,160,.1); color: #c8ffe8; font-size: .8rem; }
+    .badge.blue { background: rgba(122,162,255,.1); color: #dbe6ff; }
+    .badge.muted { background: transparent; color: var(--muted); }
+
+    /* Tables */
+    table { width: 100%; border-collapse: collapse; font-size: .95rem; }
+    th, td { border-bottom: 1px solid var(--border); padding: .5rem .4rem; vertical-align: top; }
+    thead th { text-align: left; color: var(--muted); font-weight:600; position: sticky; top: 0; background: var(--panel); }
+    tbody tr:hover { background: rgba(122,162,255,.06); }
+    tfoot td { font-weight: 600; }
+    .right { text-align: right; }
+
+    /* Accordion */
+    details.accordion { border:1px solid var(--border); background: var(--panel); border-radius: .8rem; padding: .75rem; }
+    details.accordion + details.accordion { margin-top: .75rem; }
+    details.accordion summary { cursor: pointer; list-style: none; position: relative; font-weight: 600; color: var(--text); }
+    details.accordion summary::-webkit-details-marker { display:none; }
+    details.accordion[open] { outline: 1px dashed rgba(122,162,255,.3); }
+    .summary-sub { font-size: .9rem; color: var(--muted); font-weight: 400; }
+
+    /* Project cards */
+    .cards { display:grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; }
+    .card-item { border:1px solid var(--border); border-radius:.9rem; padding: .9rem; background: var(--panel); box-shadow: var(--shadow); }
+    .card-item h3 { margin:.2rem 0 .4rem; font-size: 1.05rem; }
+    .meta-row { display:flex; gap:.5rem; flex-wrap: wrap; align-items:center; }
+    .tags { display:flex; gap:.4rem; flex-wrap: wrap; }
+
+    /* Skill bars */
+    .skill { margin:.45rem 0; }
+    .skill label { display:flex; justify-content: space-between; font-size:.9rem; color:var(--muted); }
+    .bar { height: 8px; background: #0e1318; border:1px solid var(--border); border-radius: 999px; overflow: hidden; }
+    .bar > i { display:block; height:100%; width: 0%; background: linear-gradient(90deg, var(--brand), var(--brand-2)); }
+
+    /* Timeline */
+    .timeline { position: relative; margin-left: .25rem; }
+    .tl-item { position: relative; padding-left: 1.5rem; margin: .75rem 0; }
+    .tl-item::before { content: ""; position:absolute; left: .55rem; top: 0; bottom: 0; width: 2px; background: var(--border); }
+    .dot { position:absolute; left: .25rem; top: .25rem; width: .6rem; height: .6rem; border-radius: 50%; background: var(--brand-2); box-shadow: 0 0 0 3px rgba(122,162,255,.15); }
+
+    /* Footer */
+    footer { margin: 2rem 0; color: var(--muted); text-align:center; }
+
+    /* Print */
+    @media print {
+      header.hero, nav#toc .actions, .actions, .print-hide { display:none !important; }
+      main { display:block; }
+      section.card { break-inside: avoid; box-shadow:none; }
+      body { background: white; color: black; }
+    }
+  </style>
+</head>
+<body class="dark">
+  <header class="hero">
+    <div class="container hero-inner">
+      <div class="title">
+        <div>
+          <div class="breadcrumbs">
+            <a href="/cv/">CV</a> › <a href="/cv/edu/">Education</a> › <a href="/cv/edu/bsc/">BSc</a> › <span>FII</span>
+          </div>
+          <h1>BSc — Faculty of Computer Science (FII, UAIC)</h1>
+          <div class="meta">Alexandru Ioan Cuza University of Iași · <span id="years">20XX–20XX</span> · Iași, Romania</div>
+        </div>
+      </div>
+      <div class="actions">
+        <button class="btn" id="themeToggle" aria-label="Toggle theme">🌓 Theme</button>
+        <a class="btn" href="#" onclick="window.print();return false;" title="Print this page">🖨️ Print</a>
+        <a class="btn btn-primary" href="/cv/cv.pdf" title="Download CV PDF">⬇️ Download CV</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main>
+      <!-- TOC -->
+      <nav id="toc" aria-label="Table of contents">
+        <h3>Contents</h3>
+        <a href="#overview">Overview</a>
+        <a href="#structure">Program structure</a>
+        <a href="#courses">Courses & ECTS</a>
+        <a href="#projects">Highlighted projects</a>
+        <a href="#thesis">Bachelor thesis</a>
+        <a href="#skills">Skills</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#awards">Awards</a>
+        <a href="#materials">Notes & materials</a>
+        <a href="#links">Links</a>
+        <div class="actions" style="margin-top:.75rem">
+          <a class="btn" href="/cv/edu/">← Back</a>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div class="grid">
+        <section id="overview" class="card">
+          <h2>Overview</h2>
+          <p>Degree: <strong>B.Sc. in Computer Science</strong> — Faculty of Computer Science (FII), Alexandru Ioan Cuza University of Iași.</p>
+          <p>Focus: <span class="badge">Algorithms</span> <span class="badge blue">Graphics</span> <span class="badge">Systems</span> <span class="badge blue">AI/ML</span></p>
+          <p>Interests: mathematical modeling for graphics, interactive systems, and educational tooling.</p>
+        </section>
+
+        <section id="structure" class="card">
+          <h2>Program structure</h2>
+          <div class="grid cols-3">
+            <div>
+              <h3>Year 1</h3>
+              <ul>
+                <li>Mathematical Foundations (Calculus, Algebra)</li>
+                <li>Programming Fundamentals (C/C++)</li>
+                <li>Computer Systems Basics</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Year 2</h3>
+              <ul>
+                <li>Algorithms & Data Structures</li>
+                <li>Databases, Operating Systems</li>
+                <li>Computer Networks, Web</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Year 3</h3>
+              <ul>
+                <li>Formal Languages & Compilers</li>
+                <li>Artificial Intelligence, Computer Graphics</li>
+                <li>Thesis & Advanced Electives</li>
+              </ul>
+            </div>
+          </div>
+          <p class="meta">Replace items with exact curricula. GPA is computed as a weighted average by ECTS.</p>
+          <pre style="background:var(--code); padding:.75rem; border-radius:.6rem; overflow:auto"><code>GPA = (\sum_i (ECTS_i \cdot grade_i)) / (\sum_i ECTS_i)</code></pre>
+        </section>
+
+        <section id="courses" class="card">
+          <h2>Courses & ECTS</h2>
+
+          <details class="accordion" open>
+            <summary>Year 1 <span class="summary-sub">— Foundations</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 1</summary>
+                <div>
+                  <table data-semester="y1s1">
+                    <thead>
+                      <tr>
+                        <th style="width:8ch">Code</th>
+                        <th>Course</th>
+                        <th style="width:7ch">Type</th>
+                        <th class="right" style="width:8ch">ECTS</th>
+                        <th class="right" style="width:8ch">Grade</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>MA101</td><td>Calculus I</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Limits, derivatives, integrals.</td></tr>
+                      <tr><td>AL101</td><td>Linear Algebra I</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Vector spaces, matrices, eigen.</td></tr>
+                      <tr><td>CS101</td><td>Programming I (C/C++)</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Syntax, control, functions.</td></tr>
+                      <tr><td>CS102</td><td>Computer Systems</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>CPU, memory, I/O.</td></tr>
+                      <tr><td>HU101</td><td>Academic Writing</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>Reports, citations.</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 2</summary>
+                <div>
+                  <table data-semester="y1s2">
+                    <thead>
+                      <tr>
+                        <th style="width:8ch">Code</th>
+                        <th>Course</th>
+                        <th style="width:7ch">Type</th>
+                        <th class="right" style="width:8ch">ECTS</th>
+                        <th class="right" style="width:8ch">Grade</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>MA102</td><td>Calculus II</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Series, multivariable.</td></tr>
+                      <tr><td>AL102</td><td>Linear Algebra II</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Inner-products, SVD.</td></tr>
+                      <tr><td>CS103</td><td>Programming II (OOP)</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Classes, inheritance, RAII.</td></tr>
+                      <tr><td>CS104</td><td>Discrete Mathematics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Graphs, combinatorics, logic.</td></tr>
+                      <tr><td>EL101</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>Year 2 <span class="summary-sub">— Core CS</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 3</summary>
+                <div>
+                  <table data-semester="y2s1">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>CS201</td><td>Algorithms & Data Structures</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Asymptotics, trees, graphs.</td></tr>
+                      <tr><td>CS202</td><td>Databases</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>ER, SQL, normalization.</td></tr>
+                      <tr><td>CS203</td><td>Operating Systems</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Processes, scheduling, MMU.</td></tr>
+                      <tr><td>CS204</td><td>Computer Networks</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>TCP/IP, routing.</td></tr>
+                      <tr><td>EL201</td><td>Elective</td><td>Opt</td><td class="right ects">3</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 4</summary>
+                <div>
+                  <table data-semester="y2s2">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>CS205</td><td>Software Engineering</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>UML, testing, CI/CD.</td></tr>
+                      <tr><td>CS206</td><td>Web Technologies</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>HTTP, JS, REST.</td></tr>
+                      <tr><td>CS207</td><td>Numerical Methods</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Approximation, ODEs.</td></tr>
+                      <tr><td>CS208</td><td>Probability & Statistics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Random vars, inference.</td></tr>
+                      <tr><td>EL202</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <details class="accordion">
+            <summary>Year 3 <span class="summary-sub">— Advanced & Thesis</span></summary>
+            <div style="margin-top:.6rem">
+              <details class="accordion" open>
+                <summary>Semester 5</summary>
+                <div>
+                  <table data-semester="y3s1">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>CS301</td><td>Formal Languages & Automata</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>CFGs, DFAs/NFAs, pumping.</td></tr>
+                      <tr><td>CS302</td><td>Compiler Design</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Lexing, parsing, IR.</td></tr>
+                      <tr><td>CS303</td><td>Artificial Intelligence</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Search, ML intro.</td></tr>
+                      <tr><td>CS304</td><td>Computer Graphics</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Transforms, rasterization.</td></tr>
+                      <tr><td>EL301</td><td>Elective</td><td>Opt</td><td class="right ects">2</td><td class="right grade">10</td><td>—</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+              <details class="accordion">
+                <summary>Semester 6</summary>
+                <div>
+                  <table data-semester="y3s2">
+                    <thead>
+                      <tr>
+                        <th>Code</th><th>Course</th><th>Type</th><th class="right">ECTS</th><th class="right">Grade</th><th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td>CS305</td><td>Distributed Systems</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Consensus, scaling.</td></tr>
+                      <tr><td>CS306</td><td>Security Fundamentals</td><td>Req</td><td class="right ects">5</td><td class="right grade">10</td><td>Crypto, auth, threats.</td></tr>
+                      <tr><td>CS307</td><td>Advanced Elective</td><td>Opt</td><td class="right ects">4</td><td class="right grade">10</td><td>—</td></tr>
+                      <tr><td>TH301</td><td>Thesis</td><td>Req</td><td class="right ects">6</td><td class="right grade">10</td><td>Research & defense.</td></tr>
+                    </tbody>
+                    <tfoot>
+                      <tr><td colspan="3">Totals</td><td class="right" data-total-ects>0</td><td class="right" data-gpa>—</td><td></td></tr>
+                    </tfoot>
+                  </table>
+                </div>
+              </details>
+            </div>
+          </details>
+
+          <div class="actions" style="margin-top: .75rem">
+            <button class="btn" id="recalc">↻ Recompute totals</button>
+            <span class="badge muted">Romanian scale 1–10</span>
+          </div>
+        </section>
+
+        <section id="projects" class="card">
+          <h2>Highlighted projects</h2>
+          <div class="meta">Filter by tag:</div>
+          <div class="actions print-hide" style="margin:.5rem 0">
+            <button class="btn" data-filter="all">All</button>
+            <button class="btn" data-filter="graphics">Graphics</button>
+            <button class="btn" data-filter="ml">ML</button>
+            <button class="btn" data-filter="systems">Systems</button>
+            <button class="btn" data-filter="edu">EdTech</button>
+          </div>
+          <div class="cards" id="projectCards">
+            <article class="card-item" data-tags="graphics edu">
+              <h3>Interactive 4D Cube Viewer</h3>
+              <div class="meta-row">
+                <span class="badge blue">Graphics</span>
+                <span class="badge">EdTech</span>
+                <span class="meta">OpenGL · C++</span>
+              </div>
+              <p>Visualizes tesseract rotations; step-by-step slicing for classroom demos.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">GitHub (private)</a>
+                <span class="meta">Year 3</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="ml systems">
+              <h3>Realtime Reinforcement Sandbox</h3>
+              <div class="meta-row">
+                <span class="badge">ML</span>
+                <span class="badge">Systems</span>
+                <span class="meta">C++ · Python interop</span>
+              </div>
+              <p>Minimal engine to test agents in gridworlds with deterministic seeds.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">GitHub (to be added)</a>
+                <span class="meta">Year 3</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="systems">
+              <h3>Lightweight OS Scheduler Sim</h3>
+              <div class="meta-row">
+                <span class="badge">Systems</span>
+                <span class="meta">C · POSIX</span>
+              </div>
+              <p>FCFS, SJF, RR visualized with interactive Gantt timelines.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">GitHub (to be added)</a>
+                <span class="meta">Year 2</span>
+              </div>
+            </article>
+            <article class="card-item" data-tags="edu graphics">
+              <h3>Didactic Graphics Notebooks</h3>
+              <div class="meta-row">
+                <span class="badge blue">Graphics</span>
+                <span class="badge">EdTech</span>
+                <span class="meta">Python</span>
+              </div>
+              <p>Parametric curves, transformations, and rasterization pipelines explained.</p>
+              <div class="meta-row">
+                <a href="#" aria-disabled="true">Notebooks</a>
+                <span class="meta">Year 2</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="thesis" class="card">
+          <h2>Bachelor thesis</h2>
+          <p><strong>Title:</strong> Machine Learning Compatible Game Engine</p>
+          <p><strong>Advisor:</strong> — <span class="meta">(add name)</span></p>
+          <p><strong>Abstract (short):</strong> We design a minimal, deterministic game engine with stable APIs to host learning agents. The system separates <em>rendering</em>, <em>simulation</em>, and <em>policy</em> layers, enabling reproducible experiments and curriculum learning across increasing task complexity.</p>
+          <div class="grid cols-2">
+            <div>
+              <h3>Contributions</h3>
+              <ul>
+                <li>Deterministic update & rendering loop with seed control.</li>
+                <li>Observation/action spaces compatible with RL libraries.</li>
+                <li>Headless mode and frame capture for dataset generation.</li>
+                <li>Reference tasks: navigation, resource gathering, tesseract puzzle.</li>
+              </ul>
+              <div class="meta-row">
+                <a href="/assets/thesis/bsc-ml-engine.pdf">PDF</a>
+                <span>·</span>
+                <a href="#" aria-disabled="true">Slides</a>
+                <span>·</span>
+                <a href="#" aria-disabled="true">Repo</a>
+              </div>
+            </div>
+            <div>
+              <h3>Key methods</h3>
+              <ul>
+                <li>Finite-state modeling of environments; entity-component architecture.</li>
+                <li>Linear algebra operators for transforms and feature extraction.</li>
+                <li>Stochastic policies with reproducible PRNG streams.</li>
+                <li>Evaluation metrics: episodic return, regret, wall-clock efficiency.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section id="skills" class="card">
+          <h2>Skills</h2>
+          <div class="grid cols-2">
+            <div>
+              <h3>Programming</h3>
+              <div class="skill"><label><span>C++ / STL</span><span>advanced</span></label><div class="bar"><i style="width:85%"></i></div></div>
+              <div class="skill"><label><span>Python</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+              <div class="skill"><label><span>OpenGL</span><span>intermediate</span></label><div class="bar"><i style="width:70%"></i></div></div>
+              <div class="skill"><label><span>Data Structures & Algorithms</span><span>advanced</span></label><div class="bar"><i style="width:85%"></i></div></div>
+            </div>
+            <div>
+              <h3>Math & CS theory</h3>
+              <div class="skill"><label><span>Linear Algebra</span><span>advanced</span></label><div class="bar"><i style="width:80%"></i></div></div>
+              <div class="skill"><label><span>Probability & Statistics</span><span>intermediate</span></label><div class="bar"><i style="width:65%"></i></div></div>
+              <div class="skill"><label><span>Automata & Formal Languages</span><span>intermediate</span></label><div class="bar"><i style="width:70%"></i></div></div>
+              <div class="skill"><label><span>Optimization</span><span>intermediate</span></label><div class="bar"><i style="width:60%"></i></div></div>
+            </div>
+          </div>
+          <p class="meta">Bars are indicative; adjust values as preferred.</p>
+        </section>
+
+        <section id="timeline" class="card">
+          <h2>Timeline</h2>
+          <div class="timeline">
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 1</strong> — Foundations completed; first C/C++ projects.
+            </div>
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 2</strong> — Systems + databases; networking labs; teaching assistance.
+            </div>
+            <div class="tl-item"><span class="dot"></span>
+              <strong>Year 3</strong> — Graphics + AI; thesis defense; projects showcased.
+            </div>
+          </div>
+        </section>
+
+        <section id="awards" class="card">
+          <h2>Awards & certifications</h2>
+          <ul>
+            <li>— Add scholarships, contest prizes, hackathons.</li>
+            <li>— Add relevant certifications (e.g., Linux, cloud).</li>
+          </ul>
+        </section>
+
+        <section id="materials" class="card">
+          <h2>Notes & materials</h2>
+          <ul>
+            <li><a href="/assets/notes/dsa.pdf">Data Structures & Algorithms — Notes (PDF)</a></li>
+            <li><a href="/assets/notes/os-labs.pdf">Operating Systems — Lab summaries (PDF)</a></li>
+            <li><a href="/assets/notes/graphics.pdf">Computer Graphics — Cheatsheet (PDF)</a></li>
+          </ul>
+        </section>
+
+        <section id="links" class="card">
+          <h2>Links</h2>
+          <ul>
+            <li>Faculty: <a href="https://www.info.uaic.ro/">FII — UAIC</a></li>
+            <li>Main site: <a href="https://dbxdrgsl.github.io/">dbxdrgsl.github.io</a></li>
+            <li>Back to education index: <a href="/cv/edu/">/cv/edu/</a></li>
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Dragoș — Portfolio. Built for printing and web.
+    </footer>
+  </div>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Dragoș",
+    "url": "https://dbxdrgsl.github.io/",
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Alexandru Ioan Cuza University of Iași",
+      "department": {
+        "@type": "CollegeOrUniversity",
+        "name": "Faculty of Computer Science (FII)"
+      }
+    },
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "Bachelor of Science",
+      "name": "B.Sc. in Computer Science",
+      "recognizedBy": {
+        "@type": "CollegeOrUniversity",
+        "name": "Alexandru Ioan Cuza University of Iași"
+      }
+    }
+  }
+  </script>
+
+  <script>
+    // Theme toggle with localStorage
+    (function(){
+      const key = 'theme';
+      const body = document.body;
+      const saved = localStorage.getItem(key);
+      if (saved) body.className = saved; // 'light' or 'dark'
+      else body.classList.add('dark');
+      document.getElementById('themeToggle').addEventListener('click', () => {
+        const next = body.classList.contains('dark') ? 'light' : 'dark';
+        body.classList.remove('dark','light');
+        body.classList.add(next);
+        localStorage.setItem(key, next);
+      });
+    })();
+
+    // GPA & ECTS recompute
+    function recompute() {
+      const tables = document.querySelectorAll('table[data-semester]');
+      tables.forEach(t => {
+        let ectsSum = 0, wg = 0;
+        t.querySelectorAll('tbody tr').forEach(tr => {
+          const ects = parseFloat((tr.querySelector('.ects')?.textContent||'0').replace(',', '.')) || 0;
+          const grade = parseFloat((tr.querySelector('.grade')?.textContent||'0').replace(',', '.')) || 0;
+          ectsSum += ects;
+          wg += ects * grade;
+        });
+        const totalCell = t.querySelector('[data-total-ects]');
+        const gpaCell = t.querySelector('[data-gpa]');
+        if (totalCell) totalCell.textContent = ectsSum.toFixed(0);
+        if (gpaCell) gpaCell.textContent = ectsSum > 0 ? (wg/ectsSum).toFixed(2) : '—';
+      });
+    }
+    document.getElementById('recalc').addEventListener('click', recompute);
+    window.addEventListener('DOMContentLoaded', () => { 
+      document.getElementById('year').textContent = new Date().getFullYear();
+      recompute();
+    });
+
+    // Project filtering
+    (function(){
+      const buttons = document.querySelectorAll('#projects [data-filter]');
+      const cards = document.querySelectorAll('#projectCards .card-item');
+      buttons.forEach(btn => btn.addEventListener('click', () => {
+        const tag = btn.getAttribute('data-filter');
+        cards.forEach(c => {
+          const tags = (c.getAttribute('data-tags')||'').split(/\s+/);
+          const show = tag==='all' || tags.includes(tag);
+          c.style.display = show ? '' : 'none';
+        });
+      }));
+    })();
+  </script>
+</body>
+</html>

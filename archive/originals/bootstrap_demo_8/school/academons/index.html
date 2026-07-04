@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-bs-theme="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Academons — Online Platform (Work in Progress)</title>
+  <meta name="description" content="Academons is under active development. Vision, roadmap, and early assets. This page tracks progress and holds temporary docs." />
+  <link rel="canonical" href="https://dbxdrgsl.github.io/lesson/academons.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Academons — WIP" />
+  <meta property="og:description" content="Vision. Feature plan. Privacy notes. Alpha sign-ups. PDFs and mocks." />
+  <meta property="og:url" content="https://dbxdrgsl.github.io/lesson/academons.html" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="preload" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"></noscript>
+  <style>
+    :root{--fg:#e6eef7;--bg:#0b0f14;--muted:#9aa6b2;--glass:rgba(255,255,255,.05)}
+    body{background:var(--bg);color:var(--fg)}
+    header{backdrop-filter:saturate(140%) blur(6px);background:var(--glass)}
+    .hero{padding:4rem 0 2rem}
+    .card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08)}
+    .grid{display:grid;gap:1rem}
+    @media(min-width:992px){.grid-3{grid-template-columns:1fr 1fr 1fr}.grid-2{grid-template-columns:1fr 1fr}}
+    .ratio iframe{border:0}
+    a{color:#9bd}
+    .pill{border:1px solid rgba(255,255,255,.15); border-radius:999px; padding:.35rem .8rem;}
+  </style>
+</head>
+<body>
+<header class="border-bottom sticky-top">
+  <nav class="container-xxl navbar navbar-expand py-2">
+    <a class="navbar-brand fw-semibold" href="/">dbxdrgsl.github.io</a>
+    <div class="ms-auto small text-secondary">Lesson / Academons</div>
+  </nav>
+</header>
+
+<main class="container-xxl">
+  <section class="hero">
+    <h1 class="display-5 fw-bold">Academons — Platform Roadmap</h1>
+    <p class="lead">Work in progress. Clean design. Reliable content. Fair privacy.</p>
+    <div class="d-flex gap-2 flex-wrap">
+      <span class="pill">Domain: academons.github.io</span>
+      <span class="pill">Alpha: private</span>
+      <span class="pill">Focus: KS2–KS4</span>
+      <span class="pill">Stack: static + light API</span>
+    </div>
+  </section>
+
+  <section class="mb-4 grid grid-3">
+    <div class="card p-4">
+      <h2 class="h5">Vision</h2>
+      <ul class="mb-0">
+        <li>Teacher-first workflow.</li>
+        <li>Evidence-driven lessons.</li>
+        <li>Shareable artifacts.</li>
+        <li>Open files when possible.</li>
+      </ul>
+    </div>
+    <div class="card p-4">
+      <h2 class="h5">Core Features (Planned)</h2>
+      <ul class="mb-0">
+        <li>Lesson pages with PDFs.</li>
+        <li>Quiz links. Imports.</li>
+        <li>Zip packs. Assets.</li>
+        <li>Light LMS hooks.</li>
+      </ul>
+    </div>
+    <div class="card p-4">
+      <h2 class="h5">Privacy</h2>
+      <ul class="mb-0">
+        <li>No trackers by default.</li>
+        <li>Student data stays local.</li>
+        <li>Parental consent model.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="mb-4 grid grid-2">
+    <div class="card p-4">
+      <h3 class="h5">MVP Docs (PDF / Mock)</h3>
+      <div class="ratio ratio-16x9 mb-3"><iframe src="/assets/pdf/academons/mvp-spec.pdf#view=FitH"></iframe></div>
+      <div class="ratio ratio-16x9 mb-3"><iframe src="/assets/pdf/academons/ui-wireframes.pdf#view=FitH"></iframe></div>
+      <div class="ratio ratio-16x9"><iframe src="/assets/pdf/academons/content-style-guide.pdf#view=FitH"></iframe></div>
+    </div>
+    <div class="card p-4">
+      <h3 class="h5">Roadmap</h3>
+      <ol class="mb-0">
+        <li>Alpha pages. Private.</li>
+        <li>Teacher import. CSV.</li>
+        <li>Quiz integration. GF/Forms.</li>
+        <li>Public showcase. Limited.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="mb-5">
+    <div class="card p-4">
+      <h3 class="h5">Get Involved</h3>
+      <p>Want early access? Use the form below.</p>
+      <form action="https://example.com/alpha" method="post" class="row g-2">
+        <div class="col-md-4"><input required class="form-control" name="name" placeholder="Name"></div>
+        <div class="col-md-4"><input required type="email" class="form-control" name="email" placeholder="Email"></div>
+        <div class="col-md-4"><button class="btn btn-primary w-100">Request invite</button></div>
+      </form>
+      <p class="small text-secondary mb-0 mt-2">Replace the action URL with your endpoint.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="container-xxl py-4 small">
+  <div class="d-flex justify-content-between">
+    <span>Last updated: 2025-08-16</span>
+    <span>CC BY-SA</span>
+  </div>
+</footer>
+</body>
+</html>
