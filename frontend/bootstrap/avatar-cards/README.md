@@ -1,4 +1,4 @@
-# Bootstrap Avatar Cards 12
+# Avatar Cards
 
 Future cleaned version of `bootstrap_avatar_cards_12`.
 
@@ -7,4 +7,5 @@ Future cleaned version of `bootstrap_avatar_cards_12`.
 - History preservation: not preserved because no source remote or copied folder
   was available during scaffold.
 
-Teaching focus: repeated card layouts, images, avatars, and component patterns.
+Teaching focus: repeated card layouts, images, avatars, and Bootstrap component
+patterns.

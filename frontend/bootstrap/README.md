@@ -15,7 +15,7 @@ container -> grid -> utilities -> cards -> navbar -> responsive page
 
 - `bootstrap_demo_5` -> `bootstrap-demo-5`
 - `bootstrap_demo_8` -> `bootstrap-demo-8`
-- `bootstrap_avatar_cards_12` -> `bootstrap-avatar-cards-12`
+- `bootstrap_avatar_cards_12` -> `avatar-cards`
 
 ## Possible Future Lessons
 

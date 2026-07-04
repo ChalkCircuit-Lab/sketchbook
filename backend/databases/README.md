@@ -14,6 +14,7 @@ tables -> keys -> relationships -> queries -> small interface
 ## Imported Projects
 
 - `Zoo-Database` -> `zoo-database`
+- `Zoo-Interface` -> `zoo-interface`
 
 ## Possible Future Lessons
 
@@ -22,6 +23,7 @@ tables -> keys -> relationships -> queries -> small interface
 - Simple SELECT queries
 - Joins and relationships
 - Connecting a small interface to data
+- Separating data model code from interface code
 
 ## Cleanup TODOs
 

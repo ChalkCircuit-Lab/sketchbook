@@ -14,7 +14,7 @@ variables -> DOM selection -> events -> state -> small interaction
 ## Imported Projects
 
 - `clock-navbar` -> `clock-navbar`
-- `disney-personality-quiz` -> `disney-personality-quiz`
+- `disney-personality-quiz` -> `personality-quiz`
 
 ## Possible Future Lessons
 

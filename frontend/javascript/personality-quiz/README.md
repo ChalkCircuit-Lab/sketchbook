@@ -1,4 +1,4 @@
-# Disney Personality Quiz
+# Personality Quiz
 
 Future cleaned version of `disney-personality-quiz`.
 

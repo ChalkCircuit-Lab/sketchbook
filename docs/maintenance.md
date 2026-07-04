@@ -13,5 +13,7 @@
 - Keep `.gitignore` broad but not destructive.
 - Do not commit secrets, cookies, tokens, `.env` files, browser profiles,
   generated credentials, or private keys.
-- Flag any old `LOGIN`, `COOKIE`, authentication, or session-related repository
-  for manual review before import.
+- `LOGIN` and `COOKIE` require manual security review before import because
+  their names suggest auth/session/cookie-related code:
+  `https://github.com/ChalkCircuit-Lab/LOGIN.git` and
+  `https://github.com/ChalkCircuit-Lab/COOKIE.git`.

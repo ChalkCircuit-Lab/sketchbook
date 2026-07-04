@@ -1,4 +1,4 @@
-# JavaTech Lab 02 Config
+# Lab 02 Config
 
 Future cleaned version of `javatech.lab02.config`.
 

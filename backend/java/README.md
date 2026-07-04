@@ -15,8 +15,7 @@ classes -> objects -> collections -> files -> small application
 
 - `JavaTech-Foundations` -> `javatech-foundations`
 - `Java-Foundations` -> `java-foundations`
-- `javatech.lab02.config` -> `javatech-lab02-config`
-- `Zoo-Interface` -> `zoo-interface`
+- `javatech.lab02.config` -> `lab02-config`
 
 ## Possible Future Lessons
 
