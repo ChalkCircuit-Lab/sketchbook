@@ -1,0 +1,108 @@
+{
+    "Fields":
+    [
+        {
+            "Name": "Computer Graphics",
+            "Projects":[
+                {
+                    "Name": "Fractals Visualizer",
+                    "Youtube": "https://www.youtube.com/embed/ReKHIx8SFAU?si=kcingC0KG71LF8cB",
+                    "Color": "#00FF00"
+                },
+                {
+                    "Name": "Circuit Renderer",
+                    "Youtube": "https://www.youtube.com/embed/-VDbk-N3u0c?si=f6He2G0XHeghsv20",
+                    "Color": "#00FF22"
+                },
+                {
+                    "Name": "Trigonometric Functions",
+                    "Youtube": "https://www.youtube.com/embed/ToYEpuFx8lU?si=Wm2_FlJ_XQV8FEPA",
+                    "Color": "#00FF44"
+                },
+                {
+                    "Name": "Super Shapes",
+                    "Youtube": "https://www.youtube.com/embed/-g0Vd5bepxU?si=r-LNrECgY00pTrVH",
+                    "Color": "#00FF66"
+                },
+                {
+                    "Name": "Mathematical Curves",
+                    "Youtube": "https://www.youtube.com/embed/Hz8D1atjipE?si=6wxjLyaRBrwkpWti",
+                    "Color": "#00FF88"
+                },
+                {
+                    "Name": "Fractal Tree",
+                    "Youtube": "https://www.youtube.com/embed/ajd0GGZgnDg?si=ryIxk-0OpY8SxzDD",
+                    "Color": "#00ffaa"
+                }
+            ],
+            "Color": "#005500"
+        },
+        {
+            "Name": "Game Development",
+            "Projects":[
+                {
+                    "Name": "Multiplayer Chess",
+                    "Youtube": "https://www.youtube.com/embed/Vd_fVtrs2P8?si=ZvdqRV1kWkq1UkU-",
+                    "Color": "#00FFFF"
+                },
+                {
+                    "Name": "Retro Games Collection",
+                    "Youtube": "https://www.youtube.com/embed/ba9x88ixokk?si=b0oSJnCiozoeHTpP",
+                    "Color": "#00eeFF"
+                },
+                {
+                    "Name": "Pollution Reduction Best Practices",
+                    "Youtube": "https://www.youtube.com/embed/t8LSrUmXu70?si=LOQ3WjDky0KAUPMx",
+                    "Color": "#00ddFF"
+                },
+                {
+                    "Name": "Speedrunning through a park",
+                    "Youtube": "https://www.youtube.com/embed/oqvsFGT0UL4?si=7whQx9lObr53RJxf",
+                    "Color": "#00ccFF"
+                },
+                {
+                    "Name": "Crazy Eights",
+                    "Youtube": "https://www.youtube.com/embed/16D-xYoNzKg?si=Q2xCKv6gby7CjdcM",
+                    "Color": "#00aaFF"
+                },
+                {
+                    "Name": "Open-World RPG",
+                    "Youtube": "https://www.youtube.com/embed/Int-KYsQ6iY?si=bHM8m8YDz3rae6zM",
+                    "Color": "#0088FF"
+                },
+                {
+                    "Name": "Board Game Companion App",
+                    "Youtube": "https://www.youtube.com/embed/ZGbYNnULJDI?si=b1XIduMFnQtQnuh9",
+                    "Color": "#0066FF"
+                },
+                {
+                    "Name": "Online Card Game",
+                    "Youtube": "https://www.youtube.com/embed/81ep26xyoYM?si=TTDaa3Xq8PzO577N",
+                    "Color": "#0044FF"
+                },
+                {
+                    "Name": "Grid Generator Tool",
+                    "Youtube": "https://www.youtube.com/embed/uoDdhAsgFbI?si=mA1Bl7NwCkZLMiPX",
+                    "Color": "#0022FF"
+                }
+            ],
+            "Color": "#005555"
+        },
+        {
+            "Name": "Software Development",
+            "Projects":[
+                {
+                    "Name": "Marketplace Observation Tool",
+                    "Youtube": "https://www.youtube.com/embed/Pn1Ls3Jariw?si=Vqatzap1mv3VR-2R",
+                    "Color": "#2200FF"
+                },
+                {
+                    "Name": "Cycle of given cost",
+                    "Youtube": "https://www.youtube.com/embed/h514j1cw9Do?si=d0LBzcwDXxWK2yFz",
+                    "Color": "#4400FF"
+                }
+            ],
+            "Color": "#000055"
+        }
+    ]
+}

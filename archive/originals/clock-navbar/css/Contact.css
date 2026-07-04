@@ -1,0 +1,11 @@
+.Contact-component--Container{
+    display: flex;
+}
+
+.Contact-component--LeftContainer{
+    display: flex;
+    flex-direction: column;
+
+    width: 50%;
+    height: 100%;
+}
