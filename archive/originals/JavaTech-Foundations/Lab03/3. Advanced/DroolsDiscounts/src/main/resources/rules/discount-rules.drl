@@ -1,0 +1,29 @@
+package rules
+dialect "java"
+
+import ro.uaic.dbxdrgsl.DroolsDiscounts.model.Order;
+
+rule "Loyal customer discount"
+salience 20
+when
+  $o : Order( customer != null, customer.loyal == true, $amt : amount )
+then
+  double d = $amt * 0.10;
+  $o.setDiscount(d);
+end
+
+rule "Large order discount"
+salience 10
+when
+  $o : Order( amount > 1000 )
+then
+  $o.setDiscount(100.0);
+end
+
+rule "No discount"
+salience 0
+when
+  $o : Order()
+then
+  if ($o.getDiscount() == 0.0) { $o.setDiscount(0.0); }
+end

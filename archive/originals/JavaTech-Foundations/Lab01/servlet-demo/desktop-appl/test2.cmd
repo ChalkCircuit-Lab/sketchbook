@@ -1,0 +1,1 @@
+curl -X POST -H "Accept: text/plain" -d "choice=2" http://localhost:8080/servlet-demo/api/choose

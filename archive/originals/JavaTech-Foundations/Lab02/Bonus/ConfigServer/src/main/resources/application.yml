@@ -1,0 +1,19 @@
+server:
+  port: 8888
+
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/JavaTechLabs/lab02.config
+          search-paths: config-repo
+          default-label: main
+          clone-on-start: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health,info
