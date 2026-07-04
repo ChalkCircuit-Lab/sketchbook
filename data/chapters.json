@@ -1,0 +1,112 @@
+[
+  {
+    "id": "html-css",
+    "title": "HTML & CSS",
+    "area": "frontend",
+    "teachingOrder": 1,
+    "description": "Page structure, semantic HTML, selectors, layout, and small static pages.",
+    "prerequisiteConcepts": [],
+    "conceptsIntroduced": ["tags", "semantic-structure", "selectors", "box-model", "layout"],
+    "relatedProjectIDs": ["colored-sections", "coffee-lover"]
+  },
+  {
+    "id": "bootstrap",
+    "title": "Bootstrap",
+    "area": "frontend",
+    "teachingOrder": 2,
+    "description": "Using a component library to build consistent responsive pages.",
+    "prerequisiteConcepts": ["html-css"],
+    "conceptsIntroduced": ["grid", "utilities", "cards", "navbar", "responsive-components"],
+    "relatedProjectIDs": ["bootstrap-demo-5", "bootstrap-demo-8", "bootstrap-avatar-cards-12"]
+  },
+  {
+    "id": "javascript",
+    "title": "JavaScript",
+    "area": "frontend",
+    "teachingOrder": 3,
+    "description": "Variables, DOM selection, events, state, and small browser interactions.",
+    "prerequisiteConcepts": ["html-css"],
+    "conceptsIntroduced": ["variables", "dom-selection", "events", "state", "conditional-logic"],
+    "relatedProjectIDs": ["clock-navbar", "disney-personality-quiz"]
+  },
+  {
+    "id": "react",
+    "title": "React",
+    "area": "frontend",
+    "teachingOrder": 4,
+    "description": "Component structure, props, state, and Vite-based development.",
+    "prerequisiteConcepts": ["javascript", "html-css"],
+    "conceptsIntroduced": ["components", "props", "state", "composition", "vite"],
+    "relatedProjectIDs": ["react-vite-demo"]
+  },
+  {
+    "id": "ui-patterns",
+    "title": "UI Patterns",
+    "area": "frontend",
+    "teachingOrder": 5,
+    "description": "Reusable interface patterns extracted from earlier frontend sketches.",
+    "prerequisiteConcepts": ["html-css", "javascript"],
+    "conceptsIntroduced": ["navigation", "forms", "cards", "lists", "feedback"],
+    "relatedProjectIDs": []
+  },
+  {
+    "id": "java",
+    "title": "Java",
+    "area": "backend",
+    "teachingOrder": 1,
+    "description": "Java syntax, classes, objects, collections, files, and small applications.",
+    "prerequisiteConcepts": [],
+    "conceptsIntroduced": ["classes", "objects", "methods", "collections", "files"],
+    "relatedProjectIDs": ["javatech-foundations", "java-foundations", "javatech-lab02-config", "zoo-interface"]
+  },
+  {
+    "id": "c",
+    "title": "C",
+    "area": "backend",
+    "teachingOrder": 2,
+    "description": "Compiled programs, memory basics, pointers, and low-level practice sketches.",
+    "prerequisiteConcepts": [],
+    "conceptsIntroduced": ["compilation", "functions", "pointers", "memory", "headers"],
+    "relatedProjectIDs": []
+  },
+  {
+    "id": "databases",
+    "title": "Databases",
+    "area": "backend",
+    "teachingOrder": 3,
+    "description": "Tables, keys, relationships, SQL queries, and small interfaces over data.",
+    "prerequisiteConcepts": ["java"],
+    "conceptsIntroduced": ["tables", "keys", "relationships", "queries", "schema-design"],
+    "relatedProjectIDs": ["zoo-database"]
+  },
+  {
+    "id": "algorithms",
+    "title": "Algorithms",
+    "area": "backend",
+    "teachingOrder": 4,
+    "description": "Arrays, searching, sorting, graphs, and route finding.",
+    "prerequisiteConcepts": ["java"],
+    "conceptsIntroduced": ["arrays", "searching", "sorting", "graphs", "path-finding"],
+    "relatedProjectIDs": ["route-seeker"]
+  },
+  {
+    "id": "distributed-systems",
+    "title": "Distributed Systems",
+    "area": "backend",
+    "teachingOrder": 5,
+    "description": "Processes, communication, synchronization, concurrency, and lab-style systems work.",
+    "prerequisiteConcepts": ["java", "algorithms"],
+    "conceptsIntroduced": ["processes", "communication", "synchronization", "concurrency", "coordination"],
+    "relatedProjectIDs": ["concurrent-distributed-labs"]
+  },
+  {
+    "id": "api-patterns",
+    "title": "API Patterns",
+    "area": "backend",
+    "teachingOrder": 6,
+    "description": "Request/response boundaries, endpoints, validation, and small service examples.",
+    "prerequisiteConcepts": ["java", "databases"],
+    "conceptsIntroduced": ["routes", "controllers", "validation", "serialization", "errors"],
+    "relatedProjectIDs": []
+  }
+]

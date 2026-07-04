@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sketchbook</title>
+    <link rel="stylesheet" href="assets/css/sketchbook.css">
+  </head>
+  <body>
+    <main class="page">
+      <header class="masthead">
+        <h1>sketchbook</h1>
+        <p>
+          A software notebook for preserving small experiments and turning them
+          into lessons, demos, exercises, and reference examples.
+        </p>
+      </header>
+
+      <nav class="toolbar" aria-label="Project filters">
+        <button type="button" data-filter="all" aria-pressed="true">all</button>
+        <button type="button" data-filter="frontend" aria-pressed="false">frontend</button>
+        <button type="button" data-filter="backend" aria-pressed="false">backend</button>
+        <button type="button" data-filter="fullstack" aria-pressed="false">fullstack</button>
+        <button type="button" data-filter="archive" aria-pressed="false">archive</button>
+        <span id="status" class="status">Loading project notes...</span>
+      </nav>
+
+      <section id="projects" aria-live="polite"></section>
+    </main>
+
+    <script src="assets/js/sketchbook.js"></script>
+  </body>
+</html>
