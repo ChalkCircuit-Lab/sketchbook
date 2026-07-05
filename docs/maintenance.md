@@ -20,3 +20,6 @@
 - Unsafe private-key files found in the imported Concurrent-Distributed-Labs
   history were removed from the sketchbook repository history before
   publishing.
+- A legacy `.env` file containing an API key assignment was also removed from
+  old pre-sketchbook history before publishing; keep only `.env.example`,
+  `.env.sample`, or `.env.template` files with placeholder values.
