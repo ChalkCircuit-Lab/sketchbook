@@ -17,3 +17,6 @@
   their names suggest auth/session/cookie-related code:
   `https://github.com/ChalkCircuit-Lab/LOGIN.git` and
   `https://github.com/ChalkCircuit-Lab/COOKIE.git`.
+- Unsafe private-key files found in the imported Concurrent-Distributed-Labs
+  history were removed from the sketchbook repository history before
+  publishing.
